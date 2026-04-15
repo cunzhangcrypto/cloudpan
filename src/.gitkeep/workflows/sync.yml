@@ -1,0 +1,32 @@
+name: Notion Sync
+on:
+  workflow_dispatch: # 允许你手动点击按钮立即运行
+  schedule:
+    - cron: '0 * * * *' # 设定为每小时的第 0 分钟自动运行
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3 # 第一步：获取你的仓库代码
+      
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18 # 使用 Node.js 18 环境
+          
+      - name: Install dependencies
+        run: npm install # 根据 package.json 安装 Notion 插件
+        
+      - name: Run sync script
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }} # 调用你设置的机器人密钥
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }} # 调用你设置的数据库ID
+        run: node sync_notion.js # 运行搬运脚本
+        
+      - name: Commit and Push
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "action@github.com"
+          git add src/webstack.json # 将搬运好的数据放入 src 文件夹
+          git commit -m "Update from Notion" || exit 0 # 如果数据没变化就不提交
+          git push # 推送回 GitHub，触发 Cloudflare 更新
