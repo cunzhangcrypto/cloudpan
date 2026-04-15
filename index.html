@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>FK 在线工具 - 科技推手</title>
-    <link rel="shortcut icon" href="./assets/images/favicon.png">
+    <title>FK 工具导航 - 科技推手</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="./assets/css/iconfont.css">
     <link rel="stylesheet" href="./assets/css/bootstrap.css">
     <link rel="stylesheet" href="./assets/css/iowen.css">
@@ -32,35 +32,30 @@
         </div>
 
         <div class="main-content flex-fill">
-            <div id="search-bg" class="big-header-banner" style="background-image: url('./assets/images/grid.png');">
-                <div class="container-fluid p-0">
-                    <div class="s-search mx-auto" style="max-width:800px; padding: 120px 0 80px;">
-                        <div id="search-list" class="hide-type-list text-center mb-3">
-                            <div class="search-group group-a">
-                                <ul class="search-type">
-                                    <li class="active"><span class="text-white">百度</span></li>
-                                    <li><span class="text-white">必应</span></li>
-                                    <li><span class="text-white">谷歌</span></li>
-                                </ul>
-                            </div>
+            <div class="header-big css-color mb-4" id="search-bg" style="background-image: url('./assets/images/grid.png');">
+                <div class="s-search mx-auto" style="max-width:800px; padding: 100px 0 60px;">
+                    <div id="search-list" class="hide-type-list text-center mb-3">
+                        <div class="search-group group-a">
+                            <ul class="search-type">
+                                <li class="active"><span class="text-white">百度</span></li>
+                            </ul>
                         </div>
-                        <form action="https://www.baidu.com/s" method="get" target="_blank" class="super-search-fm">
-                            <input type="text" name="wd" class="form-control smart-tips search-key" placeholder="输入搜索内容..." autocomplete="off">
-                            <button type="submit"><i class="iconfont icon-search"></i></button>
-                        </form>
                     </div>
+                    <form action="https://www.baidu.com/s" method="get" target="_blank" class="super-search-fm">
+                        <input type="text" name="wd" class="form-control smart-tips search-key" placeholder="输入搜索内容..." autocomplete="off">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
                 </div>
             </div>
 
-            <div id="content" class="content-site customize-site container-fluid p-md-4">
-                <div id="notion-render-target">
-                    <div class="text-center p-5"><i class="iconfont icon-loading fa-spin"></i> 正在同步 Notion 数据...</div>
-                </div>
+            <div id="content" class="container-fluid">
+                <div id="notion-content">
+                    </div>
             </div>
 
             <footer class="main-footer footer-type-1 bg-white border-top p-3 text-center text-xs">
                 <div class="copyright">
-                    <p>© 2026 By <a href="https://blog.cunzhangblog.com">Cun Zhang</a> | 渝ICP备2023018588号</p>
+                    <p>© 2026 By Cun Zhang | 渝ICP备2023018588号</p>
                 </div>
             </footer>
         </div>
@@ -68,60 +63,54 @@
 
     <script>
         $(document).ready(function() {
-            // 直接读取你的 webstack.json
-            fetch('./src/webstack.json?v=' + Math.random())
-            .then(res => res.json())
-            .then(data => {
-                let menu = '';
-                let content = '';
+            // 读取你仓库 src 目录下的 webstack.json
+            $.getJSON("./src/webstack.json", function(data) {
+                let menuHtml = '';
+                let contentHtml = '';
 
-                data.forEach((item, i) => {
-                    // 菜单：还原原版图标和间距
-                    menu += `
+                $.each(data, function(i, item) {
+                    // 生成菜单
+                    menuHtml += `
                         <li class="sidebar-item">
                             <a href="#term-${i}" class="smooth">
-                                <i class="iconfont icon-tag mr-2"></i>
+                                <i class="fas fa-star mr-2"></i>
                                 <span>${item.taxonomy}</span>
                             </a>
                         </li>`;
 
-                    // 内容：四层嵌套以激活原版 CSS 特效
-                    let cards = item.links.map(link => `
-                        <div class="url-card col-6 col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
-                            <div class="url-body default">
-                                <a href="${link.url}" target="_blank" class="card no-c mb-4" data-toggle="tooltip" title="${link.desc}">
-                                    <div class="card-body">
-                                        <div class="url-content d-flex align-items-center">
-                                            <div class="url-img mr-2 d-flex align-items-center justify-content-center">
-                                                <img class="lazy" src="${link.logo || './assets/images/favicon.png'}" onerror="this.src='./assets/images/favicon.png'">
+                    // 生成卡片 (四层嵌套结构是 WebStack 样式的核心)
+                    let cards = '';
+                    $.each(item.links, function(j, link) {
+                        cards += `
+                            <div class="col-6 col-md-4 col-xl-3">
+                                <div class="url-card mb-4">
+                                    <a href="${link.url}" target="_blank" class="card">
+                                        <div class="card-body p-2 d-flex align-items-center">
+                                            <div class="url-img mr-2">
+                                                <img src="${link.logo || './assets/images/favicon.png'}" width="40" height="40" onerror="this.src='./assets/images/favicon.png'">
                                             </div>
                                             <div class="url-info">
-                                                <strong>${link.title}</strong>
-                                                <p class="overflow_1line">${link.desc || ''}</p>
+                                                <div class="text-bold text-sm overflow_1line">${link.title}</div>
+                                                <p class="text-muted text-xs mb-0 overflow_1line">${link.desc || ''}</p>
                                             </div>
                                         </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    `).join('');
+                                    </a>
+                                </div>
+                            </div>`;
+                    });
 
-                    content += `
-                        <h4 class="text-gray text-lg mb-4">
-                            <i class="site-tag iconfont icon-tag icon-lg mr-1" id="term-${i}"></i>${item.taxonomy}
+                    contentHtml += `
+                        <h4 class="text-gray mb-3" id="term-${i}">
+                            <i class="fas fa-tag mr-2"></i>${item.taxonomy}
                         </h4>
                         <div class="row">${cards}</div>`;
                 });
 
-                $('#main-menu').html(menu);
-                $('#notion-render-target').html(content);
-                
-                // 激活原版 app.js 中的交互
-                if(typeof theme !== 'undefined') theme.init(); 
+                $('#main-menu').html(menuHtml);
+                $('#notion-content').html(contentHtml);
             });
         });
     </script>
-
     <script src="./assets/js/bootstrap.bundle.min.js"></script>
     <script src="./assets/js/app.js"></script>
 </body>
