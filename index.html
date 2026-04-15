@@ -1,150 +1,283 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>FK 工具导航 - 科技推手</title>
-    <link rel="shortcut icon" href="./assets/images/favicon.png" />
-    <link rel="stylesheet" id="iconfont-css" href="./assets/css/iconfont-3.03029.1.css" type="text/css" media="all" />
-    <link rel="stylesheet" id="bootstrap-css" href="./assets/css/bootstrap.min-4.3.1.css" type="text/css" media="all" />
-    <link rel="stylesheet" id="iowen-css" href="./assets/css/iowen-3.03029.1.css" type="text/css" media="all" />
-    <link rel="stylesheet" id="style-css" href="./assets/css/style-3.03029.1.css" type="text/css" media="all" />
-    <script type="text/javascript" src="./assets/js/jquery.min-3.4.1.js" id="jquery-js"></script>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>我的自适应导航站</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
     <style>
-        /* 修复动态加载导致的 UI 闪烁 */
-        .url-card .card-body { padding: 10px 15px !important; }
-        .sidebar-menu-inner { height: calc(100vh - 120px); overflow-y: auto; }
-        /* 修正夜间模式下的卡片背景 */
-        body.io-black-mode .url-body { background: #2c2e2f !important; }
-    </style>
-</head>
 
-<body class="io-grey-mode">
-    <div class="page-container">
-        <div id="sidebar" class="sticky sidebar-nav fade animate-nav" style="width: 170px;">
-            <div class="modal-dialog h-100 sidebar-nav-inner">
-                <div class="sidebar-logo border-bottom border-color">
-                    <div class="logo p-4 text-center">
-                        <img src="./assets/images/logo@2x.png" width="160" alt="LOGO">
-                    </div>
-                </div>
-                <div class="sidebar-menu flex-fill">
-                    <div class="sidebar-scroll">
-                        <div class="sidebar-menu-inner">
-                            <ul id="main-menu" class="metismenu">
-                                </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        :root { --sidebar-width: 240px; --primary-color: #f1404b; --bg-gray: #f3f6f8; }
 
-        <div class="main-content flex-fill">
-            <div id="search-bg" class="big-header-banner" style="background-image: url('./assets/images/bg-dna.jpg'); background-size: cover;">
-                <div class="container-fluid p-0">
-                    <div class="s-search mx-auto" style="max-width:800px; padding: 120px 0 80px;">
-                        <div id="search-list" class="hide-type-list text-center mb-3">
-                            <div class="search-group group-a">
-                                <ul class="search-type">
-                                    <li class="active"><span class="text-white">百度</span></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <form action="https://www.baidu.com/s" method="get" target="_blank" class="super-search-fm">
-                            <input type="text" name="wd" class="form-control smart-tips search-key" placeholder="输入搜索内容..." autocomplete="off">
-                            <button type="submit"><i class="iconfont icon-search"></i></button>
-                        </form>
-                    </div>
-                </div>
-            </div>
+        * { box-sizing: border-box; }
 
-            <div id="content" class="content-site customize-site container-fluid p-md-4">
-                <div id="dynamic-content-area">
-                    </div>
-            </div>
+        body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; margin: 0; background: var(--bg-gray); color: #333; display: flex; }
 
-            <footer class="main-footer footer-type-1 bg-white border-top p-3 text-center text-xs">
-                <div class="copyright">
-                    <p>© 2026 By Cun Zhang | 渝ICP备2023018588号</p>
-                </div>
-            </footer>
-        </div>
-    </div>
 
-    <script type="text/javascript">
-        function initWebStackUI(data) {
-            let menuHtml = '';
-            let contentHtml = '';
 
-            $.each(data, function(i, group) {
-                // 1. 生成菜单 (加上 icon-tag 图标)
-                menuHtml += `
-                    <li class="sidebar-item">
-                        <a href="#term-${i}" class="smooth">
-                            <i class="iconfont icon-tag mr-2"></i>
-                            <span>${group.taxonomy}</span>
-                        </a>
-                    </li>`;
+        /* --- 侧边栏 --- */
 
-                // 2. 生成卡片 (每一组分类必须是一个独立的 row)
-                let cardsHtml = '';
-                $.each(group.links, function(j, link) {
-                    cardsHtml += `
-                        <div class="url-card col-6 col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
-                            <div class="url-body default">
-                                <a href="${link.url}" target="_blank" class="card no-c mb-4" data-toggle="tooltip" data-placement="top" title="${link.desc || link.title}">
-                                    <div class="card-body">
-                                        <div class="url-content d-flex align-items-center">
-                                            <div class="url-img mr-2 d-flex align-items-center justify-content-center">
-                                                <img class="lazy" src="${link.logo || './assets/images/favicon.png'}" onerror="this.src='./assets/images/favicon.png'">
-                                            </div>
-                                            <div class="url-info">
-                                                <strong>${link.title}</strong>
-                                                <p class="overflow_1line">${link.desc || '...'}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>`;
-                });
+        #sidebar { width: var(--sidebar-width); background: #fff; height: 100vh; position: fixed; transition: all 0.3s; z-index: 1001; border-right: 1px solid #eee; overflow-y: auto; }
 
-                contentHtml += `
-                    <h4 class="text-gray text-lg mb-4">
-                        <i class="site-tag iconfont icon-tag icon-lg mr-1" id="term-${i}"></i>${group.taxonomy}
-                    </h4>
-                    <div class="row">${cardsHtml}</div>`;
-            });
+        .sidebar-header { padding: 20px; text-align: center; font-size: 24px; font-weight: bold; color: var(--primary-color); border-bottom: 1px solid #f9f9f9; }
 
-            // 注入到页面
-            $('#main-menu').html(menuHtml);
-            $('#dynamic-content-area').html(contentHtml);
+        #main-menu { list-style: none; padding: 0; margin: 0; }
 
-            // --- 核心逻辑：数据注入后，必须手动重置原版脚本的监听 ---
-            // 1. 激活平滑滚动
-            $(document).on('click', 'a.smooth', function(ev) {
-                ev.preventDefault();
-                $('html, body').animate({
-                    scrollTop: $($(this).attr('href')).offset().top - 90
-                }, 500);
-            });
-            
-            // 2. 激活 Tooltip
-            if ($.fn.tooltip) {
-                $('[data-toggle="tooltip"]').tooltip();
-            }
+        #main-menu li a { display: flex; align-items: center; padding: 15px 25px; text-decoration: none; color: #555; font-size: 14px; transition: 0.2s; }
+
+        #main-menu li a:hover { background: #f9f9f9; color: var(--primary-color); }
+
+        .menu-icon { margin-right: 15px; width: 20px; text-align: center; }
+
+
+
+        /* --- 主体区域 --- */
+
+        #content-wrapper { margin-left: var(--sidebar-width); flex: 1; min-width: 0; transition: all 0.3s; }
+
+        
+
+        /* 移动端顶部导航栏 */
+
+        .mobile-header { display: none; background: #fff; padding: 10px 20px; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #eee; }
+
+        .toggle-btn { cursor: pointer; font-size: 20px; }
+
+
+
+        .header-search { background: #2c3e50; padding: 60px 20px; text-align: center; color: white; }
+
+        .search-box { max-width: 600px; margin: 20px auto 0; display: flex; border-radius: 30px; overflow: hidden; background: #fff; }
+
+        .search-box input { flex: 1; border: none; padding: 15px 20px; outline: none; }
+
+        .search-box button { background: var(--primary-color); border: none; color: white; padding: 0 25px; cursor: pointer; }
+
+
+
+        .container { padding: 20px 40px; }
+
+        .taxonomy-title { margin: 30px 0 15px; font-size: 18px; display: flex; align-items: center; font-weight: bold; }
+
+        .taxonomy-title i { margin-right: 10px; color: var(--primary-color); }
+
+
+
+        /* 卡片网格 */
+
+        .row { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px; }
+
+        .card { background: #fff; border-radius: 6px; padding: 15px; display: flex; align-items: center; text-decoration: none; color: inherit; border: 1px solid transparent; transition: 0.3s; }
+
+        .card:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); border-color: var(--primary-color); }
+
+        .card-logo { width: 40px; height: 40px; border-radius: 50%; margin-right: 12px; object-fit: cover; }
+
+        .card-body { min-width: 0; }
+
+        .card-title { font-weight: bold; font-size: 14px; margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+        .card-desc { font-size: 12px; color: #888; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+
+
+        /* --- 友情链接与页脚 --- */
+
+        .footer { background: #fff; padding: 40px 20px; text-align: center; border-top: 1px solid #eee; margin-top: 50px; font-size: 13px; color: #999; line-height: 2; }
+
+        .links-section { margin-bottom: 20px; }
+
+        .links-section a { color: #666; text-decoration: none; margin: 0 10px; }
+
+        .links-section a:hover { color: var(--primary-color); }
+
+
+
+        /* --- 响应式适配 --- */
+
+        @media (max-width: 768px) {
+
+            #sidebar { left: -240px; }
+
+            #sidebar.active { left: 0; }
+
+            #content-wrapper { margin-left: 0; }
+
+            .mobile-header { display: flex; }
+
+            .container { padding: 20px; }
+
+            .row { grid-template-columns: 1fr; } /* 手机端单列显示 */
+
+            .header-search { padding: 40px 20px; }
+
         }
 
-        $(document).ready(function() {
-            // 从你的 src 目录读取数据
-            $.getJSON("./src/webstack.json?v=" + new Date().getTime(), function(data) {
-                initWebStackUI(data);
-            });
+    </style>
+
+</head>
+
+<body>
+
+
+
+    <div class="mobile-header">
+
+        <div class="toggle-btn" onclick="toggleSidebar()"><i class="fas fa-bars"></i></div>
+
+        <div style="font-weight:bold">在线工具箱</div>
+
+        <div class="toggle-btn"><i class="fas fa-search"></i></div>
+
+    </div>
+
+
+
+    <nav id="sidebar">
+
+        <div class="sidebar-header">FK 工具导航</div>
+
+        <ul id="main-menu"><li>加载中...</li></ul>
+
+        <div style="padding: 20px; border-top: 1px solid #f9f9f9; font-size: 12px; color: #ccc;">
+
+            <a href="#footer" style="color:inherit; text-decoration:none;"><i class="fas fa-link menu-icon"></i>友情链接</a>
+
+        </div>
+
+    </nav>
+
+
+
+    <div id="content-wrapper">
+
+        <section class="header-search">
+
+            <h1>百度一下，你就知道</h1>
+
+            <div class="search-box">
+
+                <input type="text" id="search-input" placeholder="输入搜索内容...">
+
+                <button onclick="window.open('https://www.google.com/search?q='+document.getElementById('search-input').value)">搜索</button>
+
+            </div>
+
+        </section>
+
+
+
+        <div class="container" id="main-content">
+
+            </div>
+
+
+
+        <footer class="footer" id="footer">
+
+            <div class="links-section">
+
+                <strong>友情链接：</strong>
+
+                <a href="#">CSDN</a> | <a href="#">程序设计网</a> | <a href="#">掘金社区</a> | <a href="#">阿里云社区</a>
+
+            </div>
+
+            <div>本站内容源自互联网，如有侵权请联系删除。</div>
+
+            <div>© 2026 By Cun Zhang | 渝ICP备2023018588号</div>
+
+        </footer>
+
+    </div>
+
+
+
+    <script>
+
+    function toggleSidebar() {
+
+        document.getElementById('sidebar').classList.toggle('active');
+
+    }
+
+
+
+    function loadData() {
+
+        fetch('./src/webstack.json?t=' + new Date().getTime())
+
+        .then(res => res.json())
+
+        .then(data => {
+
+            // 渲染菜单
+
+            document.getElementById('main-menu').innerHTML = data.map(g => `
+
+                <li><a href="#${g.taxonomy}" onclick="toggleSidebar()"><i class="fas fa-star menu-icon"></i>${g.taxonomy}</a></li>
+
+            `).join('');
+
+
+
+            // 渲染内容
+
+            document.getElementById('main-content').innerHTML = data.map(g => `
+
+                <div id="${g.taxonomy}">
+
+                    <div class="taxonomy-title"><i class="far fa-folder-open"></i>${g.taxonomy}</div>
+
+                    <div class="row">
+
+                        ${g.links.map(item => `
+
+                            <a class="card" href="${item.url}" target="_blank">
+
+                                <img src="${item.logo || 'https://via.placeholder.com/40'}" class="card-logo">
+
+                                <div class="card-body">
+
+                                    <div class="card-title">${item.title}</div>
+
+                                    <div class="card-desc">${item.desc || item.title}</div>
+
+                                </div>
+
+                            </a>
+
+                        `).join('')}
+
+                    </div>
+
+                </div>
+
+            `).join('');
+
         });
+
+    }
+
+
+
+    // 初始加载
+
+    loadData();
+
+    // 每2分钟自动抓取一次
+
+    setInterval(loadData, 120000); 
+
     </script>
 
-    <script type="text/javascript" src="./assets/js/bootstrap.min-4.3.1.js" id="bootstrap-js"></script>
-    <script type="text/javascript" src="./assets/js/app-3.03029.1.js" id="app-js"></script>
 </body>
+
 </html>
