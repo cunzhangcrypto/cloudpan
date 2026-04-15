@@ -2,141 +2,152 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的自适应导航站</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>我的精致导航站 - WebStack 原版UI</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/iowen.css" id="iowen-css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/js/bootstrap.bundle.min.js"></script>
     <style>
-        :root { --sidebar-width: 240px; --primary-color: #f1404b; --bg-gray: #f3f6f8; }
-        * { box-sizing: border-box; }
-        body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; margin: 0; background: var(--bg-gray); color: #333; display: flex; }
-
-        /* --- 侧边栏 --- */
-        #sidebar { width: var(--sidebar-width); background: #fff; height: 100vh; position: fixed; transition: all 0.3s; z-index: 1001; border-right: 1px solid #eee; overflow-y: auto; }
-        .sidebar-header { padding: 20px; text-align: center; font-size: 24px; font-weight: bold; color: var(--primary-color); border-bottom: 1px solid #f9f9f9; }
-        #main-menu { list-style: none; padding: 0; margin: 0; }
-        #main-menu li a { display: flex; align-items: center; padding: 15px 25px; text-decoration: none; color: #555; font-size: 14px; transition: 0.2s; }
-        #main-menu li a:hover { background: #f9f9f9; color: var(--primary-color); }
-        .menu-icon { margin-right: 15px; width: 20px; text-align: center; }
-
-        /* --- 主体区域 --- */
-        #content-wrapper { margin-left: var(--sidebar-width); flex: 1; min-width: 0; transition: all 0.3s; }
-        
-        /* 移动端顶部导航栏 */
-        .mobile-header { display: none; background: #fff; padding: 10px 20px; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #eee; }
-        .toggle-btn { cursor: pointer; font-size: 20px; }
-
-        .header-search { background: #2c3e50; padding: 60px 20px; text-align: center; color: white; }
-        .search-box { max-width: 600px; margin: 20px auto 0; display: flex; border-radius: 30px; overflow: hidden; background: #fff; }
-        .search-box input { flex: 1; border: none; padding: 15px 20px; outline: none; }
-        .search-box button { background: var(--primary-color); border: none; color: white; padding: 0 25px; cursor: pointer; }
-
-        .container { padding: 20px 40px; }
-        .taxonomy-title { margin: 30px 0 15px; font-size: 18px; display: flex; align-items: center; font-weight: bold; }
-        .taxonomy-title i { margin-right: 10px; color: var(--primary-color); }
-
-        /* 卡片网格 */
-        .row { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px; }
-        .card { background: #fff; border-radius: 6px; padding: 15px; display: flex; align-items: center; text-decoration: none; color: inherit; border: 1px solid transparent; transition: 0.3s; }
-        .card:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); border-color: var(--primary-color); }
-        .card-logo { width: 40px; height: 40px; border-radius: 50%; margin-right: 12px; object-fit: cover; }
-        .card-body { min-width: 0; }
-        .card-title { font-weight: bold; font-size: 14px; margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-        .card-desc { font-size: 12px; color: #888; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-
-        /* --- 友情链接与页脚 --- */
-        .footer { background: #fff; padding: 40px 20px; text-align: center; border-top: 1px solid #eee; margin-top: 50px; font-size: 13px; color: #999; line-height: 2; }
-        .links-section { margin-bottom: 20px; }
-        .links-section a { color: #666; text-decoration: none; margin: 0 10px; }
-        .links-section a:hover { color: var(--primary-color); }
-
-        /* --- 响应式适配 --- */
-        @media (max-width: 768px) {
-            #sidebar { left: -240px; }
-            #sidebar.active { left: 0; }
-            #content-wrapper { margin-left: 0; }
-            .mobile-header { display: flex; }
-            .container { padding: 20px; }
-            .row { grid-template-columns: 1fr; } /* 手机端单列显示 */
-            .header-search { padding: 40px 20px; }
-        }
+        /* 针对你本地图片显示的细微调整 */
+        .url-img img { object-fit: cover; width: 40px; height: 40px; }
+        .grid-bg { background-image: url('./assets/images/grid.png'); } /* 如果有网格背景图片 */
     </style>
 </head>
-<body>
+<body class="io-grey-mode">
 
-    <div class="mobile-header">
-        <div class="toggle-btn" onclick="toggleSidebar()"><i class="fas fa-bars"></i></div>
-        <div style="font-weight:bold">在线工具箱</div>
-        <div class="toggle-btn"><i class="fas fa-search"></i></div>
-    </div>
-
-    <nav id="sidebar">
-        <div class="sidebar-header">FK 工具导航</div>
-        <ul id="main-menu"><li>加载中...</li></ul>
-        <div style="padding: 20px; border-top: 1px solid #f9f9f9; font-size: 12px; color: #ccc;">
-            <a href="#footer" style="color:inherit; text-decoration:none;"><i class="fas fa-link menu-icon"></i>友情链接</a>
+    <div class="header-mini d-md-noneSticky header-mini-fixed">
+        <div class="d-flex align-items-center justify-content-between p-2">
+            <div id="sidebar-switch" class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
+            <div class="mobile-logo" style="font-weight:bold; color:#f1404b;">工具导航</div>
+            <div class="search-modal-btn"><i class="fas fa-search"></i></div>
         </div>
-    </nav>
-
-    <div id="content-wrapper">
-        <section class="header-search">
-            <h1>百度一下，你就知道</h1>
-            <div class="search-box">
-                <input type="text" id="search-input" placeholder="输入搜索内容...">
-                <button onclick="window.open('https://www.google.com/search?q='+document.getElementById('search-input').value)">搜索</button>
-            </div>
-        </section>
-
-        <div class="container" id="main-content">
-            </div>
-
-        <footer class="footer" id="footer">
-            <div class="links-section">
-                <strong>友情链接：</strong>
-                <a href="#">CSDN</a> | <a href="#">程序设计网</a> | <a href="#">掘金社区</a> | <a href="#">阿里云社区</a>
-            </div>
-            <div>本站内容源自互联网，如有侵权请联系删除。</div>
-            <div>© 2026 By Cun Zhang | 渝ICP备2023018588号</div>
-        </footer>
     </div>
 
-    <script>
-    function toggleSidebar() {
-        document.getElementById('sidebar').classList.toggle('active');
-    }
-
-    function loadData() {
-        fetch('./src/webstack.json?t=' + new Date().getTime())
-        .then(res => res.json())
-        .then(data => {
-            // 渲染菜单
-            document.getElementById('main-menu').innerHTML = data.map(g => `
-                <li><a href="#${g.taxonomy}" onclick="toggleSidebar()"><i class="fas fa-star menu-icon"></i>${g.taxonomy}</a></li>
-            `).join('');
-
-            // 渲染内容
-            document.getElementById('main-content').innerHTML = data.map(g => `
-                <div id="${g.taxonomy}">
-                    <div class="taxonomy-title"><i class="far fa-folder-open"></i>${g.taxonomy}</div>
-                    <div class="row">
-                        ${g.links.map(item => `
-                            <a class="card" href="${item.url}" target="_blank">
-                                <img src="${item.logo || 'https://via.placeholder.com/40'}" class="card-logo">
-                                <div class="card-body">
-                                    <div class="card-title">${item.title}</div>
-                                    <div class="card-desc">${item.desc || item.title}</div>
-                                </div>
-                            </a>
-                        `).join('')}
+    <div class="page-container">
+        <div id="sidebar" class="sticky sidebar-nav">
+            <div class="modal-dialog h-100 sidebar-nav-inner">
+                <div class="sidebar-logo p-3 text-center border-bottom border-color">
+                    <span style="color:#f1404b; font-weight:bold; font-size:18px;">FK 工具导航</span>
+                </div>
+                <div class="sidebar-menu flex-fill">
+                    <div class="sidebar-scroll">
+                        <div class="sidebar-menu-inner">
+                            <ul id="main-menu"><li><i class="fas fa-spinner fa-spin"></i>加载菜单...</li></ul>
+                        </div>
                     </div>
                 </div>
-            `).join('');
-        });
-    }
+            </div>
+        </div>
 
-    // 初始加载
-    loadData();
-    // 每2分钟自动抓取一次
-    setInterval(loadData, 120000); 
+        <div class="main-content flex-fill grid-bg">
+            <div class="big-header-banner" style="padding: 60px 0;">
+                <div class="page-header sticky">
+                    <div class="container-fluid p-0">
+                        <div class="header-big css-color mb-4" id="search-bg">
+                            <div id="search" class="s-search s-type-baidu mx-auto" style="max-width:700px;">
+                                <div id="search-list" class="hide-type-list">
+                                    <div class="search-group group-a">
+                                        <ul class="search-type">
+                                            <li><input hidden="" type="radio" name="type" checked="checked" id="type-baidu" value="https://www.baidu.com/s?wd=" data-placeholder="百度一下，你就知道"><label for="type-baidu"><span class="text-muted">百度</span></label></li>
+                                            <li><input hidden="" type="radio" name="type" id="type-bing" value="https://cn.bing.com/search?q=" data-placeholder="微软 Bing 搜索"><label for="type-bing"><span class="text-muted">必应</span></label></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <form action="https://www.baidu.com/s?wd=" method="get" target="_blank" class="super-search-fm">
+                                    <input type="text" id="search-text" class="form-control smart-tips search-key" placeholder="输入搜索内容..." style="outline:0" autocomplete="off">
+                                    <button class="submit" type="submit"><i class="fas fa-search"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="content" class="content-site customize-site container-fluid p-md-4">
+                <div id="main-content">正在从 Notion 同步数据...</div>
+            </div>
+
+            <footer class="main-footer footer-type-1 bg-white border-top text-xs p-3" id="footer">
+                <div class="container text-center">
+                    <div class="friend-links mb-3">
+                        <strong style="margin-right:10px; color:#333;">友情链接:</strong>
+                        <a href="#" target="_blank">CSDN</a> | <a href="#" target="_blank">程序设计网</a> | <a href="#" target="_blank">掘金社区</a> | <a href="#" target="_blank">阿里云社区</a>
+                    </div>
+                    <div class="footer-inner">
+                        <p>本站内容源自互联网，如有内容侵犯了您的权益，请联系删除。</p>
+                        <p>© 2026 By Cun Zhang | 渝ICP备2023018588号</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="./assets/js/app.js"></script>
+    <script>
+        // 设置手机端收纳栏的点击事件
+        $('#sidebar-switch').click(function(){
+            $('#sidebar').toggleClass('active');
+        });
+
+        function loadNotionData() {
+            console.log('正在执行自动同步...');
+            // 抓取你当前的 webstack.json
+            fetch('./src/webstack.json?v=' + Math.random())
+            .then(res => res.json())
+            .then(data => {
+                const siteStructure = data;
+
+                // 渲染左侧菜单
+                document.getElementById('main-menu').innerHTML = siteStructure.map(item => `
+                    <li class="sidebar-item">
+                        <a href="#${item.taxonomy}" class="smooth">
+                            <i class="far fa-star menu-icon fa-fw"></i>
+                            <span>${item.taxonomy}</span>
+                        </a>
+                    </li>
+                `).join('');
+
+                // 渲染右侧内容 (完全采用 WebStack 原版 HTML 结构)
+                document.getElementById('main-content').innerHTML = siteStructure.map(group => `
+                    <div id="${group.taxonomy}">
+                        <h4 class="text-gray text-lg mb-4">
+                            <i class="site-tag iconfont icon-tag icon-lg mr-1"></i>${group.taxonomy}
+                        </h4>
+                        <div class="row">
+                            ${group.links.map(link => `
+                                <div class="url-card col-6 col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
+                                    <div class="url-body default">
+                                        <a href="${link.url}" target="_blank" data-id="" data-url="${link.url}" class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom" data-original-title="${link.desc || link.title}">
+                                            <div class="card-body">
+                                                <div class="url-content d-flex align-items-center">
+                                                    <div class="url-img mr-2 d-flex align-items-center justify-content-center">
+                                                        <img class="lazy" src="${link.logo || 'https://via.placeholder.com/40'}" onerror="this.src='https://via.placeholder.com/40'">
+                                                    </div>
+                                                    <div class="url-info">
+                                                        <strong>${link.title}</strong>
+                                                        <p class="overflow_1line">${link.desc || '暂无描述'}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `).join('');
+
+                // 数据加载后初始化 tooltip 提示
+                $('[data-toggle="tooltip"]').tooltip();
+            });
+        }
+
+        loadNotionData();
+        // 如果需要，依然可以保留定时抓取功能
+        // setInterval(loadNotionData, 120000); 
     </script>
 </body>
 </html>
