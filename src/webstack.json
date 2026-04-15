@@ -1,5 +1,24 @@
 [
   {
+    "taxonomy": "网盘拉新",
+    "links": [
+      {
+        "title": "夸克网盘",
+        "desc": "网盘资源",
+        "url": "https://cunzhanblog.com",
+        "logo": "https://cunzhangblog.com/favicon.png",
+        "category": "网盘拉新"
+      },
+      {
+        "title": "Deepseek",
+        "desc": "智能AI",
+        "url": "https://cunzhangblog.com",
+        "logo": "https://cunzhangblog.com/favicon.png",
+        "category": "网盘拉新"
+      }
+    ]
+  },
+  {
     "taxonomy": "科研办公",
     "links": [
       {
