@@ -34,14 +34,36 @@ async function fetchNavData() {
       }
 
       // 3. 安全地获取上传的图标 (page.icon)
+// --- 终极适配逻辑：上传图片 > 外部链接 > 本地兜底 ---
       let iconUrl = ""; 
+      
+      // 1. 优先尝试从 Notion 页面顶部的 Icon 抓取
       if (page.icon) {
         if (page.icon.type === 'external') {
-          iconUrl = page.icon.external.url;
+          iconUrl = page.icon.external.url; // 抓取“链接”方式的图标
         } else if (page.icon.type === 'file') {
-          iconUrl = page.icon.file.url; 
+          iconUrl = page.icon.file.url;     // 抓取“上传”方式的图标
         }
       }
+
+      // 2. 如果页面顶部没设置，尝试抓取你表格里那个叫 "icon" 的属性列
+      if (!iconUrl && prop.icon) {
+        // 尝试读取文本或 URL 类型的属性
+        iconUrl = prop.icon.rich_text?.[0]?.plain_text || prop.icon.url || "";
+      }
+
+      // 3. 【方案 C 兜底】：如果上面全都没抓到，就给它你的本地默认路径
+      if (!iconUrl || iconUrl.trim() === "") {
+        iconUrl = "assets/images/favicon.png"; 
+      }
+
+      links.push({
+        title: title,
+        desc: prop.summary?.rich_text?.[0]?.plain_text || "",
+        url: url,
+        logo: iconUrl, // 这里输出的就是最终确定的图标路径
+        category: category
+      });
 
       // 4. 安全地获取分类
       const category = prop.category?.select?.name || "默认分类";
