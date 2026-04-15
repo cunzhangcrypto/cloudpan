@@ -30,62 +30,54 @@
         <div id="main-content">正在从 Notion 加载数据...</div>
     </div>
 
-    <script>
+<script>
 fetch('./src/webstack.json')
-  .then(response => response.json())
+  .then(response => {
+    if (!response.ok) throw new Error('读取 webstack.json 失败');
+    return response.json();
+  })
   .then(data => {
-    // 兼容 Notion 常见的 results 包装格式
-    const items = Array.isArray(data) ? data : (data.results || []);
-    const siteStructure = {};
+    // 根据 image_df7e0f.png 显示的结构进行解析
+    // 你的数据是一个数组，每个对象包含 taxonomy (一级分类) 和 links (链接列表)
+    const siteStructure = data; 
 
-    items.forEach(item => {
-      // --- 关键修复：增加多层级的字段读取 ---
-      const getVal = (field) => {
-        if (!field) return null;
-        if (typeof field === 'string') return field;
-        if (field.name) return field.name; // 适配 Select 字段
-        if (Array.isArray(field) && field[0]) return field[0].name || field[0].plain_text; // 适配 Multi-select 或 Text
-        return null;
-      };
+    // 1. 渲染左侧菜单 (使用 taxonomy 字段)
+    const menuContainer = document.getElementById('main-menu');
+    if (menuContainer) {
+      menuContainer.innerHTML = siteStructure.map(item => `
+        <li>
+          <a href="#${item.taxonomy}" class="smooth">
+            <span class="title">${item.taxonomy}</span>
+          </a>
+        </li>
+      `).join('');
+    }
 
-      const top = getVal(item.category) || '未分类';
-      const sub = getVal(item.tags) || '默认';
-      const title = getVal(item.title) || item.title || '无标题';
-      const summary = getVal(item.summary) || item.summary || '暂无描述';
-      const url = item.url || '#';
-
-      if (!siteStructure[top]) siteStructure[top] = {};
-      if (!siteStructure[top][sub]) siteStructure[top][sub] = [];
-      siteStructure[top][sub].push({ title, summary, url });
-    });
-
-    // 渲染左侧菜单
-    document.getElementById('main-menu').innerHTML = Object.keys(siteStructure).map(topName => `
-        <li><a href="#${topName}">${topName}</a></li>
-    `).join('');
-
-    // 渲染右侧内容
-    document.getElementById('main-content').innerHTML = Object.keys(siteStructure).map(topName => `
-        <div id="${topName}">
-            <h3 style="margin-top:40px; border-bottom: 2px solid #eee; padding-bottom:10px;">${topName}</h3>
-            ${Object.keys(siteStructure[topName]).map(subName => `
-                <div class="sub-category">
-                    <h5 style="color: #666; margin: 20px 0 10px;"># ${subName}</h5>
-                    <div class="row">
-                        ${siteStructure[topName][subName].map(card => `
-                            <div class="card" onclick="window.open('${card.url}', '_blank')" style="border: 1px solid #ddd; padding: 15px; border-radius: 8px; margin-bottom: 10px; cursor: pointer; background: #fff;">
-                                <strong style="color: #007bff; display: block;">${card.title}</strong>
-                                <p style="font-size: 13px; color: #777; margin: 5px 0 0;">${card.summary}</p>
-                            </div>
-                        `).join('')}
-                    </div>
+    // 2. 渲染右侧内容
+    const contentContainer = document.getElementById('main-content');
+    if (contentContainer) {
+      contentContainer.innerHTML = siteStructure.map(group => `
+        <div id="${group.taxonomy}">
+          <h3 style="margin-top:40px; border-bottom: 2px solid #eee; padding-bottom:10px;">${group.taxonomy}</h3>
+          <div class="row" style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 15px;">
+            ${group.links.map(link => `
+              <div class="card" onclick="window.open('${link.url}', '_blank')" 
+                   style="border: 1px solid #ddd; padding: 15px; border-radius: 8px; width: 220px; cursor: pointer; background: #fff;">
+                <div style="display: flex; align-items: center; margin-bottom: 8px;">
+                  <img src="${link.logo || ''}" onerror="this.style.display='none'" style="width:20px; height:20px; margin-right:8px;">
+                  <strong style="color: #007bff;">${link.title}</strong>
                 </div>
+                <p style="font-size: 13px; color: #777; margin: 0;">${link.desc || link.summary || '暂无描述'}</p>
+              </div>
             `).join('')}
+          </div>
         </div>
-    `).join('');
+      `).join('');
+    }
   })
   .catch(err => {
-    document.getElementById('main-content').innerHTML = `读取失败: ${err.message}`;
+    console.error(err);
+    document.getElementById('main-content').innerHTML = `<div style="color:red;">数据加载失败: ${err.message}</div>`;
   });
 </script>
 </body>
