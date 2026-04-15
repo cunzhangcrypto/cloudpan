@@ -499,11 +499,12 @@
                     // 2. 生成右侧网站卡片
                     let cardsHtml = '';
                     $.each(group.links, function(j, link) {
-                        // 优先读取 Notion 系统自带的图标 (pageIcon)，如果没传，再看你手动填的 icon 字段
-						let pageIcon = link.pageIcon ? link.pageIcon.trim() : "";
-						let customIcon = link.icon ? link.icon.trim() : "";
+                        // 1. 自动尝试所有可能的图片字段名
+							// 这里覆盖了 Notion 系统图标、手动 icon 列、手动 logo 列
+							let rawIcon = link.pageIcon || link.icon || link.logo || "";
 
-						let finalIcon = pageIcon !== "" ? pageIcon : (customIcon !== "" ? customIcon : defaultIcon);
+							// 2. 如果找到了内容，就用它；如果没找到，就用默认图
+							let finalIcon = (rawIcon && rawIcon.trim() !== "") ? rawIcon.trim() : defaultIcon;
 
                         // 处理跳转链接，防止没加 https 导致拼接域名
                         let rawUrl = link.url || '#';
