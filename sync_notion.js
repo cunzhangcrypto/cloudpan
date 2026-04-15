@@ -4,44 +4,58 @@ const fs = require('fs');
 const notion = new Client({ auth: process.env.NOTION_TOKEN });
 const databaseId = process.env.NOTION_DATABASE_ID;
 
-async function fetchNotionData() {
-  const links = [];
-  let hasMore = true;
-  let startCursor = undefined;
-
-  while (hasMore) {
+async function fetchNavData() {
+  try {
+    const links = [];
+    console.log("正在从 Notion 搬运数据...");
+    
     const response = await notion.databases.query({
       database_id: databaseId,
-      start_cursor: startCursor,
       filter: {
-        property: "status", // 只抓取已发布的
-        status: { equals: "Published" }
+        property: "status",
+        select: { equals: "Published" } // 👈 关键点：专门适配你截图里的“单选”属性
       }
     });
 
-    response.results.forEach(page => {
+    for (const page of response.results) {
       const prop = page.properties;
+      
+      // 检查标题和链接是否存在
+      const title = prop.title?.title[0]?.plain_text || prop.Name?.title[0]?.plain_text;
+      const url = prop.url?.url;
+
+      if (!title || !url) continue;
+
+      let iconUrl = ""; 
+      if (page.icon) {
+        iconUrl = page.icon.type === 'emoji' ? '' : (page.icon.external?.url || page.icon.file?.url);
+      }
+
       links.push({
-        title: prop.title?.title[0]?.plain_text || "无标题",
-        desc: prop.summary?.rich_text[0]?.plain_text || "点击查看详情",
-        url: page.url, // 这里默认指向Notion页面，如果你有外部URL字段可以替换
-        logo: "https://cunzhangblog.com/favicon.png", // 建议设个默认Logo
-        category: prop.category?.select?.name || "未分类"
+        title: title,
+        desc: prop.summary?.rich_text[0]?.plain_text || "",
+        url: url,
+        logo: iconUrl || "https://cunzhangblog.com/favicon.png",
+        category: prop.category?.select?.name || "默认分类"
       });
-    });
+    }
 
-    hasMore = response.has_more;
-    startCursor = response.next_cursor;
+    const categories = Array.from(new Set(links.map(l => l.category)));
+    const formattedData = categories.map(cat => ({
+      taxonomy: cat,
+      links: links.filter(l => l.category === cat)
+    }));
+
+    // 确保 src 文件夹存在
+    if (!fs.existsSync('./src')) { fs.mkdirSync('./src'); }
+    
+    fs.writeFileSync('./src/webstack.json', JSON.stringify(formattedData, null, 2));
+    console.log(`✅ 同步成功！搬运了 ${links.length} 个网站。`);
+  } catch (error) {
+    console.error("❌ 同步依然失败，错误详情：");
+    console.error(error.message);
+    process.exit(1);
   }
-
-  // 转换成 WebStack 要求的分组格式
-  const formattedData = Array.from(new Set(links.map(l => l.category))).map(cat => ({
-    taxonomy: cat,
-    links: links.filter(l => l.category === cat)
-  }));
-
-  fs.writeFileSync('./src/webstack.json', JSON.stringify(formattedData, null, 2));
-  console.log('✅ 数据同步成功，已更新 webstack.json');
 }
 
-fetchNotionData();
+fetchNavData();
