@@ -1,18 +1,19 @@
+<script>
 fetch('./src/webstack.json')
   .then(response => {
     if (!response.ok) throw new Error('找不到 json 数据文件，请检查路径');
     return response.json();
   })
   .then(data => {
-    // 兼容性处理：如果数据包裹在 results 字段里
+    // 兼容处理：支持直接数组或包装在 results 中的数据结构
     const items = Array.isArray(data) ? data : (data.results || []);
     if (items.length === 0) throw new Error('JSON 数据为空，请检查 Notion 同步是否成功');
 
     const siteStructure = {};
 
-    // 第一步：整理数据
+    // 第一步：整理 Notion 数据
     items.forEach(item => {
-      // 提取字段，如果 Notion 没填则显示“未分类”
+      // 提取分类和标签，增加容错处理
       const top = (item.category && item.category.name) || item.category || '未分类';
       const sub = (item.tags && item.tags.name) || item.tags || '默认';
       
@@ -21,7 +22,7 @@ fetch('./src/webstack.json')
       siteStructure[top][sub].push(item);
     });
 
-    // 第二步：渲染左侧菜单
+    // 第二步：渲染左侧导航菜单
     const menuContainer = document.getElementById('main-menu');
     if (menuContainer) {
       menuContainer.innerHTML = Object.keys(siteStructure).map(topName => `
@@ -34,7 +35,7 @@ fetch('./src/webstack.json')
       `).join('');
     }
 
-    // 第三步：渲染右侧内容
+    // 第三步：渲染右侧卡片内容
     const contentContainer = document.getElementById('main-content');
     if (contentContainer) {
       contentContainer.innerHTML = Object.keys(siteStructure).map(topName => `
@@ -65,6 +66,7 @@ fetch('./src/webstack.json')
   })
   .catch(err => {
     console.error(err);
-    // 如果报错，在页面上提示你
-    document.body.insertAdjacentHTML('afterbegin', `<div style="color:red; background:#fff; padding:20px; position:fixed; z-index:9999;">配置错误提示: ${err.message}</div>`);
+    // 如果出错，在页面顶部显示红色提示信息
+    document.body.insertAdjacentHTML('afterbegin', `<div style="color:red; background:#fff; padding:20px; position:fixed; z-index:9999; width:100%; top:0; left:0; border-bottom:1px solid red;">配置错误提示: ${err.message}</div>`);
   });
+</script>
