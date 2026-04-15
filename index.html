@@ -1,51 +1,70 @@
-// 假设你原本有一段获取 json 数据的代码
-fetch('src/webstack.json')
-  .then(response => response.json())
+fetch('./src/webstack.json')
+  .then(response => {
+    if (!response.ok) throw new Error('找不到 json 数据文件，请检查路径');
+    return response.json();
+  })
   .then(data => {
+    // 兼容性处理：如果数据包裹在 results 字段里
+    const items = Array.isArray(data) ? data : (data.results || []);
+    if (items.length === 0) throw new Error('JSON 数据为空，请检查 Notion 同步是否成功');
+
     const siteStructure = {};
 
-    // 第一步：把 Notion 的扁平数据重新组合成“1级->2级”的结构
-    data.forEach(item => {
-      const top = item.category || '未分类';
-      const sub = item.tags || '默认';
+    // 第一步：整理数据
+    items.forEach(item => {
+      // 提取字段，如果 Notion 没填则显示“未分类”
+      const top = (item.category && item.category.name) || item.category || '未分类';
+      const sub = (item.tags && item.tags.name) || item.tags || '默认';
+      
       if (!siteStructure[top]) siteStructure[top] = {};
       if (!siteStructure[top][sub]) siteStructure[top][sub] = [];
       siteStructure[top][sub].push(item);
     });
 
-    // 第二步：渲染左侧菜单 (1级菜单)
-    const sidebarHtml = Object.keys(siteStructure).map(topName => `
-      <li>
-        <a href="#${topName}" class="smooth">
-          <i class="linecons-star"></i>
-          <span class="title">${topName}</span>
-        </a>
-      </li>
-    `).join('');
-    document.getElementById('main-menu').innerHTML = sidebarHtml;
+    // 第二步：渲染左侧菜单
+    const menuContainer = document.getElementById('main-menu');
+    if (menuContainer) {
+      menuContainer.innerHTML = Object.keys(siteStructure).map(topName => `
+        <li>
+          <a href="#${topName}" class="smooth">
+            <i class="linecons-star"></i>
+            <span class="title">${topName}</span>
+          </a>
+        </li>
+      `).join('');
+    }
 
-    // 第三步：渲染右侧内容 (2级菜单 + 卡片)
-    const contentHtml = Object.keys(siteStructure).map(topName => `
-      <h4 class="text-gray" id="${topName}"><i class="linecons-tag"></i>${topName}</h4>
-      ${Object.keys(siteStructure[topName]).map(subName => `
-        <div class="sub-category">
-          <h5>${subName}</h5>
-          <div class="row">
-            ${siteStructure[topName][subName].map(item => `
-              <div class="col-sm-3">
-                <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('${item.url}', '_blank')">
-                  <div class="xe-comment-entry">
-                    <div class="xe-comment">
-                      <a href="#" class="xe-user-name overflow_1line"><strong>${item.title}</strong></a>
-                      <p class="overflow_1line">${item.summary || ''}</p>
+    // 第三步：渲染右侧内容
+    const contentContainer = document.getElementById('main-content');
+    if (contentContainer) {
+      contentContainer.innerHTML = Object.keys(siteStructure).map(topName => `
+        <h4 class="text-gray" id="${topName}" style="margin-top:40px;"><i class="linecons-tag"></i>${topName}</h4>
+        ${Object.keys(siteStructure[topName]).map(subName => `
+          <div class="sub-category">
+            <h5 style="margin:15px 0;">${subName}</h5>
+            <div class="row">
+              ${siteStructure[topName][subName].map(item => `
+                <div class="col-sm-3">
+                  <div class="xe-widget xe-conversations box2 label-info" 
+                       style="cursor:pointer; margin-bottom:20px;" 
+                       onclick="window.open('${item.url}', '_blank')">
+                    <div class="xe-comment-entry">
+                      <div class="xe-comment">
+                        <div class="xe-user-name overflow_1line"><strong>${item.title || '无标题'}</strong></div>
+                        <p class="overflow_1line">${item.summary || '暂无描述'}</p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            `).join('')}
+              `).join('')}
+            </div>
           </div>
-        </div>
-      `).join('')}
-    `).join('');
-    document.getElementById('main-content').innerHTML = contentHtml;
+        `).join('')}
+      `).join('');
+    }
+  })
+  .catch(err => {
+    console.error(err);
+    // 如果报错，在页面上提示你
+    document.body.insertAdjacentHTML('afterbegin', `<div style="color:red; background:#fff; padding:20px; position:fixed; z-index:9999;">配置错误提示: ${err.message}</div>`);
   });
