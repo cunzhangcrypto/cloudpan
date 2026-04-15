@@ -31,7 +31,7 @@
     </div>
 
 <script>
-fetch('./src/webstack.json')
+fetch('./src/webstack.json?v=' + new Date().getTime())
   .then(response => {
     if (!response.ok) throw new Error('读取 webstack.json 失败');
     return response.json();
