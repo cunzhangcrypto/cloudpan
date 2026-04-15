@@ -3,82 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的导航站</title>
+    <title>我的导航站 - 自动同步版</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        body { font-family: sans-serif; display: flex; margin: 0; background: #f9f9f9; }
-        #sidebar { width: 200px; background: #fff; border-right: 1px solid #eee; height: 100vh; padding: 20px; position: fixed; }
-        #main-menu { list-style: none; padding: 0; }
-        #main-menu li { margin-bottom: 15px; }
-        #main-menu a { text-decoration: none; color: #333; font-weight: bold; }
-        #content-wrapper { margin-left: 240px; padding: 20px; flex: 1; }
-        .row { display: flex; flex-wrap: wrap; gap: 20px; }
-        .card { background: #fff; border: 1px solid #eee; padding: 15px; width: 200px; cursor: pointer; border-radius: 8px; transition: 0.3s; }
-        .card:hover { box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .card hstrong { display: block; margin-bottom: 5px; color: #007bff; }
-        .card p { font-size: 12px; color: #666; margin: 0; }
-        .sub-category h5 { border-left: 4px solid #007bff; padding-left: 10px; margin: 20px 0 10px; }
+        :root { --sidebar-width: 240px; --primary-color: #3276b1; --bg-gray: #f3f6f8; }
+        body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; margin: 0; display: flex; background: var(--bg-gray); color: #333; }
+        
+        /* 侧边栏布局 */
+        #sidebar { width: var(--sidebar-width); background: #fff; height: 100vh; position: fixed; border-right: 1px solid #e4e4e4; overflow-y: auto; z-index: 1000; }
+        .sidebar-header { padding: 25px 20px; font-weight: bold; font-size: 20px; color: var(--primary-color); border-bottom: 1px solid #f9f9f9; text-align: center; }
+        #main-menu { list-style: none; padding: 10px 0; margin: 0; }
+        #main-menu li a { display: flex; align-items: center; padding: 12px 25px; text-decoration: none; color: #555; transition: 0.3s; font-size: 14px; }
+        #main-menu li a:hover { background: #f9f9f9; color: var(--primary-color); border-right: 3px solid var(--primary-color); }
+        .menu-icon { margin-right: 12px; width: 16px; text-align: center; color: #999; }
+
+        /* 主体内容 */
+        #content-wrapper { margin-left: var(--sidebar-width); flex: 1; min-height: 100vh; }
+        .header-search { background: #2c3e50; padding: 50px 20px; text-align: center; color: white; }
+        .search-box { max-width: 600px; margin: 20px auto 0; display: flex; box-shadow: 0 4px 12px rgba(0,0,0,0.2); border-radius: 30px; overflow: hidden; }
+        .search-box input { flex: 1; padding: 15px 25px; border: none; outline: none; font-size: 16px; }
+        .search-box button { padding: 0 30px; border: none; background: #00b894; color: white; cursor: pointer; font-weight: bold; }
+
+        .container { padding: 30px 40px; }
+        .taxonomy-title { margin: 40px 0 20px; font-size: 18px; font-weight: bold; display: flex; align-items: center; }
+        .taxonomy-title i { margin-right: 10px; color: var(--primary-color); }
+
+        /* 卡片样式适配 Notion Logo */
+        .row { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+        .card { background: #fff; border-radius: 8px; padding: 18px; display: flex; align-items: center; 
+                box-shadow: 0 2px 5px rgba(0,0,0,0.03); transition: 0.3s; cursor: pointer; border: 1px solid #eee; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.08); border-color: var(--primary-color); }
+        .card-logo { width: 45px; height: 45px; border-radius: 10px; margin-right: 15px; object-fit: cover; background: #f9f9f9; border: 1px solid #eee; }
+        .card-body { flex: 1; overflow: hidden; }
+        .card-title { font-weight: bold; color: #333; margin-bottom: 4px; font-size: 15px; }
+        .card-desc { font-size: 12px; color: #888; line-height: 1.5; height: 36px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        
+        /* 状态提示 */
+        #sync-status { position: fixed; bottom: 20px; right: 20px; font-size: 12px; color: #999; background: rgba(255,255,255,0.8); padding: 5px 10px; border-radius: 4px; }
     </style>
 </head>
 <body>
 
-    <div id="sidebar">
-        <h3>分类导航</h3>
-        <ul id="main-menu"><li>正在加载菜单...</li></ul>
-    </div>
+    <nav id="sidebar">
+        <div class="sidebar-header">在线工具导航</div>
+        <ul id="main-menu"><li>加载中...</li></ul>
+    </nav>
 
     <div id="content-wrapper">
-        <div id="main-content">正在从 Notion 加载数据...</div>
+        <section class="header-search">
+            <h1>探索你的高效工具库</h1>
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="输入搜索内容，回车直达 Google...">
+                <button onclick="doSearch()">搜 索</button>
+            </div>
+        </section>
+
+        <div class="container" id="main-content">
+            </div>
+        <div id="sync-status">初始化中...</div>
     </div>
 
-<script>
-fetch('./src/webstack.json?v=' + new Date().getTime())
-  .then(response => {
-    if (!response.ok) throw new Error('读取 webstack.json 失败');
-    return response.json();
-  })
-  .then(data => {
-    // 根据 image_df7e0f.png 显示的结构进行解析
-    // 你的数据是一个数组，每个对象包含 taxonomy (一级分类) 和 links (链接列表)
-    const siteStructure = data; 
+    <script>
+    // --- 配置信息 ---
+    const CONFIG = {
+        jsonUrl: './src/webstack.json',
+        refreshMs: 120000 // 设置为 120,000 毫秒 = 2分钟
+    };
 
-    // 1. 渲染左侧菜单 (使用 taxonomy 字段)
-    const menuContainer = document.getElementById('main-menu');
-    if (menuContainer) {
-      menuContainer.innerHTML = siteStructure.map(item => `
-        <li>
-          <a href="#${item.taxonomy}" class="smooth">
-            <span class="title">${item.taxonomy}</span>
-          </a>
-        </li>
-      `).join('');
+    function doSearch() {
+        const q = document.getElementById('search-input').value;
+        if(q) window.open('https://www.google.com/search?q=' + encodeURIComponent(q));
     }
 
-    // 2. 渲染右侧内容
-    const contentContainer = document.getElementById('main-content');
-    if (contentContainer) {
-      contentContainer.innerHTML = siteStructure.map(group => `
-        <div id="${group.taxonomy}">
-          <h3 style="margin-top:40px; border-bottom: 2px solid #eee; padding-bottom:10px;">${group.taxonomy}</h3>
-          <div class="row" style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 15px;">
-            ${group.links.map(link => `
-              <div class="card" onclick="window.open('${link.url}', '_blank')" 
-                   style="border: 1px solid #ddd; padding: 15px; border-radius: 8px; width: 220px; cursor: pointer; background: #fff;">
-                <div style="display: flex; align-items: center; margin-bottom: 8px;">
-                  <img src="${link.logo || ''}" onerror="this.style.display='none'" style="width:20px; height:20px; margin-right:8px;">
-                  <strong style="color: #007bff;">${link.title}</strong>
+    // 监听搜索框回车键
+    document.getElementById('search-input').addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') doSearch();
+    });
+
+    function renderPage() {
+        console.log('正在执行自动同步...');
+        const timestamp = new Date().getTime();
+        const statusEl = document.getElementById('sync-status');
+        
+        // 抓取 webstack.json
+        fetch(`${CONFIG.jsonUrl}?t=${timestamp}`)
+        .then(res => res.json())
+        .then(data => {
+            // 1. 渲染侧边栏
+            document.getElementById('main-menu').innerHTML = data.map(group => `
+                <li><a href="#${group.taxonomy}"><i class="fas fa-folder menu-icon"></i>${group.taxonomy}</a></li>
+            `).join('');
+
+            // 2. 渲染主内容区域
+            document.getElementById('main-content').innerHTML = data.map(group => `
+                <div id="${group.taxonomy}">
+                    <div class="taxonomy-title"><i class="fas fa-th-large"></i>${group.taxonomy}</div>
+                    <div class="row">
+                        ${group.links.map(item => `
+                            <div class="card" onclick="window.open('${item.url}', '_blank')">
+                                <img src="${item.logo || 'https://via.placeholder.com/45'}" class="card-logo" onerror="this.src='https://via.placeholder.com/45'">
+                                <div class="card-body">
+                                    <div class="card-title">${item.title}</div>
+                                    <div class="card-desc">${item.desc || '暂无介绍'}</div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
                 </div>
-                <p style="font-size: 13px; color: #777; margin: 0;">${link.desc || link.summary || '暂无描述'}</p>
-              </div>
-            `).join('')}
-          </div>
-        </div>
-      `).join('');
+            `).join('');
+
+            statusEl.innerText = '最后同步时间: ' + new Date().toLocaleTimeString();
+        })
+        .catch(err => {
+            console.error('同步失败:', err);
+            statusEl.innerText = '同步失败，请检查文件路径';
+        });
     }
-  })
-  .catch(err => {
-    console.error(err);
-    document.getElementById('main-content').innerHTML = `<div style="color:red;">数据加载失败: ${err.message}</div>`;
-  });
-</script>
+
+    // 立即执行并开启 2 分钟定时器
+    renderPage();
+    setInterval(renderPage, CONFIG.refreshMs);
+    </script>
 </body>
 </html>
