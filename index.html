@@ -63,34 +63,7 @@
                 <div class="sidebar-menu flex-fill">
                     <div class="sidebar-scroll">
                         <div class="sidebar-menu-inner">
-                            <ul>
-
-
-                                    <li class="sidebar-item">
-                                        <a href="#3e90c5117dc0fe9d71410e448d766e52" class="smooth">
-                                            <i class="far fa-star fa-lg icon-fw icon-lg mr-2"></i>
-                                            <span>常用工具</span>
-                                        </a>
-                                    </li>
-
-
-
-                                    <li class="sidebar-item">
-                                        <a href="#89a839e0a347c0be73793d01e52c31ad" class="smooth change-href" data-change="#89a839e0a347c0be73793d01e52c31ad">
-                                            <i class="fas fa-flask fa-lg icon-fw icon-lg mr-2"></i>
-                                            <span>科研办公</span>
-                                            <i class="iconfont icon-arrow-r-m sidebar-more text-sm"></i>
-                                        </a>
-                                        <ul>
-
-                                            <li><a href="#89a839e0a347c0be73793d01e52c31ad" class="smooth"><span>生物信息</span></a></li>
-                                          
-
-                                        </ul>
-                                    </li>
-
-
-                            </ul>
+                            <ul id="main-menu"></ul>
                         </div>
                     </div>
                 </div>
@@ -151,7 +124,7 @@
 
                         </div>
 
-                        <ul class="navbar-nav site-menu" style="margin-right: 16px;">
+                        <ul class="navbar-nav site-menu" id="main-menu" style="margin-right: 16px;">
 
 			<li >
 				<a href="./">
@@ -503,16 +476,18 @@
 
 <script type="text/javascript">
     $(document).ready(function() {
+        // 定义渲染函数
         function renderNotionWebStack() {
-            // 设置默认图标路径
+            // 设置一个默认图标，防止 Notion 里没传图标时显示破碎
             const defaultIcon = './assets/images/favicon.png';
 
+            // 读取从 Notion 导出的 JSON 数据文件
             $.getJSON("./src/webstack.json?t=" + new Date().getTime(), function(data) {
-                let menuHtml = '';
-                let contentHtml = '';
+                let menuHtml = '';    // 用来存放左侧菜单栏的 HTML
+                let contentHtml = ''; // 用来存放右侧网址卡片的 HTML
 
                 $.each(data, function(i, group) {
-                    // 生成左侧菜单
+                    // 1. 拼接左侧菜单：点击可以跳转到对应的分类锚点
                     menuHtml += `
                         <li class="sidebar-item">
                             <a href="#term-${i}" class="smooth">
@@ -521,10 +496,10 @@
                             </a>
                         </li>`;
 
-                    // 生成右侧卡片组
+                    // 2. 拼接右侧卡片组：每个分类下的具体网站
                     let cardsHtml = '';
                     $.each(group.links, function(j, link) {
-                        // Logo 逻辑：如果 link.logo 存在就用它，否则用默认图
+                        // 如果 Notion 里没图，就用默认图
                         let finalLogo = link.logo || defaultIcon;
 
                         cardsHtml += `
@@ -548,6 +523,7 @@
                             </div>`;
                     });
 
+                    // 3. 将分类标题和卡片组拼接在一起
                     contentHtml += `
                         <h4 class="text-gray text-lg mb-4">
                             <i class="site-tag iconfont icon-tag icon-lg mr-1" id="term-${i}"></i>${group.taxonomy}
@@ -556,22 +532,27 @@
                         <br />`;
                 });
 
-                // 把活数据塞进刚才准备好的“空盒子”里
-                $('#main-menu').html(menuHtml);
-                $('#notion-dynamic-content').html(contentHtml);
+                // 核心操作：将上面生成的 HTML 代码一瞬间塞进网页的指定位置
+                $('#main-menu').html(menuHtml);             // 对应侧边栏
+                $('#notion-dynamic-content').html(contentHtml); // 对应中间内容区
 
-                // 重点：渲染完后，手动激活原站的平滑滚动和气泡提示
+                // 渲染完成后，让页面支持平滑滚动（点击左侧菜单，右侧跟着滚）
                 $('.smooth').on('click', function(e) {
                     e.preventDefault();
                     var href = $(this).attr('href');
                     $('html, body').animate({ scrollTop: $(href).offset().top - 90 }, 500);
                 });
+                
+                // 激活气泡提示功能
                 if ($.fn.tooltip) $('[data-toggle="tooltip"]').tooltip();
             });
         }
 
+        // 页面一加载就运行一次
         renderNotionWebStack();
-        setInterval(renderNotionWebStack, 120000); // 2分钟刷新一次
+        
+        // 设置每 5 分钟自动刷新一次数据（防止你改了 Notion 后页面没变化）
+        setInterval(renderNotionWebStack, 300000); 
     });
 </script>
 
