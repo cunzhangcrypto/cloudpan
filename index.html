@@ -478,16 +478,16 @@
     $(document).ready(function() {
         // 定义渲染函数
         function renderNotionWebStack() {
-            // 设置一个默认图标，防止 Notion 里没传图标时显示破碎
+            // 网站默认图标（当 Notion 里没填 icon 时显示这个）
             const defaultIcon = './assets/images/favicon.png';
 
             // 读取从 Notion 导出的 JSON 数据文件
             $.getJSON("./src/webstack.json?t=" + new Date().getTime(), function(data) {
-                let menuHtml = '';    // 用来存放左侧菜单栏的 HTML
-                let contentHtml = ''; // 用来存放右侧网址卡片的 HTML
+                let menuHtml = '';    
+                let contentHtml = ''; 
 
                 $.each(data, function(i, group) {
-                    // 1. 拼接左侧菜单：点击可以跳转到对应的分类锚点
+                    // 1. 生成左侧菜单栏
                     menuHtml += `
                         <li class="sidebar-item">
                             <a href="#term-${i}" class="smooth">
@@ -496,20 +496,27 @@
                             </a>
                         </li>`;
 
-                    // 2. 拼接右侧卡片组：每个分类下的具体网站
+                    // 2. 生成右侧网站卡片
                     let cardsHtml = '';
                     $.each(group.links, function(j, link) {
-                        // 如果 Notion 里没图，就用默认图
-                        let finalLogo = link.logo || defaultIcon;
+                        // --- 核心修改点：将 link.logo 改为 link.icon ---
+                        let rawIcon = link.icon ? link.icon.trim() : "";
+                        let finalIcon = rawIcon !== "" ? rawIcon : defaultIcon;
+
+                        // 处理跳转链接，防止没加 https 导致拼接域名
+                        let rawUrl = link.url || '#';
+                        let finalUrl = (rawUrl.indexOf('http') !== 0 && rawUrl !== '#') 
+                                       ? 'https://' + rawUrl 
+                                       : rawUrl;
 
                         cardsHtml += `
                             <div class="url-card col-6 col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
                                 <div class="url-body default">
-                                    <a href="${link.url}" target="_blank" class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom" title="${link.desc || ''}">
+                                    <a href="${finalUrl}" target="_blank" class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom" title="${link.desc || ''}">
                                         <div class="card-body">
                                             <div class="url-content d-flex align-items-center">
                                                 <div class="url-img mr-2 d-flex align-items-center justify-content-center">
-                                                    <img class="lazy" src="${finalLogo}" onerror="this.onerror=null;this.src='${defaultIcon}';" alt="${link.title}">
+                                                    <img class="lazy" src="${finalIcon}" onerror="this.onerror=null;this.src='${defaultIcon}';" alt="${link.title}" style="width:40px;height:40px;object-fit:contain;">
                                                 </div>
                                                 <div class="url-info flex-fill">
                                                     <div class="text-sm overflowClip_1"><strong>${link.title}</strong></div>
@@ -518,12 +525,12 @@
                                             </div>
                                         </div>
                                     </a>
-                                    <a href="${link.url}" class="togo text-center text-muted is-views" target="_blank" data-toggle="tooltip" data-placement="right" title="直达"><i class="iconfont icon-goto"></i></a>
+                                    <a href="${finalUrl}" class="togo text-center text-muted is-views" target="_blank" data-toggle="tooltip" data-placement="right" title="直达"><i class="iconfont icon-goto"></i></a>
                                 </div>
                             </div>`;
                     });
 
-                    // 3. 将分类标题和卡片组拼接在一起
+                    // 3. 将分类和卡片拼接
                     contentHtml += `
                         <h4 class="text-gray text-lg mb-4">
                             <i class="site-tag iconfont icon-tag icon-lg mr-1" id="term-${i}"></i>${group.taxonomy}
@@ -532,27 +539,23 @@
                         <br />`;
                 });
 
-                // 核心操作：将上面生成的 HTML 代码一瞬间塞进网页的指定位置
-                $('#main-menu').html(menuHtml);             // 对应侧边栏
-                $('#notion-dynamic-content').html(contentHtml); // 对应中间内容区
+                // 把生成的 HTML 塞进对应的 ID 容器
+                $('#main-menu').html(menuHtml);             
+                $('#notion-dynamic-content').html(contentHtml); 
 
-                // 渲染完成后，让页面支持平滑滚动（点击左侧菜单，右侧跟着滚）
+                // 恢复平滑滚动和气泡提示
                 $('.smooth').on('click', function(e) {
                     e.preventDefault();
                     var href = $(this).attr('href');
                     $('html, body').animate({ scrollTop: $(href).offset().top - 90 }, 500);
                 });
-                
-                // 激活气泡提示功能
                 if ($.fn.tooltip) $('[data-toggle="tooltip"]').tooltip();
             });
         }
 
-        // 页面一加载就运行一次
         renderNotionWebStack();
-        
-        // 设置每 5 分钟自动刷新一次数据（防止你改了 Notion 后页面没变化）
-        setInterval(renderNotionWebStack, 300000); 
+        // 每1小时自动刷新一次
+        setInterval(renderNotionWebStack, 3600000); 
     });
 </script>
 
