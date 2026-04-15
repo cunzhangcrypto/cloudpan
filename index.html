@@ -11,6 +11,12 @@
     <link rel="stylesheet" id="iowen-css" href="./assets/css/iowen-3.03029.1.css" type="text/css" media="all" />
     <link rel="stylesheet" id="style-css" href="./assets/css/style-3.03029.1.css" type="text/css" media="all" />
     <script type="text/javascript" src="./assets/js/jquery.min-3.4.1.js" id="jquery-js"></script>
+    <style>
+        /* 针对动态加载的视觉修正 */
+        .url-card .card-body { padding: 10px 15px !important; }
+        .sidebar-menu-inner { height: calc(100vh - 120px); overflow-y: auto; }
+        .sidebar-item a { cursor: pointer; }
+    </style>
 </head>
 
 <body class="io-grey-mode">
@@ -25,8 +31,7 @@
                 <div class="sidebar-menu flex-fill">
                     <div class="sidebar-scroll">
                         <div class="sidebar-menu-inner">
-                            <ul id="main-menu" class="metismenu">
-                                </ul>
+                            <ul id="main-menu" class="metismenu"></ul>
                         </div>
                     </div>
                 </div>
@@ -34,7 +39,7 @@
         </div>
 
         <div class="main-content flex-fill">
-            <div id="search-bg" class="big-header-banner" style="background-image: url('./assets/images/bg-dna.jpg');">
+            <div id="search-bg" class="big-header-banner" style="background-image: url('./assets/images/bg-dna.jpg'); background-size: cover;">
                 <div class="container-fluid p-0">
                     <div class="s-search mx-auto" style="max-width:800px; padding: 120px 0 80px;">
                         <div id="search-list" class="hide-type-list text-center mb-3">
@@ -53,85 +58,87 @@
             </div>
 
             <div id="content" class="content-site customize-site container-fluid p-md-4">
-                <div id="main-content-render">
+                <div id="notion-list-container">
                     </div>
             </div>
 
             <footer class="main-footer footer-type-1 bg-white border-top p-3 text-center text-xs">
-                <div class="copyright">
-                    <p>© 2026 By <a href="https://blog.cunzhangblog.com">Cun Zhang</a> | 渝ICP备2023018588号</p>
+                <div class="copyright text-muted">
+                    <p>© 2026 By Cun Zhang | 渝ICP备2023018588号</p>
                 </div>
             </footer>
         </div>
     </div>
 
     <script type="text/javascript">
-        $(document).ready(function() {
-            function fetchData() {
-                $.getJSON("./src/webstack.json?v=" + new Date().getTime(), function(data) {
-                    let menuHtml = '';
-                    let contentHtml = '';
+        function renderWebStack() {
+            // 使用你的 fetch 逻辑，动态获取最新 JSON
+            fetch('./src/webstack.json?t=' + Date.now())
+            .then(res => res.json())
+            .then(data => {
+                let menuHtml = '';
+                let contentHtml = '';
 
-                    $.each(data, function(i, group) {
-                        // 1. 生成侧边栏菜单：增加 smooth 类名确保跳转
-                        menuHtml += `
-                            <li class="sidebar-item">
-                                <a href="#term-${i}" class="smooth">
-                                    <i class="iconfont icon-tag mr-2"></i>
-                                    <span>${group.taxonomy}</span>
-                                </a>
-                            </li>`;
+                data.forEach((group, i) => {
+                    // 1. 还原菜单：必须带 sidebar-item 和 smooth 
+                    menuHtml += `
+                        <li class="sidebar-item">
+                            <a href="#term-${i}" class="smooth">
+                                <i class="iconfont icon-tag mr-2"></i>
+                                <span>${group.taxonomy}</span>
+                            </a>
+                        </li>`;
 
-                        // 2. 生成卡片：严格遵循 .url-card -> .url-body 结构
-                        let cardsHtml = group.links.map(link => `
-                            <div class="url-card col-6 col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
-                                <div class="url-body default">
-                                    <a href="${link.url}" target="_blank" class="card no-c mb-4" data-toggle="tooltip" data-placement="top" title="${link.desc}">
-                                        <div class="card-body">
-                                            <div class="url-content d-flex align-items-center">
-                                                <div class="url-img mr-2 d-flex align-items-center justify-content-center">
-                                                    <img class="lazy" src="${link.logo || './assets/images/favicon.png'}" onerror="this.src='./assets/images/favicon.png'">
-                                                </div>
-                                                <div class="url-info">
-                                                    <strong>${link.title}</strong>
-                                                    <p class="overflow_1line">${link.desc || '...'}</p>
-                                                </div>
+                    // 2. 还原卡片：这是 100% 还原 UI 的关键嵌套结构
+                    let cardsHtml = group.links.map(item => `
+                        <div class="url-card col-6 col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
+                            <div class="url-body default">
+                                <a href="${item.url}" target="_blank" class="card no-c mb-4" data-toggle="tooltip" data-placement="top" title="${item.desc || item.title}">
+                                    <div class="card-body">
+                                        <div class="url-content d-flex align-items-center">
+                                            <div class="url-img mr-2 d-flex align-items-center justify-content-center">
+                                                <img class="lazy" src="${item.logo || './assets/images/favicon.png'}" onerror="this.src='./assets/images/favicon.png'">
+                                            </div>
+                                            <div class="url-info">
+                                                <strong>${item.title}</strong>
+                                                <p class="overflow_1line">${item.desc || '...'}</p>
                                             </div>
                                         </div>
-                                    </a>
-                                </div>
+                                    </div>
+                                </a>
                             </div>
-                        `).join('');
+                        </div>
+                    `).join('');
 
-                        contentHtml += `
-                            <h4 class="text-gray text-lg mb-4">
-                                <i class="site-tag iconfont icon-tag icon-lg mr-1" id="term-${i}"></i>${group.taxonomy}
-                            </h4>
-                            <div class="row">${cardsHtml}</div>`;
-                    });
-
-                    $('#main-menu').html(menuHtml);
-                    $('#main-content-render').html(contentHtml);
-
-                    // --- 关键修正：手动激活原作者脚本中的 UI 功能 ---
-                    if (typeof($.fn.tooltip) === 'function') {
-                        $('[data-toggle="tooltip"]').tooltip();
-                    }
-                    
-                    // 绑定平滑滚动，否则动态加载的内容无法通过 a.smooth 跳转
-                    $('.smooth').on('click', function(e) {
-                        e.preventDefault();
-                        var target = $(this).attr('href');
-                        $('html, body').animate({
-                            scrollTop: $(target).offset().top - 80
-                        }, 500);
-                    });
+                    contentHtml += `
+                        <h4 class="text-gray text-lg mb-4">
+                            <i class="site-tag iconfont icon-tag icon-lg mr-1" id="term-${i}"></i>${group.taxonomy}
+                        </h4>
+                        <div class="row">${cardsHtml}</div>`;
                 });
-            }
 
-            fetchData();
-            // 每 2 分钟更新一次数据
-            setInterval(fetchData, 120000);
+                $('#main-menu').html(menuHtml);
+                $('#notion-list-container').html(contentHtml);
+
+                // --- 检查点：手动重连原厂 app.js 的交互逻辑 ---
+                // 激活平滑滚动
+                $('.smooth').off('click').on('click', function(e) {
+                    e.preventDefault();
+                    var href = $(this).attr('href');
+                    if ($(href).length) {
+                        $('html, body').animate({ scrollTop: $(href).offset().top - 90 }, 500);
+                    }
+                });
+                
+                // 激活 Tooltip 提示
+                if ($.fn.tooltip) $('[data-toggle="tooltip"]').tooltip();
+            });
+        }
+
+        $(document).ready(function() {
+            renderWebStack();
+            // 保持你要求的 2 分钟更新逻辑
+            setInterval(renderWebStack, 120000); 
         });
     </script>
 
