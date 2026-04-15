@@ -13,29 +13,34 @@ async function fetchNavData() {
       database_id: databaseId,
       filter: {
         property: "status",
-        select: { equals: "Published" } // 👈 关键点：专门适配你截图里的“单选”属性
+        select: { equals: "Published" } 
       }
     });
 
     for (const page of response.results) {
       const prop = page.properties;
       
-      // 检查标题和链接是否存在
       const title = prop.title?.title[0]?.plain_text || prop.Name?.title[0]?.plain_text;
       const url = prop.url?.url;
 
       if (!title || !url) continue;
 
+      // --- 修改后的图标抓取逻辑 ---
       let iconUrl = ""; 
       if (page.icon) {
-        iconUrl = page.icon.type === 'emoji' ? '' : (page.icon.external?.url || page.icon.file?.url);
+        if (page.icon.type === 'external') {
+          iconUrl = page.icon.external.url;
+        } else if (page.icon.type === 'file') {
+          iconUrl = page.icon.file.url; // 这里就是抓取你“上传”的图片
+        }
       }
 
       links.push({
         title: title,
         desc: prop.summary?.rich_text[0]?.plain_text || "",
         url: url,
-        logo: iconUrl || "https://cunzhangblog.com/favicon.png",
+        // 这里删掉了那个强制的域名链接，如果没有图就给空
+        logo: iconUrl, 
         category: prop.category?.select?.name || "默认分类"
       });
     }
@@ -46,14 +51,12 @@ async function fetchNavData() {
       links: links.filter(l => l.category === cat)
     }));
 
-    // 确保 src 文件夹存在
     if (!fs.existsSync('./src')) { fs.mkdirSync('./src'); }
     
     fs.writeFileSync('./src/webstack.json', JSON.stringify(formattedData, null, 2));
     console.log(`✅ 同步成功！搬运了 ${links.length} 个网站。`);
   } catch (error) {
-    console.error("❌ 同步依然失败，错误详情：");
-    console.error(error.message);
+    console.error("❌ 同步失败：", error.message);
     process.exit(1);
   }
 }
