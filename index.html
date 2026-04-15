@@ -1,72 +1,88 @@
-<script>
-fetch('./src/webstack.json')
-  .then(response => {
-    if (!response.ok) throw new Error('找不到 json 数据文件，请检查路径');
-    return response.json();
-  })
-  .then(data => {
-    // 兼容处理：支持直接数组或包装在 results 中的数据结构
-    const items = Array.isArray(data) ? data : (data.results || []);
-    if (items.length === 0) throw new Error('JSON 数据为空，请检查 Notion 同步是否成功');
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的导航站</title>
+    <style>
+        body { font-family: sans-serif; display: flex; margin: 0; background: #f9f9f9; }
+        #sidebar { width: 200px; background: #fff; border-right: 1px solid #eee; height: 100vh; padding: 20px; position: fixed; }
+        #main-menu { list-style: none; padding: 0; }
+        #main-menu li { margin-bottom: 15px; }
+        #main-menu a { text-decoration: none; color: #333; font-weight: bold; }
+        #content-wrapper { margin-left: 240px; padding: 20px; flex: 1; }
+        .row { display: flex; flex-wrap: wrap; gap: 20px; }
+        .card { background: #fff; border: 1px solid #eee; padding: 15px; width: 200px; cursor: pointer; border-radius: 8px; transition: 0.3s; }
+        .card:hover { box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .card hstrong { display: block; margin-bottom: 5px; color: #007bff; }
+        .card p { font-size: 12px; color: #666; margin: 0; }
+        .sub-category h5 { border-left: 4px solid #007bff; padding-left: 10px; margin: 20px 0 10px; }
+    </style>
+</head>
+<body>
 
-    const siteStructure = {};
+    <div id="sidebar">
+        <h3>分类导航</h3>
+        <ul id="main-menu"><li>正在加载菜单...</li></ul>
+    </div>
 
-    // 第一步：整理 Notion 数据
-    items.forEach(item => {
-      // 提取分类和标签，增加容错处理
-      const top = (item.category && item.category.name) || item.category || '未分类';
-      const sub = (item.tags && item.tags.name) || item.tags || '默认';
-      
-      if (!siteStructure[top]) siteStructure[top] = {};
-      if (!siteStructure[top][sub]) siteStructure[top][sub] = [];
-      siteStructure[top][sub].push(item);
-    });
+    <div id="content-wrapper">
+        <div id="main-content">正在从 Notion 加载数据...</div>
+    </div>
 
-    // 第二步：渲染左侧导航菜单
-    const menuContainer = document.getElementById('main-menu');
-    if (menuContainer) {
-      menuContainer.innerHTML = Object.keys(siteStructure).map(topName => `
-        <li>
-          <a href="#${topName}" class="smooth">
-            <i class="linecons-star"></i>
-            <span class="title">${topName}</span>
-          </a>
-        </li>
-      `).join('');
-    }
+    <script>
+    // 确保路径指向你仓库中的真实位置
+    fetch('./src/webstack.json')
+      .then(response => {
+        if (!response.ok) throw new Error('找不到 ./src/webstack.json 文件，请检查路径');
+        return response.json();
+      })
+      .then(data => {
+        const items = Array.isArray(data) ? data : (data.results || []);
+        if (items.length === 0) throw new Error('Notion 中没有已发布的公开数据');
 
-    // 第三步：渲染右侧卡片内容
-    const contentContainer = document.getElementById('main-content');
-    if (contentContainer) {
-      contentContainer.innerHTML = Object.keys(siteStructure).map(topName => `
-        <h4 class="text-gray" id="${topName}" style="margin-top:40px;"><i class="linecons-tag"></i>${topName}</h4>
-        ${Object.keys(siteStructure[topName]).map(subName => `
-          <div class="sub-category">
-            <h5 style="margin:15px 0;">${subName}</h5>
-            <div class="row">
-              ${siteStructure[topName][subName].map(item => `
-                <div class="col-sm-3">
-                  <div class="xe-widget xe-conversations box2 label-info" 
-                       style="cursor:pointer; margin-bottom:20px;" 
-                       onclick="window.open('${item.url}', '_blank')">
-                    <div class="xe-comment-entry">
-                      <div class="xe-comment">
-                        <div class="xe-user-name overflow_1line"><strong>${item.title || '无标题'}</strong></div>
-                        <p class="overflow_1line">${item.summary || '暂无描述'}</p>
-                      </div>
+        const siteStructure = {};
+
+        // 整理数据结构
+        items.forEach(item => {
+          const top = (item.category && item.category.name) || item.category || '未分类';
+          const sub = (item.tags && item.tags.name) || item.tags || '默认';
+          if (!siteStructure[top]) siteStructure[top] = {};
+          if (!siteStructure[top][sub]) siteStructure[top][sub] = [];
+          siteStructure[top][sub].push(item);
+        });
+
+        // 渲染左侧菜单
+        const menuContainer = document.getElementById('main-menu');
+        menuContainer.innerHTML = Object.keys(siteStructure).map(topName => `
+            <li><a href="#${topName}">${topName}</a></li>
+        `).join('');
+
+        // 渲染右侧内容
+        const contentContainer = document.getElementById('main-content');
+        contentContainer.innerHTML = Object.keys(siteStructure).map(topName => `
+            <div id="${topName}">
+                <h3 style="margin-top:40px; color:#333;">${topName}</h3>
+                ${Object.keys(siteStructure[topName]).map(subName => `
+                    <div class="sub-category">
+                        <h5>${subName}</h5>
+                        <div class="row">
+                            ${siteStructure[topName][subName].map(item => `
+                                <div class="card" onclick="window.open('${item.url}', '_blank')">
+                                    <hstrong>${item.title || '无标题'}</hstrong>
+                                    <p>${item.summary || '暂无描述'}</p>
+                                </div>
+                            `).join('')}
+                        </div>
                     </div>
-                  </div>
-                </div>
-              `).join('')}
+                `).join('')}
             </div>
-          </div>
-        `).join('')}
-      `).join('');
-    }
-  })
-  .catch(err => {
-    console.error(err);
-    // 如果出错，在页面顶部显示红色提示信息
-    document.body.insertAdjacentHTML('afterbegin', `<div style="color:red; background:#fff; padding:20px; position:fixed; z-index:9999; width:100%; top:0; left:0; border-bottom:1px solid red;">配置错误提示: ${err.message}</div>`);
-  });
-</script>
+        `).join('');
+      })
+      .catch(err => {
+        // 如果出错，在页面直接打印错误
+        document.getElementById('main-content').innerHTML = `<div style="color:red; font-weight:bold;">同步失败: ${err.message}</div>`;
+      });
+    </script>
+</body>
+</html>
