@@ -6,14 +6,14 @@
         "title": "夸克网盘",
         "desc": "网盘资源",
         "url": "https://cunzhanblog.com",
-        "logo": "https://cunzhangblog.com/favicon.png",
+        "logo": "",
         "category": "网盘拉新"
       },
       {
         "title": "Deepseek",
         "desc": "智能AI",
         "url": "https://cunzhangblog.com",
-        "logo": "https://cunzhangblog.com/favicon.png",
+        "logo": "",
         "category": "网盘拉新"
       }
     ]
@@ -25,7 +25,7 @@
         "title": "ChatGPT",
         "desc": "AI聊天工具",
         "url": "https://chat.openai.com",
-        "logo": "https://cunzhangblog.com/favicon.png",
+        "logo": "",
         "category": "科研办公"
       }
     ]
@@ -37,7 +37,7 @@
         "title": "村长资源",
         "desc": "网络资源",
         "url": "cunzhangblog.com",
-        "logo": "https://cunzhangblog.com/favicon.png",
+        "logo": "",
         "category": "小说推文"
       }
     ]
@@ -49,7 +49,7 @@
         "title": "测试资源",
         "desc": "没说工城",
         "url": "www.baidu.com",
-        "logo": "https://cunzhangblog.com/favicon.png",
+        "logo": "",
         "category": "web3村长"
       }
     ]
@@ -61,7 +61,7 @@
         "title": "币安",
         "desc": "交易所注册",
         "url": "baidu.com",
-        "logo": "https://cunzhangblog.com/favicon.png",
+        "logo": "",
         "category": "交易所"
       }
     ]
