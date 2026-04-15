@@ -1,0 +1,14 @@
+[
+  {
+    "taxonomy": "常用工具",
+    "links": [
+      {
+        "title": "ChatGPT",
+        "desc": "AI聊天工具",
+        "url": "https://chat.openai.com",
+        "logo": "https://cunzhangblog.com/favicon.png",
+        "category": "常用工具"
+      }
+    ]
+  }
+]
