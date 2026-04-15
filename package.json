@@ -1,4 +1,10 @@
 {
+  "name": "cloudpan",
+  "version": "1.0.0",
+  "description": "Notion Navigation",
+  "scripts": {
+    "build": "echo 'no build needed'"
+  },
   "dependencies": {
     "@notionhq/client": "^2.2.15"
   }
