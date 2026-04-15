@@ -9,10 +9,10 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="theme-color" content="#f9f9f9" />
-    <title>网址导航 - 实用的资源导航综合网站</title>
+    <title>村长AI工具箱</title>
     <link rel="shortcut icon" href="./assets/images/favicon.png" />
-    <meta name="keywords" content="在线工具网" />
-    <meta name="description" content="在线网址导航, 各类开发工具、绘图绘画工具、md5、在线ps、base64、在线播放器、房贷计算器等" />
+    <meta name="keywords" content="AI工具, AI工具导航, AI工具大全, 免费AI工具, AI软件推荐,AI资源, AI学习资源, AI副业, AI赚钱, 副业工具,互联网工具, 科技资源网站, 工具导航网站" />
+    <meta name="description" content="村长AI工具箱是一个专注于AI工具、互联网资源与副业项目的导航网站，精选优质AI软件、实用工具和学习资源，帮助你高效获取信息、提升效率并实现副业变现。" />
 
     <link rel="stylesheet" id="block-library-css"
         href="./assets/css/block-library.min-5.6.2.css" type="text/css" media="all" />
@@ -500,11 +500,11 @@
                     let cardsHtml = '';
                     $.each(group.links, function(j, link) {
                         // 1. 自动尝试所有可能的图片字段名
-							// 这里覆盖了 Notion 系统图标、手动 icon 列、手动 logo 列
-							let rawIcon = link.pageIcon || link.icon || link.logo || "";
+							// 1. 获取 JSON 里的 logo 字段
+						let notionLogo = (link.logo || "").trim();
 
-							// 2. 如果找到了内容，就用它；如果没找到，就用默认图
-							let finalIcon = (rawIcon && rawIcon.trim() !== "") ? rawIcon.trim() : defaultIcon;
+							// 2. 如果有图就用图，没图就用本地默认的 favicon.png
+						let finalIcon = notionLogo !== "" ? notionLogo : "./assets/images/favicon.png";
 
                         // 处理跳转链接，防止没加 https 导致拼接域名
                         let rawUrl = link.url || '#';
