@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>FK 工具导航 - 科技推手</title>
+    <title>FK 在线工具 - 科技推手</title>
     <link rel="shortcut icon" href="./assets/images/favicon.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="./assets/css/iconfont.css">
     <link rel="stylesheet" href="./assets/css/bootstrap.css">
     <link rel="stylesheet" href="./assets/css/iowen.css">
@@ -33,37 +32,29 @@
         </div>
 
         <div class="main-content flex-fill">
-            <div class="header-mini d-md-noneSticky header-mini-fixed">
-                <div class="d-flex align-items-center justify-content-between p-2">
-                    <div id="sidebar-switch" class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
-                    <div class="mobile-logo">
-                        <a href="/"><img src="./assets/images/logo-mobile.png" height="30"></a>
-                    </div>
-                    <div class="search-modal-btn"><i class="fas fa-search"></i></div>
-                </div>
-            </div>
-
             <div id="search-bg" class="big-header-banner" style="background-image: url('./assets/images/grid.png');">
                 <div class="container-fluid p-0">
-                    <div class="s-search mx-auto" style="max-width:800px; padding: 100px 0 60px;">
+                    <div class="s-search mx-auto" style="max-width:800px; padding: 120px 0 80px;">
                         <div id="search-list" class="hide-type-list text-center mb-3">
                             <div class="search-group group-a">
                                 <ul class="search-type">
                                     <li class="active"><span class="text-white">百度</span></li>
+                                    <li><span class="text-white">必应</span></li>
+                                    <li><span class="text-white">谷歌</span></li>
                                 </ul>
                             </div>
                         </div>
                         <form action="https://www.baidu.com/s" method="get" target="_blank" class="super-search-fm">
-                            <input type="text" name="wd" class="form-control smart-tips search-key" placeholder="搜索你想找的..." autocomplete="off">
-                            <button type="submit"><i class="fas fa-search"></i></button>
+                            <input type="text" name="wd" class="form-control smart-tips search-key" placeholder="输入搜索内容..." autocomplete="off">
+                            <button type="submit"><i class="iconfont icon-search"></i></button>
                         </form>
                     </div>
                 </div>
             </div>
 
             <div id="content" class="content-site customize-site container-fluid p-md-4">
-                <div id="notion-data-container">
-                    <div class="text-center p-5"><i class="fas fa-spinner fa-spin fa-2x"></i></div>
+                <div id="notion-render-target">
+                    <div class="text-center p-5"><i class="iconfont icon-loading fa-spin"></i> 正在同步 Notion 数据...</div>
                 </div>
             </div>
 
@@ -77,28 +68,28 @@
 
     <script>
         $(document).ready(function() {
-            // 抓取你仓库 src 目录下的 json
-            fetch('./src/webstack.json?t=' + new Date().getTime())
+            // 直接读取你的 webstack.json
+            fetch('./src/webstack.json?v=' + Math.random())
             .then(res => res.json())
             .then(data => {
-                let menuHtml = '';
-                let contentHtml = '';
+                let menu = '';
+                let content = '';
 
-                data.forEach((group, index) => {
-                    // 1. 生成侧边栏菜单
-                    menuHtml += `
+                data.forEach((item, i) => {
+                    // 菜单：还原原版图标和间距
+                    menu += `
                         <li class="sidebar-item">
-                            <a href="#term-${index}" class="smooth">
-                                <i class="fas fa-angle-right mr-2"></i>
-                                <span>${group.taxonomy}</span>
+                            <a href="#term-${i}" class="smooth">
+                                <i class="iconfont icon-tag mr-2"></i>
+                                <span>${item.taxonomy}</span>
                             </a>
                         </li>`;
 
-                    // 2. 生成网站卡片 (严格按照 WebStack 原版 HTML 结构)
-                    let cardsHtml = group.links.map(link => `
+                    // 内容：四层嵌套以激活原版 CSS 特效
+                    let cards = item.links.map(link => `
                         <div class="url-card col-6 col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
                             <div class="url-body default">
-                                <a href="${link.url}" target="_blank" class="card no-c mb-4" title="${link.desc}">
+                                <a href="${link.url}" target="_blank" class="card no-c mb-4" data-toggle="tooltip" title="${link.desc}">
                                     <div class="card-body">
                                         <div class="url-content d-flex align-items-center">
                                             <div class="url-img mr-2 d-flex align-items-center justify-content-center">
@@ -115,24 +106,22 @@
                         </div>
                     `).join('');
 
-                    contentHtml += `
+                    content += `
                         <h4 class="text-gray text-lg mb-4">
-                            <i class="site-tag iconfont icon-tag icon-lg mr-1" id="term-${index}"></i>${group.taxonomy}
+                            <i class="site-tag iconfont icon-tag icon-lg mr-1" id="term-${i}"></i>${item.taxonomy}
                         </h4>
-                        <div class="row">${cardsHtml}</div>`;
+                        <div class="row">${cards}</div>`;
                 });
 
-                $('#main-menu').html(menuHtml);
-                $('#notion-data-container').html(contentHtml);
-
-                // 激活原版的平滑滚动和手机端菜单
-                $('#sidebar-switch').click(function() {
-                    $('.page-container').toggleClass('sidebar-collapsed');
-                });
+                $('#main-menu').html(menu);
+                $('#notion-render-target').html(content);
+                
+                // 激活原版 app.js 中的交互
+                if(typeof theme !== 'undefined') theme.init(); 
             });
         });
     </script>
-    
+
     <script src="./assets/js/bootstrap.bundle.min.js"></script>
     <script src="./assets/js/app.js"></script>
 </body>
