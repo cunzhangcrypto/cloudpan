@@ -53,5 +53,17 @@
         "category": "web3村长"
       }
     ]
+  },
+  {
+    "taxonomy": "交易所",
+    "links": [
+      {
+        "title": "币安",
+        "desc": "交易所注册",
+        "url": "baidu.com",
+        "logo": "https://cunzhangblog.com/favicon.png",
+        "category": "交易所"
+      }
+    ]
   }
 ]
