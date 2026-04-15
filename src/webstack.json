@@ -29,5 +29,29 @@
         "category": "科研办公"
       }
     ]
+  },
+  {
+    "taxonomy": "小说推文",
+    "links": [
+      {
+        "title": "村长资源",
+        "desc": "网络资源",
+        "url": "cunzhangblog.com",
+        "logo": "https://cunzhangblog.com/favicon.png",
+        "category": "小说推文"
+      }
+    ]
+  },
+  {
+    "taxonomy": "web3村长",
+    "links": [
+      {
+        "title": "测试资源",
+        "desc": "没说工城",
+        "url": "www.baidu.com",
+        "logo": "https://cunzhangblog.com/favicon.png",
+        "category": "web3村长"
+      }
+    ]
   }
 ]
