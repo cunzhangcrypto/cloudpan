@@ -1,68 +1,261 @@
 [
   {
-    "taxonomy": "网盘拉新",
+    "taxonomy": "🛡️ 隐私防护盾",
     "links": [
       {
-        "title": "夸克网盘",
-        "desc": "网盘资源",
-        "url": "https://cunzhanblog.com",
-        "logo": "https://web.gitapp.cn/assets/images/logos/gitter.jpg",
-        "category": "网盘拉新"
+        "title": "ProtonMail",
+        "desc": "全球最安全的加密邮箱，注重隐私保护的极客首选",
+        "url": "proton.me",
+        "logo": "assets/images/favicon.png",
+        "category": "🛡️ 隐私防护盾"
       },
       {
-        "title": "Deepseek",
-        "desc": "智能AI",
-        "url": "https://cunzhangblog.com",
-        "logo": "https://web.gitapp.cn/assets/images/logos/开源中国.jpg",
-        "category": "网盘拉新"
+        "title": "Bitwarden",
+        "desc": "最好用的开源密码管理工具，多端同步且完全免费",
+        "url": "bitwarden.com",
+        "logo": "assets/images/favicon.png",
+        "category": "🛡️ 隐私防护盾"
+      },
+      {
+        "title": "DuckDuckGo",
+        "desc": "追踪用户行为的隐私搜索引擎，拒绝个性化广告",
+        "url": "duckduckgo.com",
+        "logo": "assets/images/favicon.png",
+        "category": "🛡️ 隐私防护盾"
       }
     ]
   },
   {
-    "taxonomy": "科研办公",
+    "taxonomy": "📡 实时情报站",
     "links": [
+      {
+        "title": "律动 BlockBeats",
+        "desc": "深度追踪区块链行业动态，大厂与明星项目一网打尽",
+        "url": "theblockbeats.info",
+        "logo": "assets/images/favicon.png",
+        "category": "📡 实时情报站"
+      },
+      {
+        "title": "Foresight News",
+        "desc": "Web3 行业领先的中文资讯平台，情报更新极快",
+        "url": "foresightnews.com",
+        "logo": "assets/images/favicon.png",
+        "category": "📡 实时情报站"
+      }
+    ]
+  },
+  {
+    "taxonomy": "📦 宝藏资源站",
+    "links": [
+      {
+        "title": "吾爱破解",
+        "desc": "国内最知名的极客论坛，汇聚各类稀缺工具与补丁",
+        "url": "52pojie.cn",
+        "logo": "assets/images/favicon.png",
+        "category": "📦 宝藏资源站"
+      },
+      {
+        "title": "夸克资源搜索",
+        "desc": "强大的网盘资源搜索引擎，找教程、找素材首选",
+        "url": "quark.cn",
+        "logo": "assets/images/favicon.png",
+        "category": "📦 宝藏资源站"
+      }
+    ]
+  },
+  {
+    "taxonomy": "💡 AI提示词",
+    "links": [
+      {
+        "title": "FlowGPT",
+        "desc": "汇聚各种硬核对话 Prompt 的实战提示词社区",
+        "url": "flowgpt.com",
+        "logo": "assets/images/favicon.png",
+        "category": "💡 AI提示词"
+      },
+      {
+        "title": "PromptHero",
+        "desc": "发现全球顶尖 MJ 和 SD 提示词的灵感库",
+        "url": "prompthero.com",
+        "logo": "assets/images/favicon.png",
+        "category": "💡 AI提示词"
+      }
+    ]
+  },
+  {
+    "taxonomy": "🛠️ 开发者/效率",
+    "links": [
+      {
+        "title": "Cloudflare",
+        "desc": "全能的网络防护与 CDN 加速，站长必备",
+        "url": "cloudflare.com",
+        "logo": "assets/images/favicon.png",
+        "category": "🛠️ 开发者/效率"
+      },
+      {
+        "title": "Vercel",
+        "desc": "极速部署前端项目的首选平台",
+        "url": "vercel.com",
+        "logo": "assets/images/favicon.png",
+        "category": "🛠️ 开发者/效率"
+      },
+      {
+        "title": "GitHub",
+        "desc": "全球最大的开源社区，寻找黑科技项目的源头",
+        "url": "github.com",
+        "logo": "assets/images/favicon.png",
+        "category": "🛠️ 开发者/效率"
+      }
+    ]
+  },
+  {
+    "taxonomy": "🧩 浏览器神插件",
+    "links": [
+      {
+        "title": "Tampermonkey",
+        "desc": "脚本猴插件，通过脚本解锁网页各种隐藏功能",
+        "url": "https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo",
+        "logo": "assets/images/favicon.png",
+        "category": "🧩 浏览器神插件"
+      },
+      {
+        "title": "Sider",
+        "desc": "集成多种主流模型的侧边栏，支持沉浸式翻译",
+        "url": "sider.ai",
+        "logo": "assets/images/favicon.png",
+        "category": "🧩 浏览器神插件"
+      },
+      {
+        "title": "Monica",
+        "desc": "你的浏览器 AI 助手，支持总结网页、协助阅读",
+        "url": "monica.im",
+        "logo": "assets/images/favicon.png",
+        "category": "🧩 浏览器神插件"
+      }
+    ]
+  },
+  {
+    "taxonomy": "🎬 影音黑科技",
+    "links": [
+      {
+        "title": "HeyGen",
+        "desc": "制作数字人视频、视频对口型翻译的首选工具",
+        "url": "heygen.com",
+        "logo": "assets/images/favicon.png",
+        "category": "🎬 影音黑科技"
+      },
+      {
+        "title": "Lalal.ai",
+        "desc": "极其精准的 AI 伴奏与人声分离工具",
+        "url": "lalal.ai",
+        "logo": "assets/images/favicon.png",
+        "category": "🎬 影音黑科技"
+      },
+      {
+        "title": "ElevenLabs",
+        "desc": "行业天花板级别的 AI 配音与音色克隆工具",
+        "url": "elevenlabs.io",
+        "logo": "assets/images/favicon.png",
+        "category": "🎬 影音黑科技"
+      }
+    ]
+  },
+  {
+    "taxonomy": "⛓️ Web3 & 安全",
+    "links": [
+      {
+        "title": "DeBank",
+        "desc": "全面的 Web3 个人资产看板，支持多链追踪",
+        "url": "debank.com",
+        "logo": "assets/images/favicon.png",
+        "category": "⛓️ Web3 & 安全"
+      },
+      {
+        "title": "DexScreener",
+        "desc": "链上土狗、热门币种实时行情监测神器",
+        "url": "dexscreener.com",
+        "logo": "assets/images/favicon.png",
+        "category": "⛓️ Web3 & 安全"
+      },
+      {
+        "title": "TradingView",
+        "desc": "全球顶级金融图表平台，支持 Pine Script 策略编写。",
+        "url": "tradingview.com",
+        "logo": "assets/images/favicon.png",
+        "category": "⛓️ Web3 & 安全"
+      },
+      {
+        "title": "OneKey",
+        "desc": "最好用的开源硬件钱包，守护你的数字资产安全",
+        "url": "https://onekey.so/r/GVOBMX",
+        "logo": "assets/images/favicon.png",
+        "category": "⛓️ Web3 & 安全"
+      }
+    ]
+  },
+  {
+    "taxonomy": "🤖 智能对话/搜索",
+    "links": [
+      {
+        "title": "Claude",
+        "desc": "写作风格最拟人、代码能力极强的顶级大模型。",
+        "url": "claude.ai",
+        "logo": "assets/images/favicon.png",
+        "category": "🤖 智能对话/搜索"
+      },
+      {
+        "title": "Perplexity",
+        "desc": "AI 搜索时代的颠覆者，直接给答案并附带信源。\n\n",
+        "url": "perplexity.ai",
+        "logo": "assets/images/favicon.png",
+        "category": "🤖 智能对话/搜索"
+      },
       {
         "title": "ChatGPT",
-        "desc": "AI聊天工具",
-        "url": "https://chat.openai.com",
-        "logo": "https://web.gitapp.cn/assets/images/logos/语雀.jpg",
-        "category": "科研办公"
+        "desc": "全球最领先的 AI 对话模型，办公辅助全能王。",
+        "url": "chatgpt.com",
+        "logo": "assets/images/favicon.png",
+        "category": "🤖 智能对话/搜索"
+      },
+      {
+        "title": "DeepSeek",
+        "desc": "国产之光，推理能力极强且更懂中文语境。",
+        "url": "deepseek.com",
+        "logo": "assets/images/favicon.png",
+        "category": "🤖 智能对话/搜索"
       }
     ]
   },
   {
-    "taxonomy": "小说推文",
+    "taxonomy": "🚀AI创作顶流",
     "links": [
       {
-        "title": "村长资源",
-        "desc": "网络资源",
-        "url": "cunzhangblog.com",
+        "title": "Kling AI",
+        "desc": "快手出品，目前全球最强的国产 AI 视频生成模型。",
+        "url": "klingai.com",
         "logo": "assets/images/favicon.png",
-        "category": "小说推文"
-      }
-    ]
-  },
-  {
-    "taxonomy": "web3村长",
-    "links": [
+        "category": "🚀AI创作顶流"
+      },
       {
-        "title": "测试资源",
-        "desc": "没说工城",
-        "url": "www.baidu.com",
+        "title": "Luma Dream Machine电影级视频生成，支持首尾帧控制，表现极其稳定。",
+        "desc": "智能AI",
+        "url": "lumalabs.ai",
         "logo": "assets/images/favicon.png",
-        "category": "web3村长"
-      }
-    ]
-  },
-  {
-    "taxonomy": "交易所",
-    "links": [
+        "category": "🚀AI创作顶流"
+      },
       {
-        "title": "币安",
-        "desc": "交易所注册",
-        "url": "baidu.com",
+        "title": "Midjourney",
+        "desc": "AI 绘画界的老大，审美与画质无可替代。",
+        "url": "midjourney.com",
         "logo": "assets/images/favicon.png",
-        "category": "交易所"
+        "category": "🚀AI创作顶流"
+      },
+      {
+        "title": "Suno",
+        "desc": "只需一段文字，即可生成广播级品质的完整歌曲。",
+        "url": "suno.com",
+        "logo": "assets/images/favicon.png",
+        "category": "🚀AI创作顶流"
       }
     ]
   }
