@@ -99,10 +99,8 @@
                 <div class="container-fluid p-0">
 
                     <a href="" class="navbar-brand d-md-none" title="村长AI工具箱">
-                        <img src="./assets/images/bt.png" class="logo-light"
-                            alt="村长AI工具箱">
-                        <img src="./assets/images/bt.png" class="logo-dark d-none"
-                            alt="村长AI工具箱">
+                        <img src="./assets/images/bt.png" class="logo-light" alt="村长AI工具箱">
+                        <img src="./assets/images/bt.png" class="logo-dark d-none" alt="村长AI工具箱">
                     </a>
 
                     <div class="collapse navbar-collapse order-2 order-md-1">
@@ -115,89 +113,36 @@
                                     <path class="line--3" d="M0 60h62c18 0 18 20-17-5L31 45"></path>
                                 </svg>
                             </label>
-
                         </div>
 
                         <ul class="navbar-nav site-menu" id="main-menu" style="margin-right: 16px;">
-
-			<li >
-				<a href="./">
+                            <li>
+                                <a href="./">
                                     <i class="fa fa-home fa-lg mr-2"></i>
                                     <span>首页</span>
                                 </a>
-				<ul class="sub-menu">
-
-				</ul>
-			    </li>
-
-			<li >
-				<a href="./about">
+                                <ul class="sub-menu"></ul>
+                            </li>
+                            <li>
+                                <a href="./about">
                                     <i class="fa fa-book fa-lg mr-2"></i>
                                     <span>关于</span>
                                 </a>
-				<ul class="sub-menu">
-
-				</ul>
-			    </li>
-
-			</ul>
-
-
-                        <div class="rounded-circle weather">
-                            <div id="he-plugin-simple" style="display: contents;"></div>
-                            <script>WIDGET = {
-                                    CONFIG: {
-                                        "modules": "01234",
-                                        "background": 5,
-                                        "tmpColor": "E4C600",
-                                        "tmpSize": 14,
-                                        "cityColor": "E4C600",
-                                        "citySize": 14,
-                                        "aqiColor": "#E4C600",
-                                        "aqiSize": 14,
-                                        "weatherIconSize": 24,
-                                        "alertIconSize": 18,
-                                        "padding": "10px 10px 10px 10px",
-                                        "shadow": "1",
-                                        "language": "auto",
-                                        "borderRadius": 5,
-                                        "fixed": "false",
-                                        "vertical": "middle",
-                                        "horizontal": "left",
-                                        "key": "085791e805a24491b43b06cf58ab31e7"
-                                    }
-                                }
-                            </script>
-                            <script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script>
+                                <ul class="sub-menu"></ul>
+                            </li>
+                        </ul>
                         </div>
 
-                    </div>
-
                     <ul class="nav navbar-menu text-xs order-1 order-md-2">
-
-
-                        <li class="nav-item mr-3 mr-lg-0 d-none d-lg-block">
-                            <script>
-                                fetch('https://v1.hitokoto.cn')
-                                    .then(response => response.json())
-                                    .then(data => {
-                                    const hitokoto = document.getElementById('hitokoto_text')
-                                    hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
-                                    hitokoto.innerText = data.hitokoto
-                                    })
-                                    .catch(console.error)
-                            </script>
-                            <div id="hitokoto"><a href="https://cunzhangblog.com" target="_blank" id="hitokoto_text">web3村长。</a></div>
-                        </li>
-
-
                         <li class="nav-search ml-3 ml-md-4">
-                            <a href="javascript:" data-toggle="modal" data-target="#search-modal"><i
-                                    class="iconfont icon-search icon-2x"></i></a>
+                            <a href="javascript:" data-toggle="modal" data-target="#search-modal">
+                                <i class="iconfont icon-search icon-2x"></i>
+                            </a>
                         </li>
                         <li class="nav-item d-md-none mobile-menu ml-3 ml-md-4">
-                            <a href="javascript:" id="sidebar-switch" data-toggle="modal"
-                                data-target="#sidebar"><i class="iconfont icon-classification icon-2x"></i></a>
+                            <a href="javascript:" id="sidebar-switch" data-toggle="modal" data-target="#sidebar">
+                                <i class="iconfont icon-classification icon-2x"></i>
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -205,6 +150,7 @@
         </div>
         <div class="placeholder" style="height:74px"></div>
     </div>
+</div>
 
 
 <div class="header-big  post-top css-color mb-4" id="search-bg" style="">
