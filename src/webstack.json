@@ -6,21 +6,21 @@
         "title": "ProtonMail",
         "desc": "全球最安全的加密邮箱，注重隐私保护的极客首选",
         "url": "proton.me",
-        "logo": "assets/images/favicon.png",
+        "logo": "https://img.cunzhangai.com/file/1776411949904_1.png",
         "category": "🛡️ 隐私防护盾"
       },
       {
         "title": "Bitwarden",
         "desc": "最好用的开源密码管理工具，多端同步且完全免费",
         "url": "bitwarden.com",
-        "logo": "assets/images/favicon.png",
+        "logo": "https://img.cunzhangai.com/file/1776411945982_2.png",
         "category": "🛡️ 隐私防护盾"
       },
       {
         "title": "DuckDuckGo",
         "desc": "追踪用户行为的隐私搜索引擎，拒绝个性化广告",
         "url": "duckduckgo.com",
-        "logo": "assets/images/favicon.png",
+        "logo": "https://img.cunzhangai.com/file/1776411953597_3.jpg",
         "category": "🛡️ 隐私防护盾"
       }
     ]
@@ -32,14 +32,14 @@
         "title": "律动 BlockBeats",
         "desc": "深度追踪区块链行业动态，大厂与明星项目一网打尽",
         "url": "theblockbeats.info",
-        "logo": "assets/images/favicon.png",
+        "logo": "https://img.cunzhangai.com/file/1776411951328_4.jpg",
         "category": "📡 实时情报站"
       },
       {
         "title": "Foresight News",
         "desc": "Web3 行业领先的中文资讯平台，情报更新极快",
         "url": "foresightnews.com",
-        "logo": "assets/images/favicon.png",
+        "logo": "https://img.cunzhangai.com/file/1776411948758_5.jpg",
         "category": "📡 实时情报站"
       }
     ]
@@ -51,7 +51,7 @@
         "title": "吾爱破解",
         "desc": "国内最知名的极客论坛，汇聚各类稀缺工具与补丁",
         "url": "52pojie.cn",
-        "logo": "assets/images/favicon.png",
+        "logo": "https://img.cunzhangai.com/file/1776411955374_语雀话题.png",
         "category": "📦 宝藏资源站"
       },
       {
