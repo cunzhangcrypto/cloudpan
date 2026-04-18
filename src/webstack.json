@@ -1,412 +1,5 @@
 [
   {
-    "taxonomy": "🛡️ 隐私防护盾",
-    "links": [
-      {
-        "title": "ProtonMail",
-        "desc": "全球最安全的加密邮箱，注重隐私保护的极客首选",
-        "url": "proton.me",
-        "logo": "https://img.cunzhangai.com/file/1776411949904_1.png",
-        "category": "🛡️ 隐私防护盾"
-      },
-      {
-        "title": "Bitwarden",
-        "desc": "最好用的开源密码管理工具，多端同步且完全免费",
-        "url": "bitwarden.com",
-        "logo": "https://img.cunzhangai.com/file/1776411945982_2.png",
-        "category": "🛡️ 隐私防护盾"
-      },
-      {
-        "title": "DuckDuckGo",
-        "desc": "追踪用户行为的隐私搜索引擎，拒绝个性化广告",
-        "url": "duckduckgo.com",
-        "logo": "https://img.cunzhangai.com/file/1776411953597_3.jpg",
-        "category": "🛡️ 隐私防护盾"
-      }
-    ]
-  },
-  {
-    "taxonomy": "📡 实时情报站",
-    "links": [
-      {
-        "title": "律动 BlockBeats",
-        "desc": "深度追踪区块链行业动态，大厂与明星项目一网打尽",
-        "url": "theblockbeats.info",
-        "logo": "https://img.cunzhangai.com/file/1776411951328_4.jpg",
-        "category": "📡 实时情报站"
-      },
-      {
-        "title": "Foresight News",
-        "desc": "Web3 行业领先的中文资讯平台，情报更新极快",
-        "url": "foresightnews.com",
-        "logo": "https://img.cunzhangai.com/file/1776411948758_5.jpg",
-        "category": "📡 实时情报站"
-      }
-    ]
-  },
-  {
-    "taxonomy": "📦 宝藏资源站",
-    "links": [
-      {
-        "title": "吾爱破解",
-        "desc": "国内最知名的极客论坛，汇聚各类稀缺工具与补丁",
-        "url": "52pojie.cn",
-        "logo": "https://img.cunzhangai.com/file/1776411955374_语雀话题.png",
-        "category": "📦 宝藏资源站"
-      },
-      {
-        "title": "夸克资源搜索",
-        "desc": "强大的网盘资源搜索引擎，找教程、找素材首选",
-        "url": "https://pan.quark.cn/s/8b50b9b66041#/list/share",
-        "logo": "https://img.cunzhangai.com/file/1776481252600_夸克.png",
-        "category": "📦 宝藏资源站"
-      },
-      {
-        "title": "ESTK",
-        "desc": "让国产手机也能使用eSIM手机卡",
-        "url": "https://www.estk.me?aid=1308",
-        "logo": "https://img.cunzhangai.com/file/1776476144230_estk.jpg",
-        "category": "📦 宝藏资源站"
-      }
-    ]
-  },
-  {
-    "taxonomy": "💡 AI提示词",
-    "links": [
-      {
-        "title": "FlowGPT",
-        "desc": "汇聚各种硬核对话 Prompt 的实战提示词社区",
-        "url": "flowgpt.com",
-        "logo": "https://img.cunzhangai.com/file/1776481476717_flowgpt.jpg",
-        "category": "💡 AI提示词"
-      },
-      {
-        "title": "PromptHero",
-        "desc": "发现全球顶尖 MJ 和 SD 提示词的灵感库",
-        "url": "prompthero.com",
-        "logo": "https://img.cunzhangai.com/file/1776481476417_ptompthero.jpg",
-        "category": "💡 AI提示词"
-      }
-    ]
-  },
-  {
-    "taxonomy": "🛠️ 开发者/效率",
-    "links": [
-      {
-        "title": "Cloudflare",
-        "desc": "全能的网络防护与 CDN 加速，站长必备",
-        "url": "cloudflare.com",
-        "logo": "https://img.cunzhangai.com/file/1776480977777_cloudflare.jpg",
-        "category": "🛠️ 开发者/效率"
-      },
-      {
-        "title": "Vercel",
-        "desc": "极速部署前端项目的首选平台",
-        "url": "vercel.com",
-        "logo": "https://img.cunzhangai.com/file/1776480977246_vercel.png",
-        "category": "🛠️ 开发者/效率"
-      },
-      {
-        "title": "GitHub",
-        "desc": "全球最大的开源社区，寻找黑科技项目的源头",
-        "url": "github.com",
-        "logo": "https://img.cunzhangai.com/file/1776411955711_github.jpg",
-        "category": "🛠️ 开发者/效率"
-      }
-    ]
-  },
-  {
-    "taxonomy": "🧩 浏览器神插件",
-    "links": [
-      {
-        "title": "Tampermonkey",
-        "desc": "脚本猴插件，通过脚本解锁网页各种隐藏功能",
-        "url": "https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo",
-        "logo": "https://img.cunzhangai.com/file/1776480976568_tampermonkey.png",
-        "category": "🧩 浏览器神插件"
-      },
-      {
-        "title": "uBlock Origin Lite",
-        "desc": "屏蔽网页的广告，让界面变得极其干净",
-        "url": "https://chromewebstore.google.com/detail/ublock-origin-lite/ddkjiahejlhfcafbddmgiahcphecmpfh",
-        "logo": "https://img.cunzhangai.com/file/1776480974935_uBlock.png",
-        "category": "🧩 浏览器神插件"
-      },
-      {
-        "title": "SingleFile",
-        "desc": "将网页内容打包下载成本地文件html格式",
-        "url": "https://chromewebstore.google.com/detail/singlefile/mpiodijhokgodhhofbcjdecpffjipkle",
-        "logo": "https://img.cunzhangai.com/file/1776480982089_SingleFile.png",
-        "category": "🧩 浏览器神插件"
-      },
-      {
-        "title": "Global Speed",
-        "desc": "可以控制网页里所有视频的播放速度",
-        "url": "https://chromewebstore.google.com/detail/global-speed-video-speed/jpbjcnkcffbooppibceonlgknpkniiff",
-        "logo": "https://img.cunzhangai.com/file/1776480973177_Global_Speed.png",
-        "category": "🧩 浏览器神插件"
-      },
-      {
-        "title": "超级复制",
-        "desc": "很多网页的文字禁止复制，这个工个可以解除这个限制，一键搞定",
-        "url": "https://chromewebstore.google.com/detail/supercopy-pro-free-copy/cbhljnnfpomfkmhefapcjmjignigcfpn",
-        "logo": "https://img.cunzhangai.com/file/1776480981392_supercopy.png",
-        "category": "🧩 浏览器神插件"
-      },
-      {
-        "title": "沉浸式翻译",
-        "desc": "打开网页，直接双语对照，支持多种翻译方式，外语成绩差的必备插件",
-        "url": "https://chromewebstore.google.com/detail/immersive-translate-trans/bpoadfkcbjbfhfodiogcnhhhpibjhbnh",
-        "logo": "https://img.cunzhangai.com/file/1776480984079_沉浸式翻译.png",
-        "category": "🧩 浏览器神插件"
-      },
-      {
-        "title": "Search by image",
-        "desc": "看到图片，想找来源？这个插件让你一键反向搜索，快速找到相似图片或原图出处",
-        "url": "https://chromewebstore.google.com/detail/search-by-image/cnojnbdhbhnkbcieeekonklommdnndci",
-        "logo": "https://img.cunzhangai.com/file/1776480977089_Search_by_image.png",
-        "category": "🧩 浏览器神插件"
-      },
-      {
-        "title": "OneTab",
-        "desc": "经常几十个网页，这个插件可以一键全部收纳整理，且能随时恢复",
-        "url": "https://chromewebstore.google.com/detail/onetab/chphlpgkkbolifaimnlloiipkdnihall",
-        "logo": "https://img.cunzhangai.com/file/1776480981704_OneTab.png",
-        "category": "🧩 浏览器神插件"
-      },
-      {
-        "title": "OCR Image Reader ",
-        "desc": "从截图中提取文字，图片、PDF等都可以直接识别",
-        "url": "https://chromewebstore.google.com/detail/ocr-image-reader/bhbhjjkcoghibhibegcmbomkbakkpdbo",
-        "logo": "https://img.cunzhangai.com/file/1776480977611_GoFullPage.png",
-        "category": "🧩 浏览器神插件"
-      },
-      {
-        "title": "Dark Reader ",
-        "desc": "将网页变成夜间护眼模式",
-        "url": "https://chromewebstore.google.com/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh",
-        "logo": "https://img.cunzhangai.com/file/1776480982135_Dark_Reader.png",
-        "category": "🧩 浏览器神插件"
-      },
-      {
-        "title": "篡改猴",
-        "desc": "脚本管理工具，可以让浏览器实现各种“自定义功能”，上限非常高",
-        "url": "https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo",
-        "logo": "https://img.cunzhangai.com/file/1776480982135_Dark_Reader.png",
-        "category": "🧩 浏览器神插件"
-      },
-      {
-        "title": "GoFullPage",
-        "desc": "网页截图神器，自动拼接成长图，支持导出PDF、PNG图片",
-        "url": "https://chromewebstore.google.com/detail/gofullpage-full-page-scre/fdpohaocaechififmbbbbbknoalclacl",
-        "logo": "https://img.cunzhangai.com/file/1776480977611_GoFullPage.png",
-        "category": "🧩 浏览器神插件"
-      },
-      {
-        "title": "Scribe",
-        "desc": "自动记录操作步骤，一键生成图文教程",
-        "url": "https://chromewebstore.google.com/detail/scribe-ai-documentation-s/okfkdaglfjjjfefdcppliegebpoegaii",
-        "logo": "https://img.cunzhangai.com/file/1776480978065_Scribe.png",
-        "category": "🧩 浏览器神插件"
-      },
-      {
-        "title": "Copyfish",
-        "desc": "截图直接提取文字，支持多语言，效率神器",
-        "url": "https://chromewebstore.google.com/detail/copyfish-%F0%9F%90%9F-free-ocr-soft/eenjdnjldapjajjofmldgmkjaienebbj",
-        "logo": "https://img.cunzhangai.com/file/1776480978657_Copyfish.png",
-        "category": "🧩 浏览器神插件"
-      }
-    ]
-  },
-  {
-    "taxonomy": "🎬 影音黑科技",
-    "links": [
-      {
-        "title": "HeyGen",
-        "desc": "制作数字人视频、视频对口型翻译的首选工具",
-        "url": "heygen.com",
-        "logo": "https://img.cunzhangai.com/file/1776481477620_heygen.jpg",
-        "category": "🎬 影音黑科技"
-      },
-      {
-        "title": "Lalal.ai",
-        "desc": "极其精准的 AI 伴奏与人声分离工具",
-        "url": "lalal.ai",
-        "logo": "https://img.cunzhangai.com/file/1776481479810_lalal.jpg",
-        "category": "🎬 影音黑科技"
-      },
-      {
-        "title": "ElevenLabs",
-        "desc": "行业天花板级别的 AI 配音与音色克隆工具",
-        "url": "elevenlabs.io",
-        "logo": "https://img.cunzhangai.com/file/1776481534340_elevenlabs.jpg",
-        "category": "🎬 影音黑科技"
-      }
-    ]
-  },
-  {
-    "taxonomy": "⛓️ Web3 & 安全",
-    "links": [
-      {
-        "title": "DeBank",
-        "desc": "全面的 Web3 个人资产看板，支持多链追踪",
-        "url": "debank.com",
-        "logo": "https://img.cunzhangai.com/file/1776476150070_debank.jpg",
-        "category": "⛓️ Web3 & 安全"
-      },
-      {
-        "title": "DexScreener",
-        "desc": "链上土狗、热门币种实时行情监测神器",
-        "url": "dexscreener.com",
-        "logo": "https://img.cunzhangai.com/file/1776476147326_dexscreener.jpg",
-        "category": "⛓️ Web3 & 安全"
-      },
-      {
-        "title": "TradingView",
-        "desc": "全球顶级金融图表平台，支持 Pine Script 策略编写。",
-        "url": "tradingview.com",
-        "logo": "https://img.cunzhangai.com/file/1776476155468_tradingview.jpg",
-        "category": "⛓️ Web3 & 安全"
-      },
-      {
-        "title": "OneKey",
-        "desc": "最好用的开源硬件钱包，守护你的数字资产安全",
-        "url": "https://onekey.so/r/GVOBMX",
-        "logo": "https://img.cunzhangai.com/file/1776476154712_onekey.jpg",
-        "category": "⛓️ Web3 & 安全"
-      },
-      {
-        "title": "币安",
-        "desc": "NO.1交易所",
-        "url": "https://www.binance.com/register?ref=CUNZHANG",
-        "logo": "https://img.cunzhangai.com/file/1776476163309_币安.jpg",
-        "category": "⛓️ Web3 & 安全"
-      },
-      {
-        "title": "海妖Krak",
-        "desc": "连接数字货币到法币出入金kraken",
-        "url": "https://krak.app/@cunzhang",
-        "logo": "https://img.cunzhangai.com/file/1776476162428_海妖.jpg",
-        "category": "⛓️ Web3 & 安全"
-      },
-      {
-        "title": "Bybit",
-        "desc": "数字货币交易所",
-        "url": "https://partner.bybit.com/b/141011",
-        "logo": "https://img.cunzhangai.com/file/1776476142970_bybit.jpg",
-        "category": "⛓️ Web3 & 安全"
-      },
-      {
-        "title": "芝麻Gate",
-        "desc": "芝麻交易所",
-        "url": "https://www.gateweb.xyz/share/cunzhang",
-        "logo": "https://img.cunzhangai.com/file/1776476151254_gate.jpg",
-        "category": "⛓️ Web3 & 安全"
-      },
-      {
-        "title": "火币",
-        "desc": "老牌交易所",
-        "url": "https://www.htx.com.ve/invite/zh-cn/1h?invite_code=xkmtb223",
-        "logo": "https://img.cunzhangai.com/file/1776476156046_火币.jpg",
-        "category": "⛓️ Web3 & 安全"
-      },
-      {
-        "title": "LBANK",
-        "desc": "加密货币交易所",
-        "url": "https://lbank.com/ref/CUNZHANG",
-        "logo": "https://img.cunzhangai.com/file/1776476152671_lbank.png",
-        "category": "⛓️ Web3 & 安全"
-      },
-      {
-        "title": "OKX钱包",
-        "desc": "加密web3钱包",
-        "url": "https://web3.okx.com/join/CUNZHANG",
-        "logo": "https://img.cunzhangai.com/file/1776476147980_OKX.jpg",
-        "category": "⛓️ Web3 & 安全"
-      },
-      {
-        "title": "Backpack",
-        "desc": "背包交易所去中心化",
-        "url": "https://backpack.exchange/join/2airbuyo",
-        "logo": "https://img.cunzhangai.com/file/1776476143331_backpack.png",
-        "category": "⛓️ Web3 & 安全"
-      }
-    ]
-  },
-  {
-    "taxonomy": "🤖 智能对话/搜索",
-    "links": [
-      {
-        "title": "Claude",
-        "desc": "写作风格最拟人、代码能力极强的顶级大模型。",
-        "url": "claude.ai",
-        "logo": "https://img.cunzhangai.com/file/1776476147769_claude.jpg",
-        "category": "🤖 智能对话/搜索"
-      },
-      {
-        "title": "Perplexity",
-        "desc": "AI 搜索时代的颠覆者，直接给答案并附带信源。\n\n",
-        "url": "perplexity.ai",
-        "logo": "https://img.cunzhangai.com/file/1776481613938_perplexity.jpg",
-        "category": "🤖 智能对话/搜索"
-      },
-      {
-        "title": "ChatGPT",
-        "desc": "全球最领先的 AI 对话模型，办公辅助全能王。",
-        "url": "chatgpt.com",
-        "logo": "https://img.cunzhangai.com/file/1776476141860_chatgpt.png",
-        "category": "🤖 智能对话/搜索"
-      },
-      {
-        "title": "DeepSeek",
-        "desc": "国产之光，推理能力极强且更懂中文语境。",
-        "url": "deepseek.com",
-        "logo": "https://img.cunzhangai.com/file/1776476148109_deepseek.jpg",
-        "category": "🤖 智能对话/搜索"
-      },
-      {
-        "title": "Gemini",
-        "desc": "谷歌智能AI",
-        "url": "https://gemini.google.com/app",
-        "logo": "https://img.cunzhangai.com/file/1776476146845_gemini.jpg",
-        "category": "🤖 智能对话/搜索"
-      }
-    ]
-  },
-  {
-    "taxonomy": "🚀AI创作顶流",
-    "links": [
-      {
-        "title": "Kling AI",
-        "desc": "快手出品，目前全球最强的国产 AI 视频生成模型。",
-        "url": "klingai.com",
-        "logo": "https://img.cunzhangai.com/file/1776476146700_keling.jpg",
-        "category": "🚀AI创作顶流"
-      },
-      {
-        "title": "Luma Dream Machine电影级视频生成，支持首尾帧控制，表现极其稳定。",
-        "desc": "智能AI",
-        "url": "lumalabs.ai",
-        "logo": "https://img.cunzhangai.com/file/1776476145445_luma.jpg",
-        "category": "🚀AI创作顶流"
-      },
-      {
-        "title": "Midjourney",
-        "desc": "AI 绘画界的老大，审美与画质无可替代。",
-        "url": "midjourney.com",
-        "logo": "https://img.cunzhangai.com/file/1776476150710_midjourney.jpg",
-        "category": "🚀AI创作顶流"
-      },
-      {
-        "title": "Suno",
-        "desc": "只需一段文字，即可生成广播级品质的完整歌曲。",
-        "url": "suno.com",
-        "logo": "https://img.cunzhangai.com/file/1776476151049_suno.jpg",
-        "category": "🚀AI创作顶流"
-      }
-    ]
-  },
-  {
     "taxonomy": "🌐 代理IP&环境",
     "links": [
       {
@@ -539,6 +132,95 @@
         "url": "https://www.ifastgb.com/tellafriend/tianboy600 ",
         "logo": "https://img.cunzhangai.com/file/1776476153075_ifast.jpg",
         "category": "💳 走资/U卡"
+      }
+    ]
+  },
+  {
+    "taxonomy": "⛓️ Web3 & 安全",
+    "links": [
+      {
+        "title": "DeBank",
+        "desc": "全面的 Web3 个人资产看板，支持多链追踪",
+        "url": "debank.com",
+        "logo": "https://img.cunzhangai.com/file/1776476150070_debank.jpg",
+        "category": "⛓️ Web3 & 安全"
+      },
+      {
+        "title": "DexScreener",
+        "desc": "链上土狗、热门币种实时行情监测神器",
+        "url": "dexscreener.com",
+        "logo": "https://img.cunzhangai.com/file/1776476147326_dexscreener.jpg",
+        "category": "⛓️ Web3 & 安全"
+      },
+      {
+        "title": "TradingView",
+        "desc": "全球顶级金融图表平台，支持 Pine Script 策略编写。",
+        "url": "tradingview.com",
+        "logo": "https://img.cunzhangai.com/file/1776476155468_tradingview.jpg",
+        "category": "⛓️ Web3 & 安全"
+      },
+      {
+        "title": "OneKey",
+        "desc": "最好用的开源硬件钱包，守护你的数字资产安全",
+        "url": "https://onekey.so/r/GVOBMX",
+        "logo": "https://img.cunzhangai.com/file/1776476154712_onekey.jpg",
+        "category": "⛓️ Web3 & 安全"
+      },
+      {
+        "title": "币安",
+        "desc": "NO.1交易所",
+        "url": "https://www.binance.com/register?ref=CUNZHANG",
+        "logo": "https://img.cunzhangai.com/file/1776476163309_币安.jpg",
+        "category": "⛓️ Web3 & 安全"
+      },
+      {
+        "title": "海妖Krak",
+        "desc": "连接数字货币到法币出入金kraken",
+        "url": "https://krak.app/@cunzhang",
+        "logo": "https://img.cunzhangai.com/file/1776476162428_海妖.jpg",
+        "category": "⛓️ Web3 & 安全"
+      },
+      {
+        "title": "Bybit",
+        "desc": "数字货币交易所",
+        "url": "https://partner.bybit.com/b/141011",
+        "logo": "https://img.cunzhangai.com/file/1776476142970_bybit.jpg",
+        "category": "⛓️ Web3 & 安全"
+      },
+      {
+        "title": "芝麻Gate",
+        "desc": "芝麻交易所",
+        "url": "https://www.gateweb.xyz/share/cunzhang",
+        "logo": "https://img.cunzhangai.com/file/1776476151254_gate.jpg",
+        "category": "⛓️ Web3 & 安全"
+      },
+      {
+        "title": "火币",
+        "desc": "老牌交易所",
+        "url": "https://www.htx.com.ve/invite/zh-cn/1h?invite_code=xkmtb223",
+        "logo": "https://img.cunzhangai.com/file/1776476156046_火币.jpg",
+        "category": "⛓️ Web3 & 安全"
+      },
+      {
+        "title": "LBANK",
+        "desc": "加密货币交易所",
+        "url": "https://lbank.com/ref/CUNZHANG",
+        "logo": "https://img.cunzhangai.com/file/1776476152671_lbank.png",
+        "category": "⛓️ Web3 & 安全"
+      },
+      {
+        "title": "OKX钱包",
+        "desc": "加密web3钱包",
+        "url": "https://web3.okx.com/join/CUNZHANG",
+        "logo": "https://img.cunzhangai.com/file/1776476147980_OKX.jpg",
+        "category": "⛓️ Web3 & 安全"
+      },
+      {
+        "title": "Backpack",
+        "desc": "背包交易所去中心化",
+        "url": "https://backpack.exchange/join/2airbuyo",
+        "logo": "https://img.cunzhangai.com/file/1776476143331_backpack.png",
+        "category": "⛓️ Web3 & 安全"
       }
     ]
   },
@@ -677,6 +359,324 @@
         "url": "https://pan.quark.cn/s/31a4549def21",
         "logo": "https://img.cunzhangai.com/file/1776481252600_夸克.png",
         "category": "📦 网盘资源"
+      }
+    ]
+  },
+  {
+    "taxonomy": "🧩 浏览器神插件",
+    "links": [
+      {
+        "title": "Tampermonkey",
+        "desc": "脚本猴插件，通过脚本解锁网页各种隐藏功能",
+        "url": "https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo",
+        "logo": "https://img.cunzhangai.com/file/1776480976568_tampermonkey.png",
+        "category": "🧩 浏览器神插件"
+      },
+      {
+        "title": "uBlock Origin Lite",
+        "desc": "屏蔽网页的广告，让界面变得极其干净",
+        "url": "https://chromewebstore.google.com/detail/ublock-origin-lite/ddkjiahejlhfcafbddmgiahcphecmpfh",
+        "logo": "https://img.cunzhangai.com/file/1776480974935_uBlock.png",
+        "category": "🧩 浏览器神插件"
+      },
+      {
+        "title": "SingleFile",
+        "desc": "将网页内容打包下载成本地文件html格式",
+        "url": "https://chromewebstore.google.com/detail/singlefile/mpiodijhokgodhhofbcjdecpffjipkle",
+        "logo": "https://img.cunzhangai.com/file/1776480982089_SingleFile.png",
+        "category": "🧩 浏览器神插件"
+      },
+      {
+        "title": "Global Speed",
+        "desc": "可以控制网页里所有视频的播放速度",
+        "url": "https://chromewebstore.google.com/detail/global-speed-video-speed/jpbjcnkcffbooppibceonlgknpkniiff",
+        "logo": "https://img.cunzhangai.com/file/1776480973177_Global_Speed.png",
+        "category": "🧩 浏览器神插件"
+      },
+      {
+        "title": "超级复制",
+        "desc": "很多网页的文字禁止复制，这个工个可以解除这个限制，一键搞定",
+        "url": "https://chromewebstore.google.com/detail/supercopy-pro-free-copy/cbhljnnfpomfkmhefapcjmjignigcfpn",
+        "logo": "https://img.cunzhangai.com/file/1776480981392_supercopy.png",
+        "category": "🧩 浏览器神插件"
+      },
+      {
+        "title": "沉浸式翻译",
+        "desc": "打开网页，直接双语对照，支持多种翻译方式，外语成绩差的必备插件",
+        "url": "https://chromewebstore.google.com/detail/immersive-translate-trans/bpoadfkcbjbfhfodiogcnhhhpibjhbnh",
+        "logo": "https://img.cunzhangai.com/file/1776480984079_沉浸式翻译.png",
+        "category": "🧩 浏览器神插件"
+      },
+      {
+        "title": "Search by image",
+        "desc": "看到图片，想找来源？这个插件让你一键反向搜索，快速找到相似图片或原图出处",
+        "url": "https://chromewebstore.google.com/detail/search-by-image/cnojnbdhbhnkbcieeekonklommdnndci",
+        "logo": "https://img.cunzhangai.com/file/1776480977089_Search_by_image.png",
+        "category": "🧩 浏览器神插件"
+      },
+      {
+        "title": "OneTab",
+        "desc": "经常几十个网页，这个插件可以一键全部收纳整理，且能随时恢复",
+        "url": "https://chromewebstore.google.com/detail/onetab/chphlpgkkbolifaimnlloiipkdnihall",
+        "logo": "https://img.cunzhangai.com/file/1776480981704_OneTab.png",
+        "category": "🧩 浏览器神插件"
+      },
+      {
+        "title": "OCR Image Reader ",
+        "desc": "从截图中提取文字，图片、PDF等都可以直接识别",
+        "url": "https://chromewebstore.google.com/detail/ocr-image-reader/bhbhjjkcoghibhibegcmbomkbakkpdbo",
+        "logo": "https://img.cunzhangai.com/file/1776480977611_GoFullPage.png",
+        "category": "🧩 浏览器神插件"
+      },
+      {
+        "title": "Dark Reader ",
+        "desc": "将网页变成夜间护眼模式",
+        "url": "https://chromewebstore.google.com/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh",
+        "logo": "https://img.cunzhangai.com/file/1776480982135_Dark_Reader.png",
+        "category": "🧩 浏览器神插件"
+      },
+      {
+        "title": "篡改猴",
+        "desc": "脚本管理工具，可以让浏览器实现各种“自定义功能”，上限非常高",
+        "url": "https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo",
+        "logo": "https://img.cunzhangai.com/file/1776480982135_Dark_Reader.png",
+        "category": "🧩 浏览器神插件"
+      },
+      {
+        "title": "GoFullPage",
+        "desc": "网页截图神器，自动拼接成长图，支持导出PDF、PNG图片",
+        "url": "https://chromewebstore.google.com/detail/gofullpage-full-page-scre/fdpohaocaechififmbbbbbknoalclacl",
+        "logo": "https://img.cunzhangai.com/file/1776480977611_GoFullPage.png",
+        "category": "🧩 浏览器神插件"
+      },
+      {
+        "title": "Scribe",
+        "desc": "自动记录操作步骤，一键生成图文教程",
+        "url": "https://chromewebstore.google.com/detail/scribe-ai-documentation-s/okfkdaglfjjjfefdcppliegebpoegaii",
+        "logo": "https://img.cunzhangai.com/file/1776480978065_Scribe.png",
+        "category": "🧩 浏览器神插件"
+      },
+      {
+        "title": "Copyfish",
+        "desc": "截图直接提取文字，支持多语言，效率神器",
+        "url": "https://chromewebstore.google.com/detail/copyfish-%F0%9F%90%9F-free-ocr-soft/eenjdnjldapjajjofmldgmkjaienebbj",
+        "logo": "https://img.cunzhangai.com/file/1776480978657_Copyfish.png",
+        "category": "🧩 浏览器神插件"
+      }
+    ]
+  },
+  {
+    "taxonomy": "🚀AI创作顶流",
+    "links": [
+      {
+        "title": "Kling AI",
+        "desc": "快手出品，目前全球最强的国产 AI 视频生成模型。",
+        "url": "klingai.com",
+        "logo": "https://img.cunzhangai.com/file/1776476146700_keling.jpg",
+        "category": "🚀AI创作顶流"
+      },
+      {
+        "title": "Luma Dream Machine电影级视频生成，支持首尾帧控制，表现极其稳定。",
+        "desc": "智能AI",
+        "url": "lumalabs.ai",
+        "logo": "https://img.cunzhangai.com/file/1776476145445_luma.jpg",
+        "category": "🚀AI创作顶流"
+      },
+      {
+        "title": "Midjourney",
+        "desc": "AI 绘画界的老大，审美与画质无可替代。",
+        "url": "midjourney.com",
+        "logo": "https://img.cunzhangai.com/file/1776476150710_midjourney.jpg",
+        "category": "🚀AI创作顶流"
+      },
+      {
+        "title": "Suno",
+        "desc": "只需一段文字，即可生成广播级品质的完整歌曲。",
+        "url": "suno.com",
+        "logo": "https://img.cunzhangai.com/file/1776476151049_suno.jpg",
+        "category": "🚀AI创作顶流"
+      }
+    ]
+  },
+  {
+    "taxonomy": "🤖 智能对话/搜索",
+    "links": [
+      {
+        "title": "Claude",
+        "desc": "写作风格最拟人、代码能力极强的顶级大模型。",
+        "url": "claude.ai",
+        "logo": "https://img.cunzhangai.com/file/1776476147769_claude.jpg",
+        "category": "🤖 智能对话/搜索"
+      },
+      {
+        "title": "Perplexity",
+        "desc": "AI 搜索时代的颠覆者，直接给答案并附带信源。\n\n",
+        "url": "perplexity.ai",
+        "logo": "https://img.cunzhangai.com/file/1776481613938_perplexity.jpg",
+        "category": "🤖 智能对话/搜索"
+      },
+      {
+        "title": "ChatGPT",
+        "desc": "全球最领先的 AI 对话模型，办公辅助全能王。",
+        "url": "chatgpt.com",
+        "logo": "https://img.cunzhangai.com/file/1776476141860_chatgpt.png",
+        "category": "🤖 智能对话/搜索"
+      },
+      {
+        "title": "DeepSeek",
+        "desc": "国产之光，推理能力极强且更懂中文语境。",
+        "url": "deepseek.com",
+        "logo": "https://img.cunzhangai.com/file/1776476148109_deepseek.jpg",
+        "category": "🤖 智能对话/搜索"
+      },
+      {
+        "title": "Gemini",
+        "desc": "谷歌智能AI",
+        "url": "https://gemini.google.com/app",
+        "logo": "https://img.cunzhangai.com/file/1776476146845_gemini.jpg",
+        "category": "🤖 智能对话/搜索"
+      }
+    ]
+  },
+  {
+    "taxonomy": "🛠️ 开发者/效率",
+    "links": [
+      {
+        "title": "Cloudflare",
+        "desc": "全能的网络防护与 CDN 加速，站长必备",
+        "url": "cloudflare.com",
+        "logo": "https://img.cunzhangai.com/file/1776480977777_cloudflare.jpg",
+        "category": "🛠️ 开发者/效率"
+      },
+      {
+        "title": "Vercel",
+        "desc": "极速部署前端项目的首选平台",
+        "url": "vercel.com",
+        "logo": "https://img.cunzhangai.com/file/1776480977246_vercel.png",
+        "category": "🛠️ 开发者/效率"
+      },
+      {
+        "title": "GitHub",
+        "desc": "全球最大的开源社区，寻找黑科技项目的源头",
+        "url": "github.com",
+        "logo": "https://img.cunzhangai.com/file/1776411955711_github.jpg",
+        "category": "🛠️ 开发者/效率"
+      }
+    ]
+  },
+  {
+    "taxonomy": "📦 宝藏资源站",
+    "links": [
+      {
+        "title": "吾爱破解",
+        "desc": "国内最知名的极客论坛，汇聚各类稀缺工具与补丁",
+        "url": "52pojie.cn",
+        "logo": "https://img.cunzhangai.com/file/1776411955374_语雀话题.png",
+        "category": "📦 宝藏资源站"
+      },
+      {
+        "title": "夸克资源搜索",
+        "desc": "强大的网盘资源搜索引擎，找教程、找素材首选",
+        "url": "https://pan.quark.cn/s/8b50b9b66041#/list/share",
+        "logo": "https://img.cunzhangai.com/file/1776481252600_夸克.png",
+        "category": "📦 宝藏资源站"
+      },
+      {
+        "title": "ESTK",
+        "desc": "让国产手机也能使用eSIM手机卡",
+        "url": "https://www.estk.me?aid=1308",
+        "logo": "https://img.cunzhangai.com/file/1776476144230_estk.jpg",
+        "category": "📦 宝藏资源站"
+      }
+    ]
+  },
+  {
+    "taxonomy": "💡 AI提示词",
+    "links": [
+      {
+        "title": "FlowGPT",
+        "desc": "汇聚各种硬核对话 Prompt 的实战提示词社区",
+        "url": "flowgpt.com",
+        "logo": "https://img.cunzhangai.com/file/1776481476717_flowgpt.jpg",
+        "category": "💡 AI提示词"
+      },
+      {
+        "title": "PromptHero",
+        "desc": "发现全球顶尖 MJ 和 SD 提示词的灵感库",
+        "url": "prompthero.com",
+        "logo": "https://img.cunzhangai.com/file/1776481476417_ptompthero.jpg",
+        "category": "💡 AI提示词"
+      }
+    ]
+  },
+  {
+    "taxonomy": "📡 实时情报站",
+    "links": [
+      {
+        "title": "律动 BlockBeats",
+        "desc": "深度追踪区块链行业动态，大厂与明星项目一网打尽",
+        "url": "theblockbeats.info",
+        "logo": "https://img.cunzhangai.com/file/1776411951328_4.jpg",
+        "category": "📡 实时情报站"
+      },
+      {
+        "title": "Foresight News",
+        "desc": "Web3 行业领先的中文资讯平台，情报更新极快",
+        "url": "foresightnews.com",
+        "logo": "https://img.cunzhangai.com/file/1776411948758_5.jpg",
+        "category": "📡 实时情报站"
+      }
+    ]
+  },
+  {
+    "taxonomy": "🛡️ 隐私防护盾",
+    "links": [
+      {
+        "title": "ProtonMail",
+        "desc": "全球最安全的加密邮箱，注重隐私保护的极客首选",
+        "url": "proton.me",
+        "logo": "https://img.cunzhangai.com/file/1776411949904_1.png",
+        "category": "🛡️ 隐私防护盾"
+      },
+      {
+        "title": "Bitwarden",
+        "desc": "最好用的开源密码管理工具，多端同步且完全免费",
+        "url": "bitwarden.com",
+        "logo": "https://img.cunzhangai.com/file/1776411945982_2.png",
+        "category": "🛡️ 隐私防护盾"
+      },
+      {
+        "title": "DuckDuckGo",
+        "desc": "追踪用户行为的隐私搜索引擎，拒绝个性化广告",
+        "url": "duckduckgo.com",
+        "logo": "https://img.cunzhangai.com/file/1776411953597_3.jpg",
+        "category": "🛡️ 隐私防护盾"
+      }
+    ]
+  },
+  {
+    "taxonomy": "🎬 影音黑科技",
+    "links": [
+      {
+        "title": "HeyGen",
+        "desc": "制作数字人视频、视频对口型翻译的首选工具",
+        "url": "heygen.com",
+        "logo": "https://img.cunzhangai.com/file/1776481477620_heygen.jpg",
+        "category": "🎬 影音黑科技"
+      },
+      {
+        "title": "Lalal.ai",
+        "desc": "极其精准的 AI 伴奏与人声分离工具",
+        "url": "lalal.ai",
+        "logo": "https://img.cunzhangai.com/file/1776481479810_lalal.jpg",
+        "category": "🎬 影音黑科技"
+      },
+      {
+        "title": "ElevenLabs",
+        "desc": "行业天花板级别的 AI 配音与音色克隆工具",
+        "url": "elevenlabs.io",
+        "logo": "https://img.cunzhangai.com/file/1776481534340_elevenlabs.jpg",
+        "category": "🎬 影音黑科技"
       }
     ]
   }
