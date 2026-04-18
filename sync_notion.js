@@ -60,8 +60,24 @@ async function fetchNavData() {
     }
 
     // 分类汇总
-    const categories = Array.from(new Set(links.map(l => l.category)));
-    const formattedData = categories.map(cat => ({
+// 1. 获取 Notion 数据库的属性定义（包含你手动调好的选项顺序）
+    const dbMetadata = await notion.databases.retrieve({ database_id: databaseId });
+    const categoryOptions = dbMetadata.properties.category?.select?.options || [];
+    const orderedCategories = categoryOptions.map(opt => opt.name);
+
+    // 2. 获取当前搬运回来的所有分类
+    const existingCategories = Array.from(new Set(links.map(l => l.category)));
+
+    // 3. 按照 Notion 后台“手动排序”的顺序进行排列
+    const finalSortOrder = orderedCategories.filter(cat => existingCategories.includes(cat));
+    
+    // 如果有新分类没在选项列表里（兜底逻辑），补在最后
+    existingCategories.forEach(cat => {
+      if (!finalSortOrder.includes(cat)) finalSortOrder.push(cat);
+    });
+
+    // 4. 生成最终的格式化数据
+    const formattedData = finalSortOrder.map(cat => ({
       taxonomy: cat,
       links: links.filter(l => l.category === cat)
     }));
