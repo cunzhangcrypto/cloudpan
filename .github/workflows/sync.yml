@@ -1,8 +1,8 @@
 name: Notion Sync
 on:
-  workflow_dispatch: # 允许你手动点击按钮立即运行
+  workflow_dispatch: 
   schedule:
-    - cron: '0 * * * *' # 设定为每小时的第 0 分钟自动运行
+    - cron: '0 0 * * *'  # 设定为每天凌晨 0:00 (UTC) 自动运行一次
 jobs:
   build:
     runs-on: ubuntu-latest
