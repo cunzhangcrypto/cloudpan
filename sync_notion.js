@@ -60,23 +60,28 @@ async function fetchNavData() {
     }
 
     // 分类汇总
-// 1. 获取 Notion 数据库的属性定义（包含你手动调好的选项顺序）
+// 1. 获取数据库元数据
     const dbMetadata = await notion.databases.retrieve({ database_id: databaseId });
-    const categoryOptions = dbMetadata.properties.category?.select?.options || [];
+    
+    // 2. 这里的属性名必须和你 Notion 里的叫法完全一致，如果是中文就写 "category"
+    const categoryProperty = dbMetadata.properties['category'] || dbMetadata.properties['分类']; 
+    const categoryOptions = categoryProperty?.select?.options || [];
+    
+    // 打印一下，方便你在 GitHub Actions 的日志里看到排序到底对不对
     const orderedCategories = categoryOptions.map(opt => opt.name);
+    console.log("Notion 中的分类排序顺序为:", orderedCategories);
 
-    // 2. 获取当前搬运回来的所有分类
+    // 3. 提取当前链接中涉及的所有分类
     const existingCategories = Array.from(new Set(links.map(l => l.category)));
 
-    // 3. 按照 Notion 后台“手动排序”的顺序进行排列
+    // 4. 强制按照 Notion 后台拖拽的顺序进行重排
     const finalSortOrder = orderedCategories.filter(cat => existingCategories.includes(cat));
     
-    // 如果有新分类没在选项列表里（兜底逻辑），补在最后
+    // 补齐逻辑：如果有些分类不在选项里，放到最后
     existingCategories.forEach(cat => {
       if (!finalSortOrder.includes(cat)) finalSortOrder.push(cat);
     });
 
-    // 4. 生成最终的格式化数据
     const formattedData = finalSortOrder.map(cat => ({
       taxonomy: cat,
       links: links.filter(l => l.category === cat)
