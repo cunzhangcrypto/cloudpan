@@ -103,7 +103,7 @@
         "title": "GitHub",
         "desc": "全球最大的开源社区，寻找黑科技项目的源头",
         "url": "github.com",
-        "logo": "assets/images/favicon.png",
+        "logo": "https://img.cunzhangai.com/file/1776411955711_github.jpg",
         "category": "🛠️ 开发者/效率"
       }
     ]
@@ -167,28 +167,84 @@
         "title": "DeBank",
         "desc": "全面的 Web3 个人资产看板，支持多链追踪",
         "url": "debank.com",
-        "logo": "assets/images/favicon.png",
+        "logo": "https://img.cunzhangai.com/file/1776476150070_debank.jpg",
         "category": "⛓️ Web3 & 安全"
       },
       {
         "title": "DexScreener",
         "desc": "链上土狗、热门币种实时行情监测神器",
         "url": "dexscreener.com",
-        "logo": "assets/images/favicon.png",
+        "logo": "https://img.cunzhangai.com/file/1776476147326_dexscreener.jpg",
         "category": "⛓️ Web3 & 安全"
       },
       {
         "title": "TradingView",
         "desc": "全球顶级金融图表平台，支持 Pine Script 策略编写。",
         "url": "tradingview.com",
-        "logo": "assets/images/favicon.png",
+        "logo": "https://img.cunzhangai.com/file/1776476155468_tradingview.jpg",
         "category": "⛓️ Web3 & 安全"
       },
       {
         "title": "OneKey",
         "desc": "最好用的开源硬件钱包，守护你的数字资产安全",
         "url": "https://onekey.so/r/GVOBMX",
-        "logo": "assets/images/favicon.png",
+        "logo": "https://img.cunzhangai.com/file/1776476154712_onekey.jpg",
+        "category": "⛓️ Web3 & 安全"
+      },
+      {
+        "title": "币安",
+        "desc": "NO.1交易所",
+        "url": "https://www.binance.com/register?ref=CUNZHANG",
+        "logo": "https://img.cunzhangai.com/file/1776476163309_币安.jpg",
+        "category": "⛓️ Web3 & 安全"
+      },
+      {
+        "title": "海妖Krak",
+        "desc": "连接数字货币到法币出入金kraken",
+        "url": "https://krak.app/@cunzhang",
+        "logo": "https://img.cunzhangai.com/file/1776476162428_海妖.jpg",
+        "category": "⛓️ Web3 & 安全"
+      },
+      {
+        "title": "Bybit",
+        "desc": "数字货币交易所",
+        "url": "https://partner.bybit.com/b/141011",
+        "logo": "https://img.cunzhangai.com/file/1776476142970_bybit.jpg",
+        "category": "⛓️ Web3 & 安全"
+      },
+      {
+        "title": "芝麻Gate",
+        "desc": "芝麻交易所",
+        "url": "https://www.gateweb.xyz/share/cunzhang",
+        "logo": "https://img.cunzhangai.com/file/1776476151254_gate.jpg",
+        "category": "⛓️ Web3 & 安全"
+      },
+      {
+        "title": "火币",
+        "desc": "老牌交易所",
+        "url": "https://www.htx.com.ve/invite/zh-cn/1h?invite_code=xkmtb223",
+        "logo": "https://img.cunzhangai.com/file/1776476156046_火币.jpg",
+        "category": "⛓️ Web3 & 安全"
+      },
+      {
+        "title": "LBANK",
+        "desc": "加密货币交易所",
+        "url": "https://lbank.com/ref/CUNZHANG",
+        "logo": "https://img.cunzhangai.com/file/1776476152671_lbank.png",
+        "category": "⛓️ Web3 & 安全"
+      },
+      {
+        "title": "OKX钱包",
+        "desc": "加密web3钱包",
+        "url": "https://web3.okx.com/join/CUNZHANG",
+        "logo": "https://img.cunzhangai.com/file/1776476147980_OKX.jpg",
+        "category": "⛓️ Web3 & 安全"
+      },
+      {
+        "title": "Backpack",
+        "desc": "背包交易所去中心化",
+        "url": "https://backpack.exchange/join/2airbuyo",
+        "logo": "https://img.cunzhangai.com/file/1776476143331_backpack.png",
         "category": "⛓️ Web3 & 安全"
       }
     ]
@@ -200,7 +256,7 @@
         "title": "Claude",
         "desc": "写作风格最拟人、代码能力极强的顶级大模型。",
         "url": "claude.ai",
-        "logo": "assets/images/favicon.png",
+        "logo": "https://img.cunzhangai.com/file/1776476147769_claude.jpg",
         "category": "🤖 智能对话/搜索"
       },
       {
@@ -214,14 +270,21 @@
         "title": "ChatGPT",
         "desc": "全球最领先的 AI 对话模型，办公辅助全能王。",
         "url": "chatgpt.com",
-        "logo": "assets/images/favicon.png",
+        "logo": "https://img.cunzhangai.com/file/1776476141860_chatgpt.png",
         "category": "🤖 智能对话/搜索"
       },
       {
         "title": "DeepSeek",
         "desc": "国产之光，推理能力极强且更懂中文语境。",
         "url": "deepseek.com",
-        "logo": "assets/images/favicon.png",
+        "logo": "https://img.cunzhangai.com/file/1776476148109_deepseek.jpg",
+        "category": "🤖 智能对话/搜索"
+      },
+      {
+        "title": "Gemini",
+        "desc": "谷歌智能AI",
+        "url": "https://gemini.google.com/app",
+        "logo": "https://img.cunzhangai.com/file/1776476146845_gemini.jpg",
         "category": "🤖 智能对话/搜索"
       }
     ]
@@ -233,28 +296,28 @@
         "title": "Kling AI",
         "desc": "快手出品，目前全球最强的国产 AI 视频生成模型。",
         "url": "klingai.com",
-        "logo": "assets/images/favicon.png",
+        "logo": "https://img.cunzhangai.com/file/1776476146700_keling.jpg",
         "category": "🚀AI创作顶流"
       },
       {
         "title": "Luma Dream Machine电影级视频生成，支持首尾帧控制，表现极其稳定。",
         "desc": "智能AI",
         "url": "lumalabs.ai",
-        "logo": "assets/images/favicon.png",
+        "logo": "https://img.cunzhangai.com/file/1776476145445_luma.jpg",
         "category": "🚀AI创作顶流"
       },
       {
         "title": "Midjourney",
         "desc": "AI 绘画界的老大，审美与画质无可替代。",
         "url": "midjourney.com",
-        "logo": "assets/images/favicon.png",
+        "logo": "https://img.cunzhangai.com/file/1776476150710_midjourney.jpg",
         "category": "🚀AI创作顶流"
       },
       {
         "title": "Suno",
         "desc": "只需一段文字，即可生成广播级品质的完整歌曲。",
         "url": "suno.com",
-        "logo": "assets/images/favicon.png",
+        "logo": "https://img.cunzhangai.com/file/1776476151049_suno.jpg",
         "category": "🚀AI创作顶流"
       }
     ]
