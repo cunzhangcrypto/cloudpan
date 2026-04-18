@@ -57,8 +57,15 @@
       {
         "title": "夸克资源搜索",
         "desc": "强大的网盘资源搜索引擎，找教程、找素材首选",
-        "url": "quark.cn",
-        "logo": "assets/images/favicon.png",
+        "url": "https://pan.quark.cn/s/8b50b9b66041#/list/share",
+        "logo": "https://img.cunzhangai.com/file/1776481252600_夸克.png",
+        "category": "📦 宝藏资源站"
+      },
+      {
+        "title": "ESTK",
+        "desc": "让国产手机也能使用eSIM手机卡",
+        "url": "https://www.estk.me?aid=1308",
+        "logo": "https://img.cunzhangai.com/file/1776476144230_estk.jpg",
         "category": "📦 宝藏资源站"
       }
     ]
@@ -70,14 +77,14 @@
         "title": "FlowGPT",
         "desc": "汇聚各种硬核对话 Prompt 的实战提示词社区",
         "url": "flowgpt.com",
-        "logo": "assets/images/favicon.png",
+        "logo": "https://img.cunzhangai.com/file/1776481476717_flowgpt.jpg",
         "category": "💡 AI提示词"
       },
       {
         "title": "PromptHero",
         "desc": "发现全球顶尖 MJ 和 SD 提示词的灵感库",
         "url": "prompthero.com",
-        "logo": "assets/images/favicon.png",
+        "logo": "https://img.cunzhangai.com/file/1776481476417_ptompthero.jpg",
         "category": "💡 AI提示词"
       }
     ]
@@ -89,14 +96,14 @@
         "title": "Cloudflare",
         "desc": "全能的网络防护与 CDN 加速，站长必备",
         "url": "cloudflare.com",
-        "logo": "assets/images/favicon.png",
+        "logo": "https://img.cunzhangai.com/file/1776480977777_cloudflare.jpg",
         "category": "🛠️ 开发者/效率"
       },
       {
         "title": "Vercel",
         "desc": "极速部署前端项目的首选平台",
         "url": "vercel.com",
-        "logo": "assets/images/favicon.png",
+        "logo": "https://img.cunzhangai.com/file/1776480977246_vercel.png",
         "category": "🛠️ 开发者/效率"
       },
       {
@@ -115,21 +122,98 @@
         "title": "Tampermonkey",
         "desc": "脚本猴插件，通过脚本解锁网页各种隐藏功能",
         "url": "https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo",
-        "logo": "assets/images/favicon.png",
+        "logo": "https://img.cunzhangai.com/file/1776480976568_tampermonkey.png",
         "category": "🧩 浏览器神插件"
       },
       {
-        "title": "Sider",
-        "desc": "集成多种主流模型的侧边栏，支持沉浸式翻译",
-        "url": "sider.ai",
-        "logo": "assets/images/favicon.png",
+        "title": "uBlock Origin Lite",
+        "desc": "屏蔽网页的广告，让界面变得极其干净",
+        "url": "https://chromewebstore.google.com/detail/ublock-origin-lite/ddkjiahejlhfcafbddmgiahcphecmpfh",
+        "logo": "https://img.cunzhangai.com/file/1776480974935_uBlock.png",
         "category": "🧩 浏览器神插件"
       },
       {
-        "title": "Monica",
-        "desc": "你的浏览器 AI 助手，支持总结网页、协助阅读",
-        "url": "monica.im",
-        "logo": "assets/images/favicon.png",
+        "title": "SingleFile",
+        "desc": "将网页内容打包下载成本地文件html格式",
+        "url": "https://chromewebstore.google.com/detail/singlefile/mpiodijhokgodhhofbcjdecpffjipkle",
+        "logo": "https://img.cunzhangai.com/file/1776480982089_SingleFile.png",
+        "category": "🧩 浏览器神插件"
+      },
+      {
+        "title": "Global Speed",
+        "desc": "可以控制网页里所有视频的播放速度",
+        "url": "https://chromewebstore.google.com/detail/global-speed-video-speed/jpbjcnkcffbooppibceonlgknpkniiff",
+        "logo": "https://img.cunzhangai.com/file/1776480973177_Global_Speed.png",
+        "category": "🧩 浏览器神插件"
+      },
+      {
+        "title": "超级复制",
+        "desc": "很多网页的文字禁止复制，这个工个可以解除这个限制，一键搞定",
+        "url": "https://chromewebstore.google.com/detail/supercopy-pro-free-copy/cbhljnnfpomfkmhefapcjmjignigcfpn",
+        "logo": "https://img.cunzhangai.com/file/1776480981392_supercopy.png",
+        "category": "🧩 浏览器神插件"
+      },
+      {
+        "title": "沉浸式翻译",
+        "desc": "打开网页，直接双语对照，支持多种翻译方式，外语成绩差的必备插件",
+        "url": "https://chromewebstore.google.com/detail/immersive-translate-trans/bpoadfkcbjbfhfodiogcnhhhpibjhbnh",
+        "logo": "https://img.cunzhangai.com/file/1776480984079_沉浸式翻译.png",
+        "category": "🧩 浏览器神插件"
+      },
+      {
+        "title": "Search by image",
+        "desc": "看到图片，想找来源？这个插件让你一键反向搜索，快速找到相似图片或原图出处",
+        "url": "https://chromewebstore.google.com/detail/search-by-image/cnojnbdhbhnkbcieeekonklommdnndci",
+        "logo": "https://img.cunzhangai.com/file/1776480977089_Search_by_image.png",
+        "category": "🧩 浏览器神插件"
+      },
+      {
+        "title": "OneTab",
+        "desc": "经常几十个网页，这个插件可以一键全部收纳整理，且能随时恢复",
+        "url": "https://chromewebstore.google.com/detail/onetab/chphlpgkkbolifaimnlloiipkdnihall",
+        "logo": "https://img.cunzhangai.com/file/1776480981704_OneTab.png",
+        "category": "🧩 浏览器神插件"
+      },
+      {
+        "title": "OCR Image Reader ",
+        "desc": "从截图中提取文字，图片、PDF等都可以直接识别",
+        "url": "https://chromewebstore.google.com/detail/ocr-image-reader/bhbhjjkcoghibhibegcmbomkbakkpdbo",
+        "logo": "https://img.cunzhangai.com/file/1776480977611_GoFullPage.png",
+        "category": "🧩 浏览器神插件"
+      },
+      {
+        "title": "Dark Reader ",
+        "desc": "将网页变成夜间护眼模式",
+        "url": "https://chromewebstore.google.com/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh",
+        "logo": "https://img.cunzhangai.com/file/1776480982135_Dark_Reader.png",
+        "category": "🧩 浏览器神插件"
+      },
+      {
+        "title": "篡改猴",
+        "desc": "脚本管理工具，可以让浏览器实现各种“自定义功能”，上限非常高",
+        "url": "https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo",
+        "logo": "https://img.cunzhangai.com/file/1776480982135_Dark_Reader.png",
+        "category": "🧩 浏览器神插件"
+      },
+      {
+        "title": "GoFullPage",
+        "desc": "网页截图神器，自动拼接成长图，支持导出PDF、PNG图片",
+        "url": "https://chromewebstore.google.com/detail/gofullpage-full-page-scre/fdpohaocaechififmbbbbbknoalclacl",
+        "logo": "https://img.cunzhangai.com/file/1776480977611_GoFullPage.png",
+        "category": "🧩 浏览器神插件"
+      },
+      {
+        "title": "Scribe",
+        "desc": "自动记录操作步骤，一键生成图文教程",
+        "url": "https://chromewebstore.google.com/detail/scribe-ai-documentation-s/okfkdaglfjjjfefdcppliegebpoegaii",
+        "logo": "https://img.cunzhangai.com/file/1776480978065_Scribe.png",
+        "category": "🧩 浏览器神插件"
+      },
+      {
+        "title": "Copyfish",
+        "desc": "截图直接提取文字，支持多语言，效率神器",
+        "url": "https://chromewebstore.google.com/detail/copyfish-%F0%9F%90%9F-free-ocr-soft/eenjdnjldapjajjofmldgmkjaienebbj",
+        "logo": "https://img.cunzhangai.com/file/1776480978657_Copyfish.png",
         "category": "🧩 浏览器神插件"
       }
     ]
@@ -141,21 +225,21 @@
         "title": "HeyGen",
         "desc": "制作数字人视频、视频对口型翻译的首选工具",
         "url": "heygen.com",
-        "logo": "assets/images/favicon.png",
+        "logo": "https://img.cunzhangai.com/file/1776481477620_heygen.jpg",
         "category": "🎬 影音黑科技"
       },
       {
         "title": "Lalal.ai",
         "desc": "极其精准的 AI 伴奏与人声分离工具",
         "url": "lalal.ai",
-        "logo": "assets/images/favicon.png",
+        "logo": "https://img.cunzhangai.com/file/1776481479810_lalal.jpg",
         "category": "🎬 影音黑科技"
       },
       {
         "title": "ElevenLabs",
         "desc": "行业天花板级别的 AI 配音与音色克隆工具",
         "url": "elevenlabs.io",
-        "logo": "assets/images/favicon.png",
+        "logo": "https://img.cunzhangai.com/file/1776481534340_elevenlabs.jpg",
         "category": "🎬 影音黑科技"
       }
     ]
@@ -263,7 +347,7 @@
         "title": "Perplexity",
         "desc": "AI 搜索时代的颠覆者，直接给答案并附带信源。\n\n",
         "url": "perplexity.ai",
-        "logo": "assets/images/favicon.png",
+        "logo": "https://img.cunzhangai.com/file/1776481613938_perplexity.jpg",
         "category": "🤖 智能对话/搜索"
       },
       {
@@ -319,6 +403,280 @@
         "url": "suno.com",
         "logo": "https://img.cunzhangai.com/file/1776476151049_suno.jpg",
         "category": "🚀AI创作顶流"
+      }
+    ]
+  },
+  {
+    "taxonomy": "🌐 代理IP&环境",
+    "links": [
+      {
+        "title": "Geonix",
+        "desc": "首选推荐机房ip/住宅ip/手机ip",
+        "url": "https://geonix.com/?partner_link=hr7qyBUuqy",
+        "logo": "https://img.cunzhangai.com/file/1776476151365_geonix.jpg",
+        "category": "🌐 代理IP&环境"
+      },
+      {
+        "title": "Proxy6",
+        "desc": "性价比高的机房ip/3人共享ip",
+        "url": "https://proxy6.net/en/?r=648253",
+        "logo": "https://img.cunzhangai.com/file/1776476150855_proxy6.jpg",
+        "category": "🌐 代理IP&环境"
+      },
+      {
+        "title": "Talor",
+        "desc": "动态/静态住宅ip，新用户赠送200M",
+        "url": "https://web3.cunzhangblog.com/talor",
+        "logo": "https://img.cunzhangai.com/file/1776477867543_talor.jpg",
+        "category": "🌐 代理IP&环境"
+      },
+      {
+        "title": "比特指纹浏览器",
+        "desc": "永久免费搭建10个环境",
+        "url": "https://www.bitbrowser.cn/?code=9c91c1",
+        "logo": "https://img.cunzhangai.com/file/1776476161835_比特.jpg",
+        "category": "🌐 代理IP&环境"
+      },
+      {
+        "title": "Hubstudio",
+        "desc": "指纹浏览器",
+        "url": "https://www.hubstudio.cn/register/index.html?ref=dix45I6J",
+        "logo": "https://www.hubstudio.cn/register/index.html?ref=dix45I6J",
+        "category": "🌐 代理IP&环境"
+      },
+      {
+        "title": "AdsPower",
+        "desc": "指纹浏览器",
+        "url": "https://www.adspower.net/share/DutZIH",
+        "logo": "https://img.cunzhangai.com/file/1776476149022_adspower.jpg",
+        "category": "🌐 代理IP&环境"
+      },
+      {
+        "title": "跨境云",
+        "desc": "机场",
+        "url": "https://www.ikuajings.com/auth/register?code=ZLYa",
+        "logo": "https://img.cunzhangai.com/file/1776476162857_跨境云.jpg",
+        "category": "🌐 代理IP&环境"
+      },
+      {
+        "title": "云上云专线",
+        "desc": "梯子",
+        "url": "https://js7.world/#/register?code=BLIWofYv",
+        "logo": "https://img.cunzhangai.com/file/1776479071603_云上云.jpg",
+        "category": "🌐 代理IP&环境"
+      },
+      {
+        "title": "AirDUP",
+        "desc": "梯子",
+        "url": "https://new.zhifeijijiasu.cc/#/register?code=NOhLe4a7",
+        "logo": "https://img.cunzhangai.com/file/1776476145106_airudp.jpg",
+        "category": "🌐 代理IP&环境"
+      },
+      {
+        "title": "小地球仪",
+        "desc": "性价比高",
+        "url": "https://www.xiaodiqiuyi.com/?src=youtebe&user=cunzhangcrypto",
+        "logo": "https://img.cunzhangai.com/file/1776476164059_小地球仪.jpg",
+        "category": "🌐 代理IP&环境"
+      }
+    ]
+  },
+  {
+    "taxonomy": "💳 走资/U卡",
+    "links": [
+      {
+        "title": "Bitget",
+        "desc": "加密货币银行卡Fiat24",
+        "url": "https://newshare.bwb.global/zh/referralLanding?inviteCode=3K5EpM&utm_source=newInviteRebate&type=card",
+        "logo": "https://img.cunzhangai.com/file/1776476147287_bitget.jpg",
+        "category": "💳 走资/U卡"
+      },
+      {
+        "title": "Pokepay",
+        "desc": "香港visa加密货币银行卡",
+        "url": "https://app.pokepay.cc/pages/passport/invitation?r=147312",
+        "logo": "https://img.cunzhangai.com/file/1776476147371_pokepay.jpg",
+        "category": "💳 走资/U卡"
+      },
+      {
+        "title": "Crydit",
+        "desc": "加密大额消费VISA卡",
+        "url": "https://h5.company.crydit.com/register?invite_code=0DU5L76G",
+        "logo": "https://img.cunzhangai.com/file/1776476150071_crydit.jpg",
+        "category": "💳 走资/U卡"
+      },
+      {
+        "title": "Safepal",
+        "desc": "U卡免费领取硬件钱包码：559426",
+        "url": "https://safepal.com/zh-cn/download",
+        "logo": "https://img.cunzhangai.com/file/1776476149197_safepal.png",
+        "category": "💳 走资/U卡"
+      },
+      {
+        "title": "Thpay",
+        "desc": "香港加密货币银行卡",
+        "url": "https://www.thpay.org/?channelCode=8197614",
+        "logo": "https://img.cunzhangai.com/file/1776476155297_thpay.jpg",
+        "category": "💳 走资/U卡"
+      },
+      {
+        "title": "SuPAY",
+        "desc": "无限开卡/消费/订阅",
+        "url": "https://www.supaycard.com/landingView?ref=cunzhang",
+        "logo": "https://img.cunzhangai.com/file/1776476148268_supay.jpg",
+        "category": "💳 走资/U卡"
+      },
+      {
+        "title": "Wise",
+        "desc": "跨境汇款必备",
+        "url": "https://wise.com/invite/amc/tianboy4",
+        "logo": "https://img.cunzhangai.com/file/1776476149400_wise.png",
+        "category": "💳 走资/U卡"
+      },
+      {
+        "title": "iFast",
+        "desc": "加密货币友好的英国银行",
+        "url": "https://www.ifastgb.com/tellafriend/tianboy600 ",
+        "logo": "https://img.cunzhangai.com/file/1776476153075_ifast.jpg",
+        "category": "💳 走资/U卡"
+      }
+    ]
+  },
+  {
+    "taxonomy": "📦 网盘资源",
+    "links": [
+      {
+        "title": "闲鱼运营",
+        "desc": "运营秘籍课程",
+        "url": "https://pan.quark.cn/s/e19ef5ba1bc8",
+        "logo": "https://img.cunzhangai.com/file/1776481252600_夸克.png",
+        "category": "📦 网盘资源"
+      },
+      {
+        "title": "网盘管理",
+        "desc": "网盘批量管理工具",
+        "url": "https://pan.quark.cn/s/b7d82b515678",
+        "logo": "https://img.cunzhangai.com/file/1776481252600_夸克.png",
+        "category": "📦 网盘资源"
+      },
+      {
+        "title": "视频处理",
+        "desc": "视频去背景和去马赛克工具",
+        "url": "https://pan.quark.cn/s/26491ca0ddb0",
+        "logo": "https://img.cunzhangai.com/file/1776481252600_夸克.png",
+        "category": "📦 网盘资源"
+      },
+      {
+        "title": "视频去水印",
+        "desc": "视频批量随机水印",
+        "url": "https://pan.quark.cn/s/712d9a948a0c",
+        "logo": "https://img.cunzhangai.com/file/1776481252600_夸克.png",
+        "category": "📦 网盘资源"
+      },
+      {
+        "title": "手机去重",
+        "desc": "手机去重软件",
+        "url": "https://pan.quark.cn/s/9dcae8d4b283",
+        "logo": "https://img.cunzhangai.com/file/1776481252600_夸克.png",
+        "category": "📦 网盘资源"
+      },
+      {
+        "title": "剪映破解",
+        "desc": "剪映破解版",
+        "url": "https://pan.quark.cn/s/159ebddbf81e",
+        "logo": "https://img.cunzhangai.com/file/1776481252600_夸克.png",
+        "category": "📦 网盘资源"
+      },
+      {
+        "title": "视频解析",
+        "desc": "多平台视频解析下载器",
+        "url": "https://pan.quark.cn/s/0c2dbb1ea106",
+        "logo": "https://img.cunzhangai.com/file/1776481252600_夸克.png",
+        "category": "📦 网盘资源"
+      },
+      {
+        "title": "Ai去字幕",
+        "desc": "Ai去字幕解锁版（不要升级，升级会失效}",
+        "url": "https://pan.quark.cn/s/eef62faa245e",
+        "logo": "https://img.cunzhangai.com/file/1776481252600_夸克.png",
+        "category": "📦 网盘资源"
+      },
+      {
+        "title": "手机号估值",
+        "desc": "手机尾号估值资料包",
+        "url": "https://pan.quark.cn/s/731899f76302",
+        "logo": "https://img.cunzhangai.com/file/1776481252600_夸克.png",
+        "category": "📦 网盘资源"
+      },
+      {
+        "title": "宝宝起名",
+        "desc": "巨暴利，月入过万的宝宝起名项目，每单都是纯利润，零基础都能躺赚【附软件 + 视频教程】",
+        "url": "https://pan.quark.cn/s/c94e2187836e",
+        "logo": "https://img.cunzhangai.com/file/1776481252600_夸克.png",
+        "category": "📦 网盘资源"
+      },
+      {
+        "title": "视频号下载",
+        "desc": "视频号下载工具合集",
+        "url": "https://pan.quark.cn/s/8b57fb75f328",
+        "logo": "https://img.cunzhangai.com/file/1776481252600_夸克.png",
+        "category": "📦 网盘资源"
+      },
+      {
+        "title": "批量剪辑",
+        "desc": "批量剪辑大师MV批量创作大师",
+        "url": "https://pan.quark.cn/s/963d9bed18df",
+        "logo": "https://img.cunzhangai.com/file/1776481252600_夸克.png",
+        "category": "📦 网盘资源"
+      },
+      {
+        "title": "去重模板",
+        "desc": "剪映全套去重",
+        "url": "https://pan.quark.cn/s/9b380611140c",
+        "logo": "https://img.cunzhangai.com/file/1776481252600_夸克.png",
+        "category": "📦 网盘资源"
+      },
+      {
+        "title": "价格行为",
+        "desc": "阿布价格行为交易系统",
+        "url": "https://pan.quark.cn/s/b58315ec74ee",
+        "logo": "https://img.cunzhangai.com/file/1776481252600_夸克.png",
+        "category": "📦 网盘资源"
+      },
+      {
+        "title": "图片去水印",
+        "desc": "去水印软件专家版",
+        "url": "https://pan.quark.cn/s/87be6e5c0720",
+        "logo": "https://img.cunzhangai.com/file/1776481252600_夸克.png",
+        "category": "📦 网盘资源"
+      },
+      {
+        "title": "软件卸载",
+        "desc": "电脑桌面软件卸载工具",
+        "url": "https://pan.quark.cn/s/762c9e9fadd6",
+        "logo": "https://img.cunzhangai.com/file/1776481252600_夸克.png",
+        "category": "📦 网盘资源"
+      },
+      {
+        "title": "PDF工具",
+        "desc": "免费PDF工具2款",
+        "url": "https://pan.quark.cn/s/b9589c6e015d",
+        "logo": "https://img.cunzhangai.com/file/1776481252600_夸克.png",
+        "category": "📦 网盘资源"
+      },
+      {
+        "title": "电子印章",
+        "desc": "电子Y章生成器",
+        "url": "https://pan.quark.cn/s/0a47162f6a6c",
+        "logo": "https://img.cunzhangai.com/file/1776481252600_夸克.png",
+        "category": "📦 网盘资源"
+      },
+      {
+        "title": "闲鱼发货",
+        "desc": "闲鱼自动发货",
+        "url": "https://pan.quark.cn/s/31a4549def21",
+        "logo": "https://img.cunzhangai.com/file/1776481252600_夸克.png",
+        "category": "📦 网盘资源"
       }
     ]
   }
