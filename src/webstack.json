@@ -466,35 +466,35 @@
     ]
   },
   {
-    "taxonomy": "🚀AI创作顶流",
+    "taxonomy": "🚀Git开源神器",
     "links": [
       {
-        "title": "Kling AI",
-        "desc": "快手出品，目前全球最强的国产 AI 视频生成模型。",
-        "url": "klingai.com",
+        "title": "Notion博客",
+        "desc": "Notion+Gtihub+Vercel搭建的博客网站",
+        "url": "https://github.com/tangly1024/NotionNext",
         "logo": "https://img.cunzhangai.com/file/1776476146700_keling.jpg",
-        "category": "🚀AI创作顶流"
+        "category": "🚀Git开源神器"
       },
       {
-        "title": "Luma Dream Machine电影级视频生成，支持首尾帧控制，表现极其稳定。",
-        "desc": "智能AI",
-        "url": "lumalabs.ai",
+        "title": "Notion导航网站",
+        "desc": "Notion+Gtihub+Cloudflare导航网站",
+        "url": "https://github.com/cunzhangcrypto/cloudpan",
         "logo": "https://img.cunzhangai.com/file/1776476145445_luma.jpg",
-        "category": "🚀AI创作顶流"
+        "category": "🚀Git开源神器"
       },
       {
-        "title": "Midjourney",
-        "desc": "AI 绘画界的老大，审美与画质无可替代。",
-        "url": "midjourney.com",
+        "title": "图床",
+        "desc": "基于 CloudFlare 的开源文件托管解决方案（图床/文件床/网盘）",
+        "url": "https://github.com/cunzhangcrypto/imgbed",
         "logo": "https://img.cunzhangai.com/file/1776476150710_midjourney.jpg",
-        "category": "🚀AI创作顶流"
+        "category": "🚀Git开源神器"
       },
       {
-        "title": "Suno",
-        "desc": "只需一段文字，即可生成广播级品质的完整歌曲。",
-        "url": "suno.com",
-        "logo": "https://img.cunzhangai.com/file/1776476151049_suno.jpg",
-        "category": "🚀AI创作顶流"
+        "title": "Sink",
+        "desc": "一款简单/快速/安全的链接缩短服务，带有分析功能，100% 基于 Cloudflare 运行。",
+        "url": "https://github.com/cunzhangcrypto/Sink",
+        "logo": "https://img.cunzhangai.com/file/1776648881052_sink.png",
+        "category": "🚀Git开源神器"
       }
     ]
   },
