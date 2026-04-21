@@ -495,6 +495,20 @@
         "url": "https://github.com/cunzhangcrypto/Sink",
         "logo": "https://img.cunzhangai.com/file/1776648881052_sink.png",
         "category": "🚀Git开源神器"
+      },
+      {
+        "title": "TrendRadar",
+        "desc": "告别信息过载，你的 AI 舆情监控助手与热点筛选工具！聚合多平台热点 + RSS 订阅，支持关键词精准筛选。",
+        "url": "https://github.com/sansan0/TrendRadar",
+        "logo": "https://img.cunzhangai.com/file/1776689910744_TrendRadar.jpg",
+        "category": "🚀Git开源神器"
+      },
+      {
+        "title": "AInews",
+        "desc": "村长优化版TrendRadar，修改了一些代码逻辑及RSS订阅源，增加R2存储和Workers部署",
+        "url": "https://github.com/cunzhangcrypto/AInews",
+        "logo": "assets/images/favicon.png",
+        "category": "🚀Git开源神器"
       }
     ]
   },
