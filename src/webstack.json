@@ -359,6 +359,20 @@
         "url": "https://pan.quark.cn/s/31a4549def21",
         "logo": "https://img.cunzhangai.com/file/1776481252600_夸克.png",
         "category": "📦 网盘资源"
+      },
+      {
+        "title": "AI视频转录绿色便携版",
+        "desc": "针对 Windows 环境优化，支持解压即用。无需安装复杂的环境依赖",
+        "url": "https://pan.quark.cn/s/5592557bc8bf",
+        "logo": "https://img.cunzhangai.com/file/1776755884380_ai视频转录.png",
+        "category": "📦 网盘资源"
+      },
+      {
+        "title": "VibeVoice安装包下载",
+        "desc": "微软开源的ASR/TTS语音模型，安装包本地下载安装",
+        "url": "https://pan.quark.cn/s/96546062722a",
+        "logo": "https://img.cunzhangai.com/file/1776782685581_VibeVoice.png",
+        "category": "📦 网盘资源"
       }
     ]
   },
@@ -509,6 +523,20 @@
         "url": "https://github.com/cunzhangcrypto/AInews",
         "logo": "assets/images/favicon.png",
         "category": "🚀Git开源神器"
+      },
+      {
+        "title": "AI视频转录器",
+        "desc": "一款开源的AI视频/播客转录和摘要工具，支持YouTube、Bilibili、抖音、Apple Podcasts、SoundCloud等30+平台",
+        "url": "https://github.com/wendy7756/AI-Video-Transcriber",
+        "logo": "https://img.cunzhangai.com/file/1776755884380_ai视频转录.png",
+        "category": "🚀Git开源神器"
+      },
+      {
+        "title": "VibeVoice",
+        "desc": "微软开源的ASR/TTS语音模型",
+        "url": "https://github.com/microsoft/VibeVoice",
+        "logo": "https://img.cunzhangai.com/file/1776782685581_VibeVoice.png",
+        "category": "🚀Git开源神器"
       }
     ]
   },
@@ -600,6 +628,13 @@
         "desc": "让国产手机也能使用eSIM手机卡",
         "url": "https://www.estk.me?aid=1308",
         "logo": "https://img.cunzhangai.com/file/1776476144230_estk.jpg",
+        "category": "📦 宝藏资源站"
+      },
+      {
+        "title": "Youtube视频封面提取",
+        "desc": "免费提供YouTube视频的封面预览和下载功能",
+        "url": "https://tool.yzitc.com/ytb/",
+        "logo": "https://img.cunzhangai.com/file/1776782538205_Youtube.png",
         "category": "📦 宝藏资源站"
       }
     ]
