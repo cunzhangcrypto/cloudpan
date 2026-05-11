@@ -71,6 +71,13 @@
         "url": "https://new.zhifeijijiasu.cc/#/register?code=NOhLe4a7",
         "logo": "https://img.cunzhangai.com/file/1776476145106_airudp.jpg",
         "category": "🌐 代理IP&环境"
+      },
+      {
+        "title": "Thordata住宅ip",
+        "desc": "Thordata 在全球 190 多个国家拥有超过 ",
+        "url": "https://dashboard.thordata.com/zh/register?invitation_code=4ECMWQD6",
+        "logo": "https://img.cunzhangai.com/file/1778400832376_3402e7e8-b063-4cc0-a91b-560ce57d26bf.jpg",
+        "category": "🌐 代理IP&环境"
       }
     ]
   },
@@ -143,6 +150,20 @@
         "desc": "视频号达人检索，视频号在线下载，视频号主页下载，视频号批量下载",
         "url": "https://www.convry.com/video/sph/home",
         "logo": "https://img.cunzhangai.com/file/1777447485443_sph.png",
+        "category": "⚡ 极速下载站"
+      },
+      {
+        "title": "Cobalt视频下载器",
+        "desc": "ouTube、TikTok、Twitter、Instagram……20+平台全部支持\n无水印、无广告、无追踪，开源免费，连账号都不用登！\n内容创作者、剪辑狗、视频党狂喜！",
+        "url": "https://cobalt.tools/",
+        "logo": "https://img.cunzhangai.com/file/1778399086003_cobalt.png",
+        "category": "⚡ 极速下载站"
+      },
+      {
+        "title": "视频下载器",
+        "desc": "轻松下载您最喜爱的视频。我们支持从各大主流平台下载，只需粘贴链接",
+        "url": "https://videodl.owlsay.com/",
+        "logo": "https://img.cunzhangai.com/file/1778399090025_panda.jpg",
         "category": "⚡ 极速下载站"
       }
     ]
@@ -418,6 +439,13 @@
         "url": "https://pan.quark.cn/s/a5bb9cc1e723",
         "logo": "https://img.cunzhangai.com/file/1776481252600_夸克.png",
         "category": "💰 副业变现利器"
+      },
+      {
+        "title": "ESTK手机神器",
+        "desc": "它长得就像一张普通的 SIM 卡，但它是个“容器”。让你的手机使用上eSIM手机号",
+        "url": "https://www.cunzhangblog.com/estkme",
+        "logo": "https://img.cunzhangai.com/file/1778401231536_ESTK.png",
+        "category": "💰 副业变现利器"
       }
     ]
   },
@@ -478,6 +506,20 @@
         "desc": "微软开源的ASR/TTS语音模型",
         "url": "https://github.com/microsoft/VibeVoice",
         "logo": "https://img.cunzhangai.com/file/1776782685581_VibeVoice.png",
+        "category": "🚀Git开源神器"
+      },
+      {
+        "title": "MinerU文档处理器",
+        "desc": "MinerU 是一款由 OpenDataLab 开源的 PDF 解析工具，能高精度还原公式、表格和复杂版面，是 Web3 投研、RAG 知识库和 AI 文档预处理的最佳基座之一",
+        "url": "https://www.cunzhangblog.com/mineru",
+        "logo": "https://img.cunzhangai.com/file/1778400434417_mineru1.png",
+        "category": "🚀Git开源神器"
+      },
+      {
+        "title": "Rin开源博客",
+        "desc": "RIN 是基于 Cloudflare D1 + R2 的轻量级博客系统，可实现极速响应、零成本维护和深度 SEO 优化",
+        "url": "https://github.com/cunzhangcrypto/Rin",
+        "logo": "https://img.cunzhangai.com/file/1778400037276_rin.png",
         "category": "🚀Git开源神器"
       }
     ]
@@ -559,6 +601,13 @@
         "url": "https://www.cunzhangblog.com/cloudmail",
         "logo": "https://img.cunzhangai.com/file/1778400527817_email.png",
         "category": "🛠️ 开发者/效率"
+      },
+      {
+        "title": "LinkSwift网盘助手",
+        "desc": "一款",
+        "url": "https://www.cunzhangblog.com/linkswift",
+        "logo": "https://img.cunzhangai.com/file/1778400705706_linkswift.jpg",
+        "category": "🛠️ 开发者/效率"
       }
     ]
   },
@@ -573,7 +622,7 @@
         "category": "📦 宝藏资源站"
       },
       {
-        "title": "吾爱破解1",
+        "title": "吾爱破解",
         "desc": "国内最知名的极客论坛，汇聚各类稀缺工具与补丁",
         "url": "52pojie.cn",
         "logo": "https://img.cunzhangai.com/file/1776411955374_语雀话题.png",
@@ -591,6 +640,13 @@
         "desc": "免费提供YouTube视频的封面预览和下载功能",
         "url": "https://tool.yzitc.com/ytb/",
         "logo": "https://img.cunzhangai.com/file/1776782538205_Youtube.png",
+        "category": "📦 宝藏资源站"
+      },
+      {
+        "title": "地址生成器",
+        "desc": "可以生成27个国家和地区的地址生成器",
+        "url": "https://duoguodizhi.com/",
+        "logo": "https://img.cunzhangai.com/file/1778423202818_address.png",
         "category": "📦 宝藏资源站"
       }
     ]
@@ -770,6 +826,27 @@
         "desc": "极其精准的 AI 伴奏与人声分离工具",
         "url": "lalal.ai",
         "logo": "https://img.cunzhangai.com/file/1776481479810_lalal.jpg",
+        "category": "🎬 影音黑科技"
+      },
+      {
+        "title": "初剪神器 Auto-Edito",
+        "desc": "Auto-Editor 是一款基于命令行的自动视频剪辑工具，通过分析音频电平自动剔除视频中的空白和停顿，大幅提升博主初剪效率",
+        "url": "https://www.cunzhangblog.com/autoeditor",
+        "logo": "https://img.cunzhangai.com/file/1778400172501_autoeditor.png",
+        "category": "🎬 影音黑科技"
+      },
+      {
+        "title": "OBS录屏软件",
+        "desc": "录屏界的“天花板”——OBS，专业录屏软件，插件自选",
+        "url": "https://www.cunzhangblog.com/obs",
+        "logo": "https://img.cunzhangai.com/file/1778400281764_obs.png",
+        "category": "🎬 影音黑科技"
+      },
+      {
+        "title": "Recordly录屏软件",
+        "desc": "它是一款",
+        "url": "https://www.cunzhangblog.com/recordly",
+        "logo": "https://img.cunzhangai.com/file/1778400346616_recordly.png",
         "category": "🎬 影音黑科技"
       }
     ]
