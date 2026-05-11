@@ -2,7 +2,7 @@ name: Notion Sync
 on:
   workflow_dispatch: 
   schedule:
-    - cron: '0 0 * * *'  # 设定为每天凌晨 0:00 (UTC) 自动运行一次
+    - cron: '0 22 * * *'  # 设定为每天凌晨 0:00 (UTC) 自动运行一次
 jobs:
   build:
     runs-on: ubuntu-latest
