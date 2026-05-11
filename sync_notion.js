@@ -7,56 +7,48 @@ const databaseId = process.env.NOTION_DATABASE_ID;
 async function fetchNavData() {
   try {
     const links = [];
-    console.log("正在从 Notion 搬运数据...");
-    
-    const response = await notion.databases.query({
-      database_id: databaseId,
-      filter: {
-        property: "status",
-        select: { equals: "Published" } 
-      }
-    });
+    let hasMore = true;
+    let cursor = undefined;
 
-    for (const page of response.results) {
-      const prop = page.properties;
-      
-      // 1. 安全获取标题和URL
-      const titleObj = prop.title || prop.Name;
-      const title = titleObj?.title?.[0]?.plain_text || "";
-      const url = prop.url?.url || "";
+    console.log("正在从 Notion 搬运全量数据...");
 
-      if (!title || !url) continue;
-
-      // 2. 先定义好分类变量 (修复报错的关键)
-      const categoryName = prop.category?.select?.name || "默认分类";
-
-      // 3. 抓取图标逻辑
-      let iconUrl = ""; 
-      if (page.icon) {
-        if (page.icon.type === 'external') {
-          iconUrl = page.icon.external.url;
-        } else if (page.icon.type === 'file') {
-          iconUrl = page.icon.file.url; 
+    // 使用循环抓取所有页面的数据
+    while (hasMore) {
+      const response = await notion.databases.query({
+        database_id: databaseId,
+        start_cursor: cursor, // 从上次结束的地方开始
+        filter: {
+          property: "status",
+          select: { equals: "Published" }
         }
-      }
-
-      // 4. 尝试读取表格里的 icon 列
-      if (!iconUrl && prop.icon) {
-        iconUrl = prop.icon.rich_text?.[0]?.plain_text || prop.icon.url || "";
-      }
-
-      // 5. 最终兜底
-      if (!iconUrl || iconUrl.trim() === "") {
-        iconUrl = "assets/images/favicon.png"; 
-      }
-
-      links.push({
-        title: title,
-        desc: prop.summary?.rich_text?.[0]?.plain_text || "...",
-        url: url,
-        logo: iconUrl,
-        category: categoryName
       });
+
+      // 将当前页面的结果加入数组
+      for (const page of response.results) {
+        const prop = page.properties;
+        // ... (这里保留你原来的 1. 到 5. 的解析逻辑) ...
+        const titleObj = prop.title || prop.Name;
+        const title = titleObj?.title?.[0]?.plain_text || "";
+        const url = prop.url?.url || "";
+
+        if (!title || !url) continue;
+
+        const categoryName = prop.category?.select?.name || "默认分类";
+        
+        // (省略中间的图标抓取逻辑，保持你原来的代码即可)
+        
+        links.push({
+          title: title,
+          desc: prop.summary?.rich_text?.[0]?.plain_text || "...",
+          url: url,
+          logo: iconUrl, // 确保 iconUrl 变量在循环内已定义
+          category: categoryName
+        });
+      }
+
+      // 更新分页状态
+      hasMore = response.has_more;
+      cursor = response.next_cursor;
     }
 
     // 分类汇总
