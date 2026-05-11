@@ -87,7 +87,7 @@
       {
         "title": "Safepal",
         "desc": "U卡免费领取硬件钱包码：559426",
-        "url": "https://safepal.com/zh-cn/download",
+        "url": "https://www.cunzhangblog.com/safepalbank",
         "logo": "https://img.cunzhangai.com/file/1776476149197_safepal.png",
         "category": "💳 走资/U卡"
       },
@@ -136,91 +136,14 @@
     ]
   },
   {
-    "taxonomy": "⛓️ Web3 & 安全",
+    "taxonomy": "⚡ 极速下载站",
     "links": [
       {
-        "title": "TradingView",
-        "desc": "全球顶级金融图表平台，支持 Pine Script 策略编写。",
-        "url": "tradingview.com",
-        "logo": "https://img.cunzhangai.com/file/1776476155468_tradingview.jpg",
-        "category": "⛓️ Web3 & 安全"
-      },
-      {
-        "title": "OneKey",
-        "desc": "最好用的开源硬件钱包，守护你的数字资产安全",
-        "url": "https://onekey.so/r/GVOBMX",
-        "logo": "https://img.cunzhangai.com/file/1776476154712_onekey.jpg",
-        "category": "⛓️ Web3 & 安全"
-      },
-      {
-        "title": "DexScreener",
-        "desc": "链上土狗、热门币种实时行情监测神器",
-        "url": "dexscreener.com",
-        "logo": "https://img.cunzhangai.com/file/1776476147326_dexscreener.jpg",
-        "category": "⛓️ Web3 & 安全"
-      },
-      {
-        "title": "DeBank",
-        "desc": "全面的 Web3 个人资产看板，支持多链追踪",
-        "url": "debank.com",
-        "logo": "https://img.cunzhangai.com/file/1776476150070_debank.jpg",
-        "category": "⛓️ Web3 & 安全"
-      },
-      {
-        "title": "火币",
-        "desc": "老牌交易所",
-        "url": "https://www.htx.com.ve/invite/zh-cn/1h?invite_code=xkmtb223",
-        "logo": "https://img.cunzhangai.com/file/1776476156046_火币.jpg",
-        "category": "⛓️ Web3 & 安全"
-      },
-      {
-        "title": "Backpack",
-        "desc": "背包交易所去中心化",
-        "url": "https://backpack.exchange/join/2airbuyo",
-        "logo": "https://img.cunzhangai.com/file/1776476143331_backpack.png",
-        "category": "⛓️ Web3 & 安全"
-      },
-      {
-        "title": "海妖Krak",
-        "desc": "连接数字货币到法币出入金kraken",
-        "url": "https://krak.app/@cunzhang",
-        "logo": "https://img.cunzhangai.com/file/1776476162428_海妖.jpg",
-        "category": "⛓️ Web3 & 安全"
-      },
-      {
-        "title": "Bybit",
-        "desc": "数字货币交易所",
-        "url": "https://partner.bybit.com/b/141011",
-        "logo": "https://img.cunzhangai.com/file/1776476142970_bybit.jpg",
-        "category": "⛓️ Web3 & 安全"
-      },
-      {
-        "title": "币安",
-        "desc": "NO.1交易所",
-        "url": "https://www.binance.com/register?ref=CUNZHANG",
-        "logo": "https://img.cunzhangai.com/file/1776476163309_币安.jpg",
-        "category": "⛓️ Web3 & 安全"
-      },
-      {
-        "title": "芝麻Gate",
-        "desc": "芝麻交易所",
-        "url": "https://www.gateweb.xyz/share/cunzhang",
-        "logo": "https://img.cunzhangai.com/file/1776476151254_gate.jpg",
-        "category": "⛓️ Web3 & 安全"
-      },
-      {
-        "title": "OKX钱包",
-        "desc": "加密web3钱包",
-        "url": "https://web3.okx.com/join/CUNZHANG",
-        "logo": "https://img.cunzhangai.com/file/1776476147980_OKX.jpg",
-        "category": "⛓️ Web3 & 安全"
-      },
-      {
-        "title": "LBANK",
-        "desc": "加密货币交易所",
-        "url": "https://lbank.com/ref/CUNZHANG",
-        "logo": "https://img.cunzhangai.com/file/1776476152671_lbank.png",
-        "category": "⛓️ Web3 & 安全"
+        "title": "视频在线下载",
+        "desc": "视频号达人检索，视频号在线下载，视频号主页下载，视频号批量下载",
+        "url": "https://www.convry.com/video/sph/home",
+        "logo": "https://img.cunzhangai.com/file/1777447485443_sph.png",
+        "category": "⚡ 极速下载站"
       }
     ]
   },
@@ -622,6 +545,20 @@
         "url": "github.com",
         "logo": "https://img.cunzhangai.com/file/1776411955711_github.jpg",
         "category": "🛠️ 开发者/效率"
+      },
+      {
+        "title": "ClubSim香港手机号",
+        "desc": "保号神卡——香港 Club SIM",
+        "url": "https://www.cunzhangblog.com/clubsim",
+        "logo": "https://img.cunzhangai.com/file/1778400991265_clubsim.png",
+        "category": "🛠️ 开发者/效率"
+      },
+      {
+        "title": "免费搭建邮箱系统",
+        "desc": "利用 Cloudflare 的边缘计算能力，配合开源项目 CloudMail，实现",
+        "url": "https://www.cunzhangblog.com/cloudmail",
+        "logo": "https://img.cunzhangai.com/file/1778400527817_email.png",
+        "category": "🛠️ 开发者/效率"
       }
     ]
   },
@@ -678,6 +615,95 @@
     ]
   },
   {
+    "taxonomy": "⛓️ Web3 & 安全",
+    "links": [
+      {
+        "title": "TradingView",
+        "desc": "全球顶级金融图表平台，支持 Pine Script 策略编写。",
+        "url": "tradingview.com",
+        "logo": "https://img.cunzhangai.com/file/1776476155468_tradingview.jpg",
+        "category": "⛓️ Web3 & 安全"
+      },
+      {
+        "title": "OneKey",
+        "desc": "最好用的开源硬件钱包，守护你的数字资产安全",
+        "url": "https://onekey.so/r/GVOBMX",
+        "logo": "https://img.cunzhangai.com/file/1776476154712_onekey.jpg",
+        "category": "⛓️ Web3 & 安全"
+      },
+      {
+        "title": "DexScreener",
+        "desc": "链上土狗、热门币种实时行情监测神器",
+        "url": "dexscreener.com",
+        "logo": "https://img.cunzhangai.com/file/1776476147326_dexscreener.jpg",
+        "category": "⛓️ Web3 & 安全"
+      },
+      {
+        "title": "DeBank",
+        "desc": "全面的 Web3 个人资产看板，支持多链追踪",
+        "url": "debank.com",
+        "logo": "https://img.cunzhangai.com/file/1776476150070_debank.jpg",
+        "category": "⛓️ Web3 & 安全"
+      },
+      {
+        "title": "火币",
+        "desc": "老牌交易所",
+        "url": "https://www.htx.com.ve/invite/zh-cn/1h?invite_code=xkmtb223",
+        "logo": "https://img.cunzhangai.com/file/1776476156046_火币.jpg",
+        "category": "⛓️ Web3 & 安全"
+      },
+      {
+        "title": "Backpack",
+        "desc": "背包交易所去中心化",
+        "url": "https://backpack.exchange/join/2airbuyo",
+        "logo": "https://img.cunzhangai.com/file/1776476143331_backpack.png",
+        "category": "⛓️ Web3 & 安全"
+      },
+      {
+        "title": "海妖Krak",
+        "desc": "连接数字货币到法币出入金kraken",
+        "url": "https://krak.app/@cunzhang",
+        "logo": "https://img.cunzhangai.com/file/1776476162428_海妖.jpg",
+        "category": "⛓️ Web3 & 安全"
+      },
+      {
+        "title": "Bybit",
+        "desc": "数字货币交易所",
+        "url": "https://partner.bybit.com/b/141011",
+        "logo": "https://img.cunzhangai.com/file/1776476142970_bybit.jpg",
+        "category": "⛓️ Web3 & 安全"
+      },
+      {
+        "title": "币安",
+        "desc": "NO.1交易所",
+        "url": "https://www.binance.com/register?ref=CUNZHANG",
+        "logo": "https://img.cunzhangai.com/file/1776476163309_币安.jpg",
+        "category": "⛓️ Web3 & 安全"
+      },
+      {
+        "title": "芝麻Gate",
+        "desc": "芝麻交易所",
+        "url": "https://www.gateweb.xyz/share/cunzhang",
+        "logo": "https://img.cunzhangai.com/file/1776476151254_gate.jpg",
+        "category": "⛓️ Web3 & 安全"
+      },
+      {
+        "title": "OKX钱包",
+        "desc": "加密web3钱包",
+        "url": "https://web3.okx.com/join/CUNZHANG",
+        "logo": "https://img.cunzhangai.com/file/1776476147980_OKX.jpg",
+        "category": "⛓️ Web3 & 安全"
+      },
+      {
+        "title": "LBANK",
+        "desc": "加密货币交易所",
+        "url": "https://lbank.com/ref/CUNZHANG",
+        "logo": "https://img.cunzhangai.com/file/1776476152671_lbank.png",
+        "category": "⛓️ Web3 & 安全"
+      }
+    ]
+  },
+  {
     "taxonomy": "📡 实时情报站",
     "links": [
       {
@@ -693,18 +719,6 @@
         "url": "foresightnews.com",
         "logo": "https://img.cunzhangai.com/file/1776411948758_5.jpg",
         "category": "📡 实时情报站"
-      }
-    ]
-  },
-  {
-    "taxonomy": "⚡ 极速下载站",
-    "links": [
-      {
-        "title": "视频在线下载",
-        "desc": "视频号达人检索，视频号在线下载，视频号主页下载，视频号批量下载",
-        "url": "https://www.convry.com/video/sph/home",
-        "logo": "https://img.cunzhangai.com/file/1777447485443_sph.png",
-        "category": "⚡ 极速下载站"
       }
     ]
   },
